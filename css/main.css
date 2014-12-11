@@ -1,0 +1,94 @@
+@font-face {
+	font-family: PTSerif;
+	src: url("/fonts/PTSansNormal.ttf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: PTSerif;
+	src: url("/fonts/PTSansItalic.ttf");
+	font-style: italic;
+}
+
+body {
+	font-family: PTSerif;
+	font-size: 13pt;
+	visibility: hidden;
+	color: #333;
+	margin: 1em;
+	font-style: normal;
+}
+
+*::selection {
+	background-color: #eef;
+	color: #00a;
+}
+
+a { 
+	background-color: #ffc;
+	color: #10c;
+	text-decoration: underline;
+}
+
+a.folder {
+	font-weight: bold;
+}
+
+a:hover {
+	color: #c10;
+}
+
+img.tex {
+	
+}
+
+h1 {
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	font-style: italic;
+}
+
+h4{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+p.tex {
+	text-align: center;
+}
+
+time {
+	color: #ccc;
+	font-family: PTSerif;
+	font-style: italic;
+}
+
+li.menu {
+	font-size: 14pt;
+	margin: 1em;
+	list-style-type: none;
+	margin: 0.5em;
+}
+
+#menu {
+	margin-bottom: 1em;
+}
+
+p.img {
+	text-align: center;
+	background-color: #ffe;
+}
+
+img.img {
+	max-width: 62.5%;
+	-webkit-transition: all 0.3s;
+}
+
+img.img:active {
+	max-width: 98%;
+	-webkit-transition: all 0.3s;
+}
+
+span.light {
+	color: #ccc;
+}

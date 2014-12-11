@@ -1,0 +1,11 @@
+var fs = require("fs");
+
+function parseFile(path) {
+	var t;
+	fs.readFile(path,{encoding: "utf-8"}function(err,data) {
+		if (err) throw err;
+		
+	});
+	t = data.split("<tex>","<img alt='tex' src='http://");
+	
+}
