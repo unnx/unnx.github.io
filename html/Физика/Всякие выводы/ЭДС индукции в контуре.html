@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ЭДС индукции в контуре</title>
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body onload="document.body.style.visibility='visible';">
+<time>
+<div>Обн. 16 декабря</div>
+</time>
+<div id="menu">
+<a href="./">./</a>
+<a href="/txt/Физика/Всякие выводы/ЭДС индукции в контуре">[txt]</a>
+</div>
+<h4>ЭДС индукции в контуре</h4><br>Представим контур на плоскости чертежа, по которому ездит токопроводящая планка. Контур пронизывает магнитное поле, направленное в чертеж. Электроны в планке движутся, и на них действует сила Лоренца:<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\vec F = e[\vec v;\vec B]'></p>Эта сила аналогична той, что действовала бы на электроны со стороны некоторого электрического поля<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\vec F = e\vec E'></p>Отсюда следует, что напряженность этого поля:<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\vec E = [\vec v;\vec B]'></p>ЭДС будет равна циркуляции напряженности по контуру, но электрическое поле однородно, а его напряженность не равна нулю только в планке, поэтому:<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = (\vec E,\vec l)'></p>Под длиной здесь подразумевается длина планки, а разность потенциалов ищется между двумя точками, где планка касается контура. Вектор длины соответствует направлению обхода (тока) контура, которое связано с направлением поля правилом правого винта<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = ([\vec v;\vec B],\vec l)'></p>Преобразуем:<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = (\vec B,[\vec l;\vec v])'></p><p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = \frac{(\vec B,[\vec l;\vec vdt])}{dt}'></p>Легко видеть, что<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?[\vec l;\vec vdt] = -\vec n dS'></p>&mdash; Элементарная убыль площади при смещении планки, направленная по нормали к контуру. В итоге:<p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = \frac{-(\vec B,\vec n dS)}{dt}'></p><p class='tex'><img class='tex' alt='tex' src='http://latex.codecogs.com/png.latex?\varepsilon = -\frac{d\Phi}{dt}'></p>Т.е. ЭДС индукции в контуре равно убыли производной магнитного потока через контур по времени.<br>
+</body>
+</html>

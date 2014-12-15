@@ -1,0 +1,12 @@
+*** ЭДС самоиндукции ***
+
+Индуктивность --- коэффициент пропорциональности между силой тока в контуре и полным магнитным потоком через него:
+	\Psi = LI;;
+Отсюда:
+	\varepsilon = -\frac{\partial (LI)}{\partial t};;
+	\varepsilon = -(L\frac{\partial I}{\partial t} + I\frac{\partial L}{\partial t});;
+	\varepsilon = -(L+I\frac{\partial L}{\partial I})\frac{\partial I}{\partial t};;
+
+Если ферромагнетики отсутствуют, индуктивность не зависит от напряженности поля, поэтому
+	\frac{\partial L}{\partial I}=0;;
+	\varepsilon = -L\frac{\partial I}{\partial t};;
