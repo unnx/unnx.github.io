@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{ЭДС индукции в контуре}\\
+
+	Замкнутый контур пронизывает магнитное поле $\vec B$.
+	По этому контуру с постоянной скоростью $\vec v$ ездит планка. На каждый электрон в ней действует сила Лоренца:
+	\begin{equation}
+		\vec F = -|e|[\vec v;\vec B];
+	\end{equation}
+
+	На самом деле, эта сила является результатом действия однородного электрического поля $\vec E$:
+	\begin{equation}
+		\vec F = -|e|\vec E
+	\end{equation}
+
+	Таким образом, напряженность этого поля равна
+	\begin{equation}
+		\vec E = [\vec v;\vec B];
+	\end{equation}
+
+	Это электрическое поле не является электростатическим, т.к. порождено явлением электромагнитной индукции. Поэтому работа по перемещению заряда (ЭДС) этого поля равна циркуляции напряженности по контуру:
+	\begin{equation}
+		\varepsilon_i = \oint{\vec E d\vec l} = \oint{[\vec v;\vec B] d\vec l} = ([\vec v;\vec B];\vec l)
+	\end{equation}
+
+	Векторное произведение $[\vec v;\vec B]$ не равно нулю только на планке, а $\vec l$ -- вектор, по модулю равный длине планки и направленный по правилу правого винта относительно выбранной нормали к контуру $\vec n$. По свойству смешанного произведения:
+	\begin{equation}
+		\varepsilon_i = (\vec B;[\vec l;\vec v])
+	\end{equation}
+
+	Величину $\varepsilon_i$ можно сделать зависимой от времени умножив и разделив ее на $dt$:
+	\begin{equation}
+		\varepsilon_i = \frac{(\vec B;[\vec l;\vec vdt])}{dt}
+	\end{equation}
+
+	Легко видеть, что $[\vec l;\vec vdt]$ по модулю дает площадь $\vec dS$, заметаемую движущейся планкой за элементарное время, а направлен этот вектор против нормали. Таким образом:
+	\begin{equation}
+		\varepsilon_i = -\frac{(\vec B; d\vec S)}{dt}
+	\end{equation}
+
+	Скалярное произведение $\vec B$ на $d\vec S$ дает приращение магнитного потока $d\Phi$. Отсюда получаем формулу:
+	\begin{equation}
+		\varepsilon_i = -\frac{d\Phi}{dt}
+	\end{equation}
+
+\end{document}
