@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Индуктивность}\\
+
+	Если магнитный поток через замкнутый контур изменяется со временем, то в этом контуре индуцируется ток. Аналогично, любой контур с током создает магнитное поле, просто потому, что является проводником с током. Чтобы связать магнитный поток через контур с током в нем, вводится коэффициент пропорциональности, называемый индуктивностью контура $L$:
+	\begin{equation}
+		\Phi = LI
+	\end{equation}
+
+	Для всевозможных конструкций, представимых в виде множества контуров (напр. соленоидов, тороидов), вводится также величина полного магнитного потока, равная числу витков $N$, помноженному на поток через один виток $\Phi$:
+	\begin{equation}
+		\Psi = N\Phi
+	\end{equation}
+
+	Таким образом, индуктивность такой конструкции:
+	\begin{equation}
+		L = \frac{\Psi}{I}
+	\end{equation}
+
+	Индуктивность может зависеть от разных величин. Покажем это. Распишем ЭДС индукции:
+	\begin{equation}
+		\varepsilon_i=-\frac{d\Psi}{dt}=-\frac{d(LI)}{dt}=-(L\frac{\partial I}{\partial t}+I\frac{\partial L}{\partial t})
+	\end{equation}
+
+	Интуитивно ясно (доказывать не будем), что характеристики контура, в т.ч. индуктивность, практически не зависят от времени при ничтожно слабом намагничивании, т.е. в отсутствие ферромагнетиков. В этом случае:
+	\begin{equation}
+		\varepsilon_i=-L\frac{\partial I}{\partial t}
+	\end{equation}
+
+	Если ферромагнетики есть, можно, проведя некоторые преобразования, показать зависимость индуктивности от силы тока в контуре:
+	\begin{equation}
+		\varepsilon_i=-(L\frac{\partial I}{\partial t}+I\frac{\partial L}{\partial t})=-(L+I\frac{\partial L}{\partial I})\frac{\partial I}{\partial t}
+	\end{equation}
+
+	Выходит, что индуктивность действительно может зависеть от разных величин.
+
+\end{document}
