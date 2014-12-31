@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Вычисление электрических полей по теореме Гаусса}\\
+
+	Теорема Гаусса для вектора $\vec E$ гласит: поток вектора $\vec E$ через замкнутую поверхность равен заряду, заключенному в объеме, ограниченном этой поверхностью, деленому на $\varepsilon_0$:
+	\begin{equation}
+		\oint{\vec E d\vec S} = \frac{q}{\varepsilon_0}
+	\end{equation}
+
+	Если часть поверхности, поток через которую не равен нулю, является эквипотенциальной, модуль $\vec E$ можно вынести из-под знака интеграла. Воспользуемся этим для вычисления полей разных заряженных фигур.\\
+
+	Для бесконечной плоскости с поверхностной плотностью $\sigma$ эквипотенциальными поверхностями являются плоскости, параллельные данной. В качестве замкнутой поверхности удобно взять прямой цилиндр, образующие которого перпендикулярны заряженной плоскости. Тогда:
+	\begin{equation}
+		E \oint{d \vec S} = \frac{q}{\varepsilon_0}
+	\end{equation}
+	\begin{equation}
+		E = \frac{q}{2S\varepsilon_0}
+	\end{equation}
+	\begin{equation}
+		E = \frac{\sigma}{2\varepsilon_0}
+	\end{equation}
+
+	Легко видеть, что в случае двух бесконечных разноименно заряженных плоскостей напряженность поля между ними равна $\frac{\sigma}{\varepsilon_0}$, а снаружи поле отсутствует.\\
+
+	Для заряженной сферы эквипотенциальными поверхностями являются сферы. Если радиус выбранной поверхности меньше радиуса заряженной сферы, то такая поверхность не охватывает зарядов, поэтому $E=0$. Допустим, ее радиус $r$ больше радиуса заряженной сферы $R$:
+	\begin{equation}
+		E4\pi r^2 = \frac{q}{\varepsilon_0}
+	\end{equation}
+	\begin{equation}
+		E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}
+	\end{equation}
+
+	Таким образом, внутри сферы поле отсутствует, а снаружи соответствует полю точечного заряда, сконцентрированного в центре сферы.\\
+
+	Случай шара c объемной плотностью заряда $\rho$ аналогичен предыдущему с той разницей, что сфера радиуса $r<R$ тоже охватывает заряды:
+	\begin{equation}
+		E4\pi r^2 = \frac{\rho \frac{4}{3}\pi r^3}{\varepsilon_0}
+	\end{equation}
+	\begin{equation}
+		E = \frac{\rho r}{3\varepsilon_0}, \;\; r\leq R
+	\end{equation}
+
+	$\rho$ можно заменить на $\frac{3q}{4\pi R^3}$:
+	\begin{equation}
+		E = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^3}r, \;\; r\leq R
+	\end{equation}	
+
+	Снаружи шар создает поле, совпадающее с полем сферы того же заряда и радиуса:
+	\begin{equation}
+		E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}, \;\; r>R
+	\end{equation}
+
+
+\end{document}
