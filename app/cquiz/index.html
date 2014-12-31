@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="color,quiz,game" />
+		<meta name="description" content="Игра в цвета" />
+		<title>Игра в цвета</title>
+		<style type="text/css">            
+            #container {
+                text-align: center;
+            }
+            
+            #color-btn {
+                margin-top: 5em;
+                margin-bottom: 5em;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0.8em;
+                width: 20em;
+                height: 20em;
+                background-color: #fff;
+                border-style: none;
+                font-size: 100%;
+                -webkit-transition: background-color 0.3s;
+            }
+            
+            #variants {                
+                text-align: center;
+            }
+            
+            .variant {
+                margin: 1.5em;
+                border-spacing: 0.2em; 
+                cursor: pointer;
+                font-size: 100%;
+                -webkit-transition: background-color 0.3s;
+            }
+            
+            .variant:hover {
+                border-bottom-style: dotted;
+                border-width: 1px;
+            }
+            
+            #background-div {
+                position: absolute;
+                margin: auto;
+                right: 0;
+                bottom: 0;
+            }
+            
+            #oldcolors {
+                overflow: hidden;
+                text-align: center;
+                height: 16em;
+                width: 10em;
+                margin: 3em auto 0 auto;
+                line-height: 0.5em;
+                opacity: 0.1;
+                -webkit-transition: opacity 0.3s;
+                -moz-transition: opacity 0.3s;
+                -o-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+            }
+            
+            #oldcolors:hover {
+                opacity: 1;                
+            }
+            
+            ::selection {
+                background: #000;
+                opacity: 1;
+            }
+		</style>
+		<script type="text/javascript">
+            var comp = 50; var compA = 0.1;
+            var r = 255;
+            var g = 255;            
+            var b = 255;
+            var rt,gt,bt;
+            
+            function $(c) {
+                return(document.getElementById(c));    
+            }
+            
+            function loadColors() {
+                $("oldcolors").innerHTML = sessionStorage.getItem("oldcolors");
+            }
+            
+            function update() {
+                var r = getRandomInt(0,255);
+                var g = getRandomInt(0,255);
+                var b = getRandomInt(0,255);
+                var ra,ga,ba,aa;
+                var t = getRandomInt(0,3);
+                
+                $("oldcolors").innerHTML = "<p style='color: " + $("color-btn").style.backgroundColor + ";'>" + $("color-btn").style.backgroundColor + "</p>" + $("oldcolors").innerHTML;
+                sessionStorage.setItem("oldcolors",$("oldcolors").innerHTML);
+                
+                $("color-btn").innerText=getColorPhrase();
+                
+                for(var i=0;i<4;i++) {
+                    $("variant-" + i).style.color = "#000";
+                    ra = r + getRandomInt(-1*comp,comp); if(ra>255) ra=255; if(ra<0) ra=0;
+                    ga = g + getRandomInt(-1*comp,comp); if(ga>255) ga=255; if(ga<0) ga=0;
+                    ba = b + getRandomInt(-1*comp,comp); if(ba>255) ba=255; if(ba<0) ba=0;
+                    $("variant-" + i).innerHTML = "rgb(" + ra  + ", " + ga + ", " + ba + ")";
+                    if(i==t) $("variant-" + i).innerHTML = "rgb(" + r + ", " + g + ", " + b + ")";
+                }
+                $("color-btn").style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+                if((r<160)&&(g<160)&&(b<160)) {
+                    $("color-btn").style.color = "#fff";
+                } else {
+                    $("color-btn").style.color = "#000";
+                }
+                
+                updateBackground();
+            }
+            
+            function getRandomArbitary(min, max)
+            {
+                return Math.random() * (max - min) + min;
+            }
+            
+            function getRandomInt(min, max)
+            {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            
+            function check(c,o) {
+                o.style.color = c;
+                if($("color-btn").style.backgroundColor==c){$("color-btn").innerHTML=c + "<br><br>" + getTruePhrase();}else{o.innerText=getFalsePhrase();};
+            }
+            
+            function sr(d) {
+                rt = setInterval(function(){r+=d;updateBackground()},1);
+            }
+        
+            function er() {
+                clearInterval(rt);
+            }
+            
+            function sg(d) {
+                gt = setInterval(function(){g+=d;updateBackground()},1);
+            }
+        
+            function eg() {
+                clearInterval(gt);
+            }
+            
+            function sb(d) {
+                bt = setInterval(function(){b+=d;updateBackground()},1);
+            }
+        
+            function eb() {
+                clearInterval(bt);
+            }
+            
+            function updateBackground() {
+                if(r>255) r=255; if(r<0) r=0;
+                if(g>255) g=255; if(g<0) g=0;
+                if(b>255) b=255; if(b<0) b=0;
+                if((r<160)&&(g<160)&&(b<160)) {
+                    for(var i=0;i<4;i++) $("variant-" + i).style.color = "#fff";
+                    $("bgr-r").style.color = "#fff";
+                    $("bgr-g").style.color = "#fff";
+                    $("bgr-b").style.color = "#fff";
+                } else {
+                    for(var n=0;n<4;n++) $("variant-" + n).style.color = "#000";
+                    $("bgr-r").style.color = "#000";
+                    $("bgr-g").style.color = "#000";
+                    $("bgr-b").style.color = "#000";
+                }
+                document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+                $("oldcolors").setAttribute("style","box-shadow: rgb(" + r + ", " + g + ", " + b + ") 0 0 5em inset");
+                $("bgr-r").innerText = r;
+                $("bgr-g").innerText = g;
+                $("bgr-b").innerText = b;
+            }
+            
+            function randomElement(array) {
+                return(array[getRandomInt(0,array.length-1)]);
+            }
+            
+            function getColorPhrase() {
+                var phrases = [
+                    "Что за цвет?",
+                    "А этот угадаешь?",
+                    "Ты сможешь!",
+                    "Мы верим в тебя!",
+                    "Давай же!",
+                    "А это что за цвет?",
+                    "Посмотри-ка на такой оттенок.",
+                    "Вот еще цвет. Угадаешь?",
+                    "Будь уверен в победе!",
+                    "А этот цвет?",
+                    "У нас еще много цветов..."
+                ];
+                return randomElement(phrases);
+            }
+            
+            function getFalsePhrase() {
+                var phrases = [
+                    "Не-а!",
+                    "Неправильно!",
+                    "Неверно!",
+                    "Ну ты вообще!",
+                    "Упоролся?",
+                    "Не тот.",
+                    "Промах!",
+                    "Неправда.",
+                    "Еще разок.",
+                    "Повнимательней."
+                ];
+                return randomElement(phrases);
+            }
+            
+             function getTruePhrase() {
+                var phrases = [
+                    "Ура!",
+                    "Именно этот!",
+                    "Совершенно правильно!",
+                    "Всецело и полностью!",
+                    "Да!",
+                    "Ну конечно!",
+                    "Молодец!",
+                    "Умняша!",
+                    "Супер!",
+                    "Ты гений!",
+                    "Мы знали, что ты справишься!"
+                ];
+                return randomElement(phrases);
+            }           
+		</script>
+	</head>
+	<body onload="loadColors();update();">
+        <div id="container"><button id="color-btn" onclick="update()"></button></div>
+        <div id="variants">
+            <span class="variant" id="variant-0" onclick="check(this.innerHTML,this);"></span>
+            <span class="variant" id="variant-1" onclick="check(this.innerHTML,this);"></span>
+            <span class="variant" id="variant-2" onclick="check(this.innerHTML,this);"></span>
+            <span class="variant" id="variant-3" onclick="check(this.innerHTML,this);"></span>
+        </div>
+        <div id="oldcolors">
+            <span class="variant"></span>
+        </div>
+        <div id="background-div">
+            <div>
+            <table>
+                <tr>
+                    <td>
+                        <button onmousedown="sr(1)" onmouseup="er()" onmouseout="er()">+</button>
+                    </td>
+                    <td>
+                        <button onmousedown="sg(1)" onmouseup="eg()" onmouseout="eg()">+</button>
+                    </td>
+                    <td>
+                        <button onmousedown="sb(1)" onmouseup="eb()" onmouseout="eb()">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onmousedown="sr(-1)" onmouseup="er()" onmouseout="er()">&ndash;</button>
+                    </td>
+                    <td>
+                        <button onmousedown="sg(-1)" onmouseup="eg()" onmouseout="eg()">&ndash;</button>
+                    </td>
+                    <td>
+                        <button onmousedown="sb(-1)" onmouseup="eb()" onmouseout="eb()">&ndash;</button>
+                    </td>               
+                </tr>
+                <tr>
+                    <td id="bgr-r">255</td>
+                    <td id="bgr-g">255</td>
+                    <td id="bgr-b">255</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+*** Электромагнетизм ***
+
+*** Закон Кулона ***
+
+	\vec F_{12}=\frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^3}\vec r_{21};;
+
+*** Электростатическое поле ***
+
+	\vec E_q = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\vec r;;
+	\vec E = -\vec\nabla\varphi;;
+	q\vec E = F_q\;\;q\varphi = W_q;;
+	\oint_l\vec E\vec{dl}=0;;
+	[\vec\nabla;\vec E]=0;;
+	\oint_S\vec E\vec S = \frac{\sum_S q}{\varepsilon_0};;
+	\vec\nabla\vec E=\frac{\rho}{\varepsilon_0};;
+
+*** Диполь ***
+
+	\vec p = q\vec l;;
+	\varphi = \frac{1}{4\pi\varepsilon_0}\frac{p \cos\theta}{r^2};;
+	\vec E = \frac{1}{4\pi\varepsilon_0}\frac{\vec p}{r^3}\sqrt{1+3\cos^2\theta};;
+	\vec N = [\vec p;\vec E];;
+	W_p = -\vec p\vec E;;
+
+*** Некоторые поля, вычисленные по теор. Гаусса ***
+
+Бесконечная заряженная плоскость:
+	E = \frac{\sigma}{2\varepsilon_0};;
+
+Поле между двумя заряж. плоскостями: 
+	E = \frac{\sigma}{\varepsilon_0};;
+
+Поле вне заряженной сферы, вне заряженного шара:
+	E = \frac{1}{4\pi\varepsilon_0}\frac{q}{r^2};;
+
+Поле внутри заряженного шара:
+	E = \frac{1}{4\pi\varepsilon_0}\frac{q}{R^2}r;;
+
+*** Поляризуемость, поляризация ***
+
+Дипольный момент молекулы:
+	\vec p = \sum_i q_i <\vec r_i>;;
+Поляризуемость молекулы:
+	\vec p = \beta\varepsilon_0\vec E;;
+Поляризованность диэлектрика:
+	\vec P = \frac{1}{\Delta V}\sum_{\Delta V} \vec p;;
+Связь поляризованности и напряженности поля для изотропных диэлектриков (через диэлектрическую восприимчивость):
+	\vec P = n\beta\varepsilon_0\vec E = \varkappa\varepsilon_0\vec E;;
+При включении поля через замкнутую поверхность выходит наружу (входит внутрь) заряд:
+	q_{in}^* = -q_{out}^* = \oint\vec P\vec dS;;
+	\rho^* = -\vec\nabla\vec P;;
+При включении поля на поверхность выходит связанный заряд:
+	\sigma^* = \varkappa\varepsilon_0E_n;;
+Вектор электрического смещения:
+	\vec D = \varepsilon_0\vec E + \vec P = \varepsilon_0(1+\varkappa)\vec E = \varepsilon_0\varepsilon\vec E;;
+	\vec\nabla \vec D = \rho;;
+Внутри диэлектрика закон Кулона приобретает вид:
+	F = \frac{1}{4\pi\varepsilon\varepsilon_0}\frac{q_1q_2}{\varepsilon r^2};;
+
+*** Условия на границе двух диэлектриков ***
+
+	D_{1n}=D_{2n};;
+	E_{1_\tau}=E_{2_\tau};;
+
+*** Электроемкость и конденсаторы ***
+
+Электроемкость:
+	q = C\varphi;;
+Емкость конденсатора:
+	C = \frac{q}{\varphi_1-\varphi_2}=\frac{q}{U};;
+Емкость плоского конденсатора:
+	C = \frac{\varepsilon_0\varepsilon S}{d};;
+Емкость сферического конденсатора:
+	C = 4\pi\varepsilon\varepsilon_0\frac{R_1R_2}{R_2-R_1};;
+
+f
