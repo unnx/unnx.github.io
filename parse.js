@@ -39,29 +39,29 @@ function parseMonth() {
 	var d = new Date();
 	switch(d.getMonth()) {
 		case 0:
-			return "января";
+			return "янв.";
 		case 1:
-			return "февраля";
+			return "фев.";
 		case 2:
-			return "марта";
+			return "мар.";
 		case 3:
-			return "апреля";
+			return "апр.";
 		case 4:
 			return "мая";
 		case 5:
-			return "июня";
+			return "июн.";
 		case 6:
-			return "июля";
+			return "июл.";
 		case 7:
-			return "августа";
+			return "авг.";
 		case 8:
-			return "сентября";
+			return "сен.";
 		case 9:
-			return "октября";
+			return "окт.";
 		case 10:
-			return "ноября";
+			return "нояб.";
 		case 11:
-			return "декабря";
+			return "дек.";
 	}
 }
 
@@ -91,6 +91,19 @@ function getFiles(folder,template1,template2) {
 	mkIndex();
 }
 
+function mkLatex() {
+	fs.readFile("tmp/notes.html",{encoding: "utf8"},function(err,data) {
+		var files = fs.readdirSync("latex/");
+		var t = data;
+		for(var j in files) {
+			if(fs.lstatSync("latex/"+files[j]).isDirectory()) {
+				t = t.split("<!--O-->").join("<li class='menu'>"+files[j]+"&nbsp;[<a class='folder' href='/latex/"+files[j]+"/index.pdf'>pdf</a>]&nbsp;[<a class='folder' href='/latex/"+files[j]+"/index.tex'>tex</a>]</li><!--O-->");
+			}
+		}
+		fs.writeFileSync("notes.html",t);
+	})
+}
+
 function mkIndex() {
 	fs.readFile("tmp/index.html",{encoding: "utf8"},function(err,data) {
 		var files = fs.readdirSync("txt/");
@@ -106,6 +119,7 @@ function mkIndex() {
 		fs.writeFileSync("index.html",t);
 		fs.writeFileSync("html/index.html",t);
 	})
+	mkLatex();
 }
 
 var rmdir = function(dir) {

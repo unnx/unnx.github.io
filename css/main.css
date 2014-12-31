@@ -10,32 +10,45 @@
 	font-style: italic;
 }
 
+@font-face {
+	font-family: Terminus;
+	src: url("/fonts/Terminus.ttf");
+}
+
 body {
-	font-family: PTSerif;
-	font-size: 13pt;
 	visibility: hidden;
-	color: #333;
+	background-color: #003;
+	color: #ccc;
 	margin: 1em;
-	font-style: normal;
+	font-family: Terminus;
+	font-size: 24pt;
 }
 
 *::selection {
-	background-color: #eef;
-	color: #00a;
+	background-color: transparent;
+	color: #60f;
+	text-decoration: none;
+	opacity: 1;
 }
 
 a { 
-	background-color: #ffc;
-	color: #10c;
+	color: #ccc;
 	text-decoration: underline;
+	outline: none;
 }
 
 a.folder {
-	font-weight: bold;
+
 }
 
 a:hover {
-	color: #c10;
+	background-color: #ff3;
+	color: #005;
+}
+
+a:focus {
+	background-color: #ff3;
+	color: #005;	
 }
 
 img.tex {
@@ -44,27 +57,34 @@ img.tex {
 
 h1 {
 	margin-top: 0.2em;
-	margin-bottom: 0.5em;
-	font-style: italic;
+	margin-bottom: 0.8em;
+	font-family: Terminus;
+	font-size: 32pt;
+	color: #30c;
+	background-color: #69f;
+	padding: 0.2em;
 }
 
 h4{
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
+	color: #0c0;
 }
 
 p.tex {
 	text-align: center;
+	background-color: #ccc;
+	padding: 0.2em;
 }
 
 time {
-	color: #dcdcdc;
-	font-family: PTSerif;
-	font-style: italic;
+	color: #ff0;
+	font-family: Terminus;
+	margin: 0.2em;
 }
 
 li.menu {
-	font-size: 14pt;
+	font-size: 24pt;
 	margin: 1em;
 	list-style-type: none;
 	margin: 0.5em;
@@ -76,7 +96,7 @@ li.menu {
 
 p.img {
 	text-align: center;
-	background-color: #ffa;
+	background-color: #ffc;
 	padding: 1em;
 }
 
