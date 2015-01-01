@@ -20,7 +20,7 @@ function parseFile(fname,path,template) {
 		t = t.split("--").join("&ndash;");
 		t = t.split("<<<").join("<details><summary></summary>");
 		t = t.split(">>>").join("</details>");
-		t = t.split("[[").join("<a target='_blank' href='");
+		t = t.split("[[").join("<a href='");
 		t = t.split("||").join("'>");
 		t = t.split("]]").join("</a>");		
 		t = t.split("{{").join("<p class='img'><img class='img' src='");
@@ -95,12 +95,19 @@ function mkLatex() {
 	fs.readFile("tmp/notes.html",{encoding: "utf8"},function(err,data) {
 		var files = fs.readdirSync("latex/");
 		var t = data;
+		var q = data;
 		for(var j in files) {
 			if(fs.lstatSync("latex/"+files[j]).isDirectory()) {
-				t = t.split("<!--O-->").join("<li class='menu'>"+files[j]+"&nbsp;[<a class='folder' href='/latex/"+files[j]+"/index.pdf'>pdf</a>]&nbsp;[<a class='folder' href='/latex/"+files[j]+"/index.tex'>tex</a>]</li><!--O-->");
+				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+files[j]+"/index.pdf'>" + files[j] + "</a></li><!--O-->");
+				q = q.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+files[j]+"/index.tex'>" + files[j] + "</a></li><!--O-->");
 			}
 		}
+		t = t.split("$SRCLINK$").join("<a href='/notes-src.html'>Исходники LaTeX</a>");
+		t = t.split("$DESCRIPTION$").join("");
+		q = q.split("$DESCRIPTION$").join("(исходники)");
+		q = q.split("$SRCLINK$").join("<a href='/notes.html'>PDF-файлы</a>");
 		fs.writeFileSync("notes.html",t);
+		fs.writeFileSync("notes-src.html",q);
 	})
 }
 
