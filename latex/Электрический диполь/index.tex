@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Электрический диполь}\\
+
+	Электрическим диполем называется система из двух одинаковых по модулю и различных по знаку зарядов $+q$ и $-q$, разнесенных на постоянное расстояние $l$.
+
+	Отрезок, соединяющий заряды, называется осью диполя. Эту ось принято обозначать через вектор $\vec l$, равный по модулю расстоянию между зарядами и направленный от $-q$ к $+q$.
+
+	Электрическим дипольным моментом называется произведение модуля одного из зарядов на вектор $\vec l$:
+	\begin{equation}
+		\vec p = |q|\vec l
+	\end{equation}
+
+	Центром диполя считается центр его оси. Введя полярную систему координат, в которой полярная ось совпадает по направлению с $l$, а центр находится в центре диполя, любую точку пространства относительно диполя можно представить в виде сочетания координат $(r,\vartheta)$, либо как вектор $\vec r$.\\
+
+	Найдем потенциал поля диполя. Он складывается из потенциала полей первого и второго зарядов:
+	\begin{equation}
+		\varphi = \frac{1}{4\pi\varepsilon_0}(\frac{+q}{r_+}+\frac{-q}{r_-})=\frac{|q|}{4\pi\varepsilon_0}(\frac{1}{r_+}-\frac{1}{r_-})
+	\end{equation}
+
+	Здесь $r_+$ и $r_-$ -- расстояния до $+q$ и $-q$ соответственно. Таким образом:
+	\begin{equation}
+		\varphi = \frac{|q|}{4\pi\varepsilon_0}\frac{r_--r_+}{r_+r_-}
+	\end{equation}
+
+	Введем векторы $+\vec a$ и $-\vec a$, выходящие из центра диполя, по модулю равные половине длины его оси и направленные в стороны положительного и отрицательного зарядов соответственно. Зная вектор $\vec r$, проведенный из центра диполя в произвольную точку пространства, можем приближенно найти расстояния от этой точки до зарядов:
+	\begin{equation}
+		r_+ = r - a\cos\vartheta = r - (\vec a;\vec e_r)
+	\end{equation}
+	\begin{equation}
+		r_- = r + a\cos\vartheta = r + (\vec a;\vec e_r)
+	\end{equation}
+
+	Вернемся к формуле $(3)$. Произведение $r_+r_-$ с высокой точностью можно представить как $r^2$. Разность $r_--r_+$ раскрывается по формулам $(4)$ и $(5)$:
+	\begin{equation}
+		r_--r_+=2a\cos\vartheta=(2\vec a;\vec e_r)=(\vec l;\vec e_r)
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		\varphi = \frac{1}{4\pi\varepsilon_0}\frac{(|q|\vec l;\vec e_r)}{r^2} = \frac{1}{4\pi\varepsilon_0}\frac{(\vec p;\vec e_r)}{r^2}
+	\end{equation}
+
+	Можно раскрыть скалярное произведение:
+	\begin{equation}
+		\varphi = \frac{1}{4\pi\varepsilon_0}\frac{p\cos\vartheta}{r^2}
+	\end{equation}
+
+	Чтобы найти напряженность поля диполя, найдем ее проекции на вектор, перпендикулярный радиус-вектору и на сам радиус-вектор ($E_\vartheta$ и $E_r$ соответственно):
+	\begin{equation}
+		E_r = -\frac{d\varphi}{dr} = \frac{1}{4\pi\varepsilon_0}\frac{2p\cos\vartheta}{r^3}
+	\end{equation}
+	\begin{equation}
+		E_\vartheta = -\frac{d\varphi}{rd\vartheta} = \frac{1}{4\pi\varepsilon_0}\frac{p\sin\vartheta}{r^3}
+	\end{equation}
+
+	Квадрат напряженности равен сумме квадратов найденых проекций (т.к. оси, на которые они сделаны, образуют прямоугольную декартову систему координат):
+	\begin{equation}
+		E^2 = (\frac{p}{4\pi r^3\varepsilon_0})^2(4\cos^2\vartheta+\sin^2\vartheta) = (\frac{p}{4\pi r^3\varepsilon_0})^2(1+3\cos^2\vartheta)
+	\end{equation}
+
+	Найдем модуль напряженностив:
+	\begin{equation}
+		E = \frac{1}{4\pi\varepsilon_0}\frac{p}{r^3}\sqrt{1+3\cos^2\vartheta} 
+	\end{equation}
+
+	Если внести диполь в поле $\vec E$, на каждый заряд будет действовать сила:
+	\begin{equation}
+		\vec F = q\vec E
+	\end{equation}
+
+	Модуль момента пары сил, действующих на диполь, равен произведению модуля любой силы на плечо:
+	\begin{equation}
+		N = |q|El\sin\vartheta = pE\sin\vartheta
+	\end{equation}
+
+	Можно переписать это соотношение в векторном виде:
+	\begin{equation}
+		\vec N = [\vec p;\vec E]
+	\end{equation}
+
+	Потенциальная энергия диполя относительно поля, в которое он помещен, равна:
+	\begin{equation}
+		W_p = |q|(\varphi_+ - \varphi_-)
+	\end{equation}
+
+	Здесь $\varphi_+$ и $\varphi_-$ -- потенциалы внешнего поля в тех точках, где находятся заряды $q_+$ и $q_-$. Введя ось $x$, совпадающую по направлению с $\vec E$, распишем выражение для потенциальной энергии:
+	\begin{equation}
+		W_p = |q|(\varphi_+ - \varphi_-) = |q|\frac{\partial\varphi}{\partial x}\Delta x
+	\end{equation}
+
+	$\Delta x$ -- модуль проекции оси диполя на ось $x$. Отсюда:
+	\begin{equation}
+		W_p = |q|El\cos\vartheta = pE\cos\vartheta
+	\end{equation}
+
+	Либо в векторном виде:
+	\begin{equation}
+		W_p = (\vec p;\vec E)
+	\end{equation}
+
+
+
+
+
+
+\end{document}
+	

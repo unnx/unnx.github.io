@@ -1,16 +1,4 @@
 @font-face {
-	font-family: PTSerif;
-	src: url("/fonts/PTSansNormal.ttf");
-	font-style: normal;
-}
-
-@font-face {
-	font-family: PTSerif;
-	src: url("/fonts/PTSansItalic.ttf");
-	font-style: italic;
-}
-
-@font-face {
 	font-family: Terminus;
 	src: url("/fonts/Terminus.ttf");
 }
@@ -25,9 +13,8 @@ body {
 }
 
 *::selection {
-	background-color: transparent;
-	color: #60f;
-	text-decoration: none;
+	color: #003;
+	background-color: #ff3;
 	opacity: 1;
 }
 
@@ -66,9 +53,10 @@ h1 {
 }
 
 h4{
+	font-size: 24pt;
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
-	color: #0c0;
+	color: #fff;
 }
 
 p.tex {
