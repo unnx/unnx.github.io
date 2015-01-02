@@ -99,7 +99,7 @@ function mkLatex() {
 		for(var j in files) {
 			if(fs.lstatSync("latex/"+files[j]).isDirectory()) {
 				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+files[j]+"/index.pdf'>" + files[j] + "</a></li><!--O-->");
-				q = q.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+files[j]+"/index.tex'>" + files[j] + "</a></li><!--O-->");
+				q = q.split("<!--O-->").join("<li class='menu'><a class='folder' type='text/plain' href='/latex/"+files[j]+"/index.tex'>" + files[j] + "</a></li><!--O-->");
 			}
 		}
 		t = t.split("$SRCLINK$").join("<a href='/notes-src.html'>Исходники LaTeX</a>");
