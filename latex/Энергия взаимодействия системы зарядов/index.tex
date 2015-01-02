@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Энергия взаимодействия системы зарядов}\\
+	
+	Потенциальная энергия заряда $q_1$, находящегося в поле заряда $q_2$, определяется выражением:
+	\begin{equation}
+		W_p = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}
+	\end{equation}
+
+	Можно считать $W_p$ взаимной потенциальной энергией зарядов $q_1$ и $q_2$. 
+
+	Энергия взаимодействия системы зарядов определяется как полусумма энергий взаимодействия пар:
+	\begin{equation}
+		W_{p} = \frac{1}{2}\sum_{i\neq k}W_{pik}(r_{ik})
+	\end{equation}
+
+	При этом:
+	\begin{equation}
+		W_{pik} = \frac{1}{4\pi\varepsilon_0}\frac{q_iq_k}{r_{ik}}
+	\end{equation}
+
+	Подставим:
+	\begin{equation}
+		W_p = \frac{1}{2}\sum_{i\neq k}\frac{1}{4\pi\varepsilon_0}\frac{q_iq_k}{r_{ik}}
+	\end{equation}
+
+	Вынесем из-под знака суммы исследуемые заряды, оставив там заряды, "создающие поле".
+	\begin{equation}
+		W_p = \frac{1}{2}\sum_{i=1}^nq_i\sum_{k=1\neq i}^n\frac{1}{4\pi\varepsilon_0}\frac{q_k}{r_{ik}}
+	\end{equation}
+
+	Ясно, что $\sum_{k=1\neq i}^n\frac{1}{4\pi\varepsilon_0}$ определяет суммарный потенциал $\varphi_i$, создаваемый всеми зарядами, кроме $q_i$ в той точке, где находится $q_i$. Таким образом, выражение для потенциальной энергии взаимодействия можно переписать:
+	\begin{equation}
+		W_p = \frac{1}{2}\sum_{i=1}^n q_i\varphi_i
+	\end{equation}
+
+\end{document}
