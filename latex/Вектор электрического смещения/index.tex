@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	Из теоремы Гаусса для вектора $\vec E$ и теоремы Остроградского-Гаусса следует:
+	\begin{equation}
+		(\vec\nabla;\vec E) = \frac{q}{V\varepsilon_0}
+	\end{equation}
+
+	Известно, что суммарная плотность зарядов состоит из плотности связанных и сторонних зарядов ($q/V = \rho + \rho'$), поэтому:
+	\begin{equation}
+		(\vec\nabla;\vec E) = \frac{1}{\varepsilon_0}(\rho+\rho')
+	\end{equation}
+
+	Известно также, что плотность связанных зарядов выражается через вектор поляризованности:
+	\begin{equation}
+		(\vec\nabla;\vec E) = \frac{1}{\varepsilon_0}(\rho-(\vec\nabla;\vec P))
+	\end{equation}
+
+	Отсюда следует, что
+	\begin{equation}
+		(\vec\nabla;\varepsilon_0\vec E + \vec P) = \rho
+	\end{equation}
+
+	Величина $\varepsilon_0\vec E + \vec P$ называется вектором электрического смещения $\vec D$:
+	\begin{equation}
+		\vec D = \varepsilon_0\vec E + \vec P
+	\end{equation}
+
+	Распишем векторе $\vec P$:
+	\begin{equation}
+		\vec D = \varepsilon_0\vec E + \kappa\varepsilon_0\vec E = \varepsilon_0(1+\kappa)\vec E
+	\end{equation}
+
+	Безразмерная величина $1+\kappa$ называется диэлектрической проницаемостью среды, и обозначается через $\varepsilon$. Таким образом:
+	\begin{equation}
+		\vec D = \varepsilon_0\varepsilon\vec E
+	\end{equation}
+
+	Смысл вектора $\vec D$ в том, что зная его можно сразу найти поле, не рассчитывая влияние поля поверхностно-связанных зарядов $\vec E'$ на $\vec E_0$. Найти $\vec D$ можно по соотношению:
+	\begin{equation}
+		(\vec\nabla;\vec D) = \rho
+	\end{equation}
+
+	Или по другому соотношению, вытекающему из предыдущего:
+	\begin{equation}
+		\oint_S \vec D d\vec S = q
+	\end{equation}
+
+	Выходит, что $\vec D$ связан только со сторонними зарядами.
+\end{document}
