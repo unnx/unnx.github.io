@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Конденсаторы}\\
+
+	Конденсатором называется система из двух проводников, находящихся на небольшом расстоянии друг от друга и разделенных диэлектриком.\\
+
+	Основная характеристика конденсатора -- электроемкость $C$:
+	\begin{equation}
+		q = C(\varphi_1-\varphi_2)
+	\end{equation}
+
+	Здесь $q$ -- заряд конденсатора, а $\varphi_1, \varphi_2$ -- потенциалы двух проводников.\\
+
+	Разность потенциалов $\varphi_1 - \varphi_2$ называется напряжением $U$ между обкладками конденсатора (обычно проводники выбираются плоские, сферические, и т.д., поэтому и называются обкладками).\\
+
+	Найдем емкость плоского конденсатора. Напряженность между обкладками примерно равна напряженности между двумя разноименно заряженными плоскостями.
+	\begin{equation}
+		E = \frac{\sigma}{\varepsilon_0\varepsilon} = \frac{q}{\varepsilon_0\varepsilon S}
+	\end{equation}
+
+	Коэффициент $\frac{1}{\varepsilon}$ появился из того соображения, что пространство между плоскостями заполнено диэлектриком с проницаемостью $\varepsilon$.\\
+
+	Плоскости являются эквипотенциальными, поэтому:
+	\begin{equation}
+		\varphi_1-\varphi_2 = Ed = \frac{qd}{\varepsilon_0\varepsilon S}
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		C = \frac{\varepsilon_0\varepsilon S}{d}
+	\end{equation}
+
+	Энергию заряженного конденсатора легко найти как энергию системы зарядов:
+	\begin{equation}
+		W_p = \frac{1}{2}q(\varphi_1-\varphi_2) = \frac{1}{2}qU
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		W_p = \frac{qU}{2} = \frac{q^2}{2C} = \frac{CU^2}{2}
+	\end{equation}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Мощность тока, закон Джоуля-Ленца}\\
+
+	Электростатические силы при перемещении заряда по проводнику совершают работу:
+	\begin{equation}
+		A = Uq = UIt
+	\end{equation}
+
+	Разделив работу на время, получим мощность:
+	\begin{equation}
+		A = UI = (\varphi_1-\varphi_2)I + \mathcal{E}_{12}I
+	\end{equation}
+
+	Удельная мошность выражается через объем:
+	\begin{equation}
+		P_{\text{уд}} = \frac{\Delta P}{\Delta V}
+	\end{equation}
+
+	Получим выражение для мощности тока. Мощность механической силы равна скалярному произведению силы и скорости тела, на которое она действует. Сила $e(\vec E + \vec E*)$ развивает мощность:
+	\begin{equation}
+		P' = (e(\vec E + \vec E^*);\vec u)
+	\end{equation}
+
+	Мощность $\Delta P$, развиваемая в объеме $\Delta V$ получаем, умножив $P'$ на число зарядов в этом объеме $n\Delta V$:
+	\begin{equation}
+		\Delta P = P'n\Delta V = (e(\vec E + \vec E^*);\vec u) n\Delta V = (\vec j,\vec E + \vec E^*)\Delta V
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		P_{\text{уд}} = \vec j(\vec E + \vec E^*)
+	\end{equation}
+
+	Джоуль и Ленц установили выражение для количества теплоты, выделяющегося при прохождении тока $I$ через разность потенциалов $U$ за время $t$:
+	\begin{equation}
+		Q = UIt
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		Q = RI^2 t
+	\end{equation}
+
+
+\end{document}

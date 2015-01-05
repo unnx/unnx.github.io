@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Сила и плотность тока}\\
+
+	Если в проводнике носители заряда движутся с некоторой средней скоростью $<\vec u>$, говорят, что в нем течет ток. Характеристикой тока является его сила $I$:
+	\begin{equation}
+		I = \frac{dq}{dt}
+	\end{equation}
+
+	$dq$ -- заряд, проходящий за время $dt$ сквозь поверхность, перпендикулярную движению зарядов.\\
+
+	Сила тока зависит от площади сечения проводника. Введем характеристику $\vec j$, зависящую только от зарядов:
+	\begin{equation}
+		dI = (\vec j;d\vec S)
+	\end{equation}
+	\begin{equation}
+		I = \int_S \vec j d\vec S
+	\end{equation}
+
+	Эта характеристика называется плотностью тока. Она численно равна заряду, проходящему за единицу времени через поверхность с единичной площадью.\\
+
+	Ток, в котором $\vec j$ не меняется со временем называется постоянным. Для него справедливо:
+	\begin{equation}
+		I = \frac{q}{t}
+	\end{equation}
+
+	Возьмем внутри проводника замкнутую поверхность $S$, изнутри которой вытекает заряд. По закону сохранения заряда скорость убывания заряда равна заряду, пересекающему $S$ в единицу времени:
+	\begin{equation}
+		\frac{-dq}{dt} = \oint_S \vec j d\vec S
+	\end{equation}
+
+	Выразив заряд через его плотность, получим:
+	\begin{equation}
+		\oint_S \vec j d\vec S = -\frac{d}{dt}\int_V \rho dV = -\int_V \frac{\partial \rho}{\partial t}dV
+	\end{equation}
+
+	По теореме Остроградского-Гаусса:
+	\begin{equation}
+		\int_V (\vec\nabla;\vec j)dV = -\int_V\frac{\partial\rho}{\partial t}dV
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		(\vec\nabla;\vec j) = -\frac{\partial\rho}{\partial t}
+	\end{equation}
+
+	Это соотношение называется уравнением непрерывности.\\
+
+	В случае стационарного тока плотность заряда не зависит от времени, поэтому $(\vec\nabla;\vec j) = 0$.
+\end{document}

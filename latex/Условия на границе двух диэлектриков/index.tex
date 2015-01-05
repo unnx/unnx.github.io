@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Условия на границе двух диэлектриков}\\
+
+	Известно:
+	\begin{equation}
+		[\vec\nabla;\vec E] = 0,\;\;\;(\vec\nabla;\vec D) = 0
+	\end{equation}
+
+	Отсюда можем выяснить, как изменяются векторы $\vec E$ и $\vec D$ на границе двух диэлектриков, как преломляются их линии.\\
+
+	Вблизи границы выберем прямоугольный контур со сторонами $l$ и $h$ (сторона $h$ перпендикулярна границе и ее длина стремится к нулю). По теореме Стокса циркуляция $\vec E$ по этому контуру должна быть равна нулю, т.к. он замкнутый:
+	\begin{equation}
+		[\vec\nabla;\vec E]=0 \Rightarrow \oint_l \vec E d\vec l = 0
+	\end{equation}
+
+	Относительно границы раздела можно представить вектор $\vec E$ через нормальную составляющую $E_n$ и тангенциальную $E_\tau$. Проходя через границу раздела, эти составляющие изменяются. Возьмем криволинейный интеграл:
+	\begin{equation}
+		\oint \vec E d\vec l = E_{\tau1}l- E_{\tau2}l = 0
+	\end{equation}
+
+	Получили соотношение для тангенциальной составляющей $\vec E$:
+	\begin{equation}
+		E_{\tau1} = E_{\tau2}
+	\end{equation}
+
+	(Мы пренебрегаем значением интеграла по частям контура длины $h$, т.к. эта длина стремится к нулю)\\
+
+	Теперь выберем поверхность параллелепипеда, пересекающую границу (основания площади $S$ и высота $h\rightarrow 0$).\\
+
+	По теореме Остроградского-Гаусса выражаем поток $\vec D$ через эту поверхность:
+	\begin{equation}
+		\oint_S \vec D d\vec S = 0
+	\end{equation}
+
+	Берем интеграл, пренебрегая потоком через боковые стенки высоты $h$:
+	\begin{equation}
+		\oint_S \vec D d\vec S = D_{n1}S - D_{n2} = 0
+	\end{equation}
+
+	При вычислении потока мы всюду спроектировали $\vec S$ на одну нормаль, поэтому получили разные знаки у слагаемых.\\
+
+	Таким образом:
+	\begin{equation}
+		D_{n1}S = D_{n2}
+	\end{equation}
+
+	Выяснили, как изменяется тангенциальная составляющая $\vec E$ и нормальная составляющая $\vec D$ при проходе через границу раздела диэлектриков.\\
+
+	Чтобы узнать, как изменяются $E_n$ и $D_\tau$ на границе, раскроем $D$ через $E$ (и наоборот):
+	\begin{equation}
+		D_{n1} = D_{n2}
+	\end{equation}
+	\begin{equation}
+		\varepsilon_0\varepsilon_1 E_{n1} = \varepsilon_0\varepsilon_2 E_{n2}
+	\end{equation}
+	\begin{equation}
+		\frac{E_{n1}}{E_{n2}} = \frac{\varepsilon_2}{\varepsilon_1}
+	\end{equation}
+
+	Аналогично найдем изменение $D_\tau$:
+	\begin{equation}
+		E_{\tau1} = E_{\tau2}
+	\end{equation}
+	\begin{equation}
+		\frac{D_{\tau1}}{\varepsilon_0\varepsilon_1} = \frac{D_{\tau2}}{\varepsilon_0\varepsilon_2}
+	\end{equation}
+	\begin{equation}
+		\frac{D_{\tau1}}{D_{\tau2}} = \frac{\varepsilon_1}{\varepsilon_2}
+	\end{equation}
+
+	Выяснили, что на границе двух диэлектриков происходит следующее:
+	\begin{equation}
+		E_{\tau1} = E_{\tau2},\;\;\; \frac{E_{n1}}{E_{n2}} = \frac{\varepsilon_2}{\varepsilon_1}
+	\end{equation}
+	\begin{equation}
+		D_{n1} = D_{n2},\;\;\; \frac{D_{\tau1}}{D_{\tau2}} = \frac{\varepsilon_1}{\varepsilon_2}
+	\end{equation}
+
+\end{document}

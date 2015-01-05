@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Энергия электрического поля}\\
+
+	Энергию любого заряженного конденсатора можно представить как энергию поля между обкладками. Найдем выражение для энергии электрического поля. Представим плоский конденсатор с емкостью $C$ и энергией $W_p$:
+	\begin{equation}
+		W_p = \frac{CU^2}{2} = \frac{\varepsilon_0\varepsilon}{2}(\frac{U}{d})^2 Sd
+	\end{equation}
+
+	Ввиду эквипотенциальных обкладок имеем:
+	\begin{equation}
+		W_p = \frac{\varepsilon_0\varepsilon E^2}{2d}V
+	\end{equation}
+
+	Разделив энергию на объем получим плотность энергии:
+	\begin{equation}
+		w = \frac{\varepsilon_0\varepsilon E^2}{2d} = \frac{ED}{2}
+	\end{equation}
+
+	В изотропных диэлектриках $\vec E \uparrow\uparrow \vec D$, поэтому
+	\begin{equation}
+		w = \frac{(\vec E;\vec D)}{2}
+	\end{equation}
+
+	Вектор $\vec D$ можно раскрыть по определению:
+	\begin{equation}
+		w = \frac{(\vec E;\varepsilon_0\vec E + \vec P)}{2} = \frac{\varepsilon_0 E^2}{2} + \frac{(\vec E;\vec P)}{2}
+	\end{equation}
+
+	Ясно, что первое слагаемое представляет из себя плотность энергии поля $\vec E$ в вакууме. Покажем, что второе слагаемое равно энергии, затраченной на поляризацию диэлектрика. \\
+
+	Поляризация заключается в смещении зарядов $q_i$ на некоторые расстояния $d\vec r_i$. Найдем элементарную работу:
+	\begin{equation}
+		dA = \sum_{V=1} q_i\vec E dr_i = \vec E d\sum_{V=1} q_i r_i 
+	\end{equation}
+
+	Сумма $\sum q_ir_i$ равна дипольному моменту единицы объема:
+	\begin{equation}
+		dA = (\vec E;d\vec P) = \kappa\varepsilon_0(\vec E;d\vec E) = d(\frac{\kappa\varepsilon_0E^2}{2}) = d(\frac{(\vec E;\vec P)}{2})
+	\end{equation}
+
+	Отсюда получили, что работа, затрачиваемая на поляризацию единицы объема диэлектрика, равна:
+	\begin{equation}
+		A_{V=1} = \frac{(\vec E;\vec P)}{2}
+	\end{equation}
+
+\end{document}
