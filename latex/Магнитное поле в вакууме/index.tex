@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Магнитное поле в вакууме}\\
+
+	Экспериментально установлено, что движущиеся заряды действуют с некоторой силой на другие движущиеся заряды, а токи действуют на токи.\\
+
+	Из опыта следует, что два параллельных провода с током одного направления притягиваются с силой:
+	\begin{equation}
+		F = k\frac{2I_1I_2}{b}
+	\end{equation}
+
+	Здесь $b$ -- расстояние между проводами. \\
+
+	Вводится поле этих сил, называемое магнитным.\\
+
+	Введем для замкнутого проводника (контура) площади $S$, по которому течет ток $I$, специальную характеристику, называемую магнитным моментом контура:
+	\begin{equation}
+		\vec p_m = I\vec S
+	\end{equation} 
+
+	На контур с током в магнитном поле со стороны этого поля действуют силы, создающие вращающий момент. Этот момент зависит от положения контура в пространстве и $\vec p_m$, но соотношение $\frac{M_{max}}{p_m}$ зависит только от магнитного поля. Вводится характеристика поля, называемая индукцией $\vec B$:
+	\begin{equation}
+		B = \frac{M_{max}}{p_m}
+	\end{equation}
+
+	(Вектор $\vec B$ направлен по нормали к контуру)\\
+
+	Для индукции магнитного поля верен принцип суперпозиции:
+	\begin{equation}
+		\vec B = \sum_i \vec B_i
+	\end{equation}
+
+	Био, Савар и Лаплас вывели закон, выражающий элементарную индукцию:
+	\begin{equation}
+		d\vec B = \frac{\mu_0}{4\pi}\frac{I[d\vec l;\vec r]}{r^3}
+	\end{equation}
+
+	(Вектор $d\vec l$ сонаправлен с вектором плотности тока)\\
+
+	Отсюда легко вывести магнитное поле движущегося заряда:
+	\begin{equation}
+		I = jS = ne'vS
+	\end{equation}
+	\begin{equation}
+		d\vec B = \frac{\mu_0}{4\pi}\frac{ne'vS[d\vec l;\vec r]}{r^3}
+	\end{equation}
+	\begin{equation}
+		d\vec B = \frac{\mu_0}{4\pi}\frac{ne'Sdl[\vec v;\vec r]}{r^3}
+	\end{equation}
+	\begin{equation}
+		d\vec B = \frac{\mu_0}{4\pi}\frac{Ne'[\vec v;\vec r]}{r^3}
+	\end{equation}
+	\begin{equation}
+		d\vec B = \frac{\mu_0}{4\pi}\frac{q[\vec v;\vec r]}{r^3}
+	\end{equation}
+
+\end{document}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" src="js/main.js"></script>
+<title>Español</title>
+</head>
+<body onload="main()">
+<button id="time" onclick="newGame();">
+<output id="timeleft"></output>
+</button>
+<button id="points" onclick="showScore();">
+<output id="mypoints">0 б.</output>
+</button>
+<button id="msg">
+ok
+</button>
+<header>
+<h1>
+Справка
+</h1>
+</header>
+<details>
+<summary>Правила игры</summary>
+В правом верхнем углу экрана &mdash; кнопка новой игры, которая показывает количество оставшихся секунд <br>
+Под ней &mdash; число заработанных за предыдущую игру очков. <br>
+По нажатии на это число, выводится твой лучший результат. <br>
+Игра состоит в том, чтобы выполнять задания, появляющиеся внизу экрана. <br>
+Ответ нужно вводить в текстовое поле под заданием <br>
+Для подтверждения ответа можно нажать кнопку со стрелкой, либо клавишу Enter <br>
+За верный ответ начисляется 1 балл <br>
+За ошибку вычитается кол-во баллов равное кол-ву оставшихся секунд <br>
+Если в результате вычета сумма баллов становится отрицательной, она сбрасывается до 0 <br>
+На игру дается количество секунд, равное сумме вашего рекорда и 10 <br>
+Во время игры можно подсматривать в грамматические таблицы, если осталось 60 секунд или меньше <br>
+Освоившим испанскую грамматику считается игрок, набравший 999 баллов
+</details>
+<header>
+<h1>
+Местоимения
+</h1>
+</header>
+<details>
+<summary><i>Таблица 1</i> личные местоимения</summary>
+<table>
+<tr>
+<td>Лицо</td>
+<td>Род</td>
+<td>Ед. ч.</td>
+<td>Мн. ч.</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td>М</td>
+<td rowspan="2">yo <em>&mdash; я</em></td>
+<td>nosotr<u>os</u> <em>&mdash; мы</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>nosotr<u>as</u> <em>&mdash; мы</em></td>
+</tr>
+<tr>
+<td rowspan="2">2</td>
+<td>М</td>
+<td rowspan="2">tú <em>&mdash; ты</em></td>
+<td>vosotr<u>os</u> <em>&mdash; вы</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>vosotr<u>as</u> <em>&mdash; вы</em></td>
+</tr>
+<tr>
+<td rowspan="3">3</td>
+<td>М</td>
+<td>él <em>&mdash; он</em></td>
+<td>ell<u>os</u> <em>&mdash; они</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>ella <em>&mdash; она</em></td>
+<td>ell<u>as</u> <em>&mdash; они</em></td>
+</tr>
+<tr>
+<td>Ср</td>
+<td>ello <em>&mdash; оно</em></td>
+</tr>
+<tr>
+<td>Вежливая<br>форма</td>
+<td></td>
+<td>Usted <em>&mdash; Вы</em></td>
+<td>Ustedes <em>&mdash; Вы</em></td>
+</tr>
+</table>
+Ello близко по значению к указательному местоимению Esto (это)
+</details>
+<details>
+<summary><i>Таблица 2</i> притяжательные местоимения-прилагательные</summary>
+<table>
+<tr>
+<td>Лицо</td>
+<td>Род (предмета)</td>
+<td colspan="2">Ед. ч. (людей)</td>
+<td colspan="2">Мн. ч. (людей)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Ед. ч. (предметов)</td>
+<td>Мн. ч. (предметов)</td>
+<td>Ед. ч. (предметов)</td>
+<td>Мн. ч. (предметов)</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td>М</td>
+<td>mi <em>&mdash; мой</em></td>
+<td rowspan="2">mis <em>&mdash; мои</em></td>
+<td>nuestr<u>o</u> <em>&mdash; наш</em></td>
+<td>nuestr<u>os</u> <em>&mdash; наши</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>mi <em>&mdash; моя</em></td>
+<td>nuestr<u>a</u> <em>&mdash; наша</em></td>
+<td>nuestr<u>as</u> <em>&mdash; наши</em></td>
+</tr>
+<tr>
+<td rowspan="2">2</td>
+<td>М</td>
+<td>tu <em>&mdash; твой</em></td>
+<td rowspan="2">tus <em>&mdash; твои</em></td>
+<td>vuestr<u>o</u> <em>&mdash; ваш</em></td>
+<td>vuestr<u>os</u> <em>&mdash; ваши</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>tu <em>&mdash; твоя</em></td>
+<td>vuestr<u>a</u> <em>&mdash; ваша</em></td>
+<td>vuestr<u>as</u> <em>&mdash; ваши</em></td>
+</tr>
+<tr>
+<td rowspan="2">3</td>
+<td>М</td>
+<td rowspan="2">su <em>&mdash; его, ее</em></td>
+<td rowspan="2">sus <em>&mdash; его, ее</em></td>
+<td rowspan="2">su <em>&mdash; их</em></td>
+<td rowspan="2">sus <em>&mdash; их</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+</tr>
+<tr>
+<td>Вежливая<br>форма</td>
+<td></td>
+<td>su <em>&mdash; Ваш</em></td>
+<td>sus <em>&mdash; Ваши</em></td>
+<td>su <em>&mdash; Ваш</em></td>
+<td>sus <em>&mdash; Ваши</em></td>
+</tr>
+</table>
+</details>
+<details>
+<summary><i>Таблица 3</i> притяжательные местоимения-существительные</summary>
+<table>
+<tr>
+<td>Лицо</td>
+<td>Род (<b>п</b>редмета/<b>л</b>юдей)</td>
+<td colspan="2">Ед. ч. (людей)</td>
+<td colspan="2">Мн. ч. (людей)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Ед. ч. (предметов)</td>
+<td>Мн. ч. (предметов)</td>
+<td>Ед. ч. (предметов)</td>
+<td>Мн. ч. (предметов)</td>
+</tr>
+<tr>
+<td rowspan="2">1</td>
+<td>М (<b>п</b>)</td>
+<td>(el) mío <em>&mdash; мой</em></td>
+<td>(los) mios <em>&mdash; мои</em></td>
+<td>(el) nuestr<u>o</u> <em>&mdash; наш</em></td>
+<td>(los) nuestr<u>os</u> <em>&mdash; наши</em></td>
+</tr>
+<tr>
+<td>Ж (<b>п</b>)</td>
+<td>(la) mía <em>&mdash; моя</em></td>
+<td>(los) mias <em>&mdash; мои</em></td>
+<td>(la) nuestr<u>a</u> <em>&mdash; наша</em></td>
+<td>(las) nuestr<u>as</u> <em>&mdash; наши</em></td>
+</tr>
+<tr>
+<td rowspan="2">2</td>
+<td>М (<b>п</b>)</td>
+<td>(el) tuyo <em>&mdash; твой</em></td>
+<td>(los) tuyos <em>&mdash; твои</em></td>
+<td>(el) vuestr<u>o</u> <em>&mdash; ваш</em></td>
+<td>(los) vuestr<u>os</u> <em>&mdash; ваши</em></td>
+</tr>
+<tr>
+<td>Ж (<b>п</b>)</td>
+<td>(la) tuya <em>&mdash; твоя</em></td>
+<td>(las) tuyas <em>&mdash; твои</em></td>
+<td>(la) vuestr<u>a</u> <em>&mdash; ваша</em></td>
+<td>(las) vuestr<u>as</u> <em>&mdash; ваши</em></td>
+</tr>
+<tr>
+<td rowspan="2">3</td>
+<td>М (<b>л</b><i> или </i><b>п</b>)</td>
+<td>(el) suyo <em>&mdash; его</em></td>
+<td>(los) suyos <em>&mdash; его</em></td>
+<td>(el) suyo <em>&mdash; их</em></td>
+<td>(los) suyos <em>&mdash; их</em></td>
+</tr>
+<tr>
+<td>Ж (<b>л</b><i> или </i><b>п</b>)</td>
+<td>(la) suya <em>&mdash; ее</em></td>
+<td>(las) suyas <em>&mdash; ее</em></td>
+<td>(la) suya <em>&mdash; их</em></td>
+<td>(las) suyas <em>&mdash; их</em></td>
+</tr>
+<tr>
+<td rowspan="2">Вежливая форма</td>
+<td>М (<b>п</b>)</td>
+<td>(el) suyo <em>&mdash; Ваш</em></td>
+<td>(los) suyos <em>&mdash; Ваши</em></td>
+<td>(el) suyo <em>&mdash; Ваш</em></td>
+<td>(los) suyos <em>&mdash; Ваши</em></td>
+</tr>
+<tr>
+<td>Ж (<b>п</b>)</td>
+<td>(la) suya <em>&mdash; Ваша</em></td>
+<td>(las) suyas <em>&mdash; Ваши</em></td>
+<td>(la) suya <em>&mdash; Ваша</em></td>
+<td>(las) suyas <em>&mdash; Ваши</em></td>
+</tr>
+</table>
+</details>
+<details>
+<summary><i>Таблица 4</i> указательные местоимения</summary>
+<table>
+<tr>
+<td>Лицо</td>
+<td>Род</td>
+<td>Ед. ч.</td>
+<td>Мн. ч.</td>
+</tr>
+<tr>
+<td rowspan="2">1 (свой предмет)</td>
+<td>М</td>
+<td>Este <em>&mdash; этот</em></td>
+<td>Estos <em>&mdash; эти</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>Esta <em>&mdash; эта</em></td>
+<td>Estas <em>&mdash; эти</em></td>
+</tr>
+<tr>
+<td rowspan="2">2 (твой предмет)</td>
+<td>М</td>
+<td>Ese <em>&mdash; этот</em></td>
+<td>Esos <em>&mdash; эти</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>Esa <em>&mdash; эта</em></td>
+<td>Esas <em>&mdash; эти</em></td>
+</tr>
+<tr>
+<td rowspan="2">3</td>
+<td>М</td>
+<td>Aquel <em>&mdash; тот</em></td>
+<td>Aquellos <em>&mdash; те</em></td>
+</tr>
+<tr>
+<td>Ж</td>
+<td>Aquella <em>&mdash; та</em></td>
+<td>Aquellas <em>&mdash; те</em></td>
+</tr>
+</table>
+</details>
+
+<header>
+<h1>
+Глаголы
+</h1>
+</header>
+<details>
+<summary><em>Таблица 1</em> спряжения глаголов настоящего времени</summary>
+<table>
+<tr>
+<td>Местоимение</td>
+<td>Оканч. -ar</td>
+<td>Оканч. -er</td>
+<td>Оканч. -ir</td>
+</tr>
+<tr>
+<td>Yo</td>
+<td>-o</td>
+<td>-o</td>
+<td>-o</td>
+</tr>
+<tr>
+<td>Tú</td>
+<td>-as</td>
+<td>-es</td>
+<td>-es</td>
+</tr>
+<tr>
+<td>Él(la)</td>
+<td>-a</td>
+<td>-e</td>
+<td>-e</td>
+</tr>
+<tr>
+<td>Nosotros</td>
+<td>-amos</td>
+<td>-emos</td>
+<td>-imos</td>
+</tr>
+<tr>
+<td>Vosotros</td>
+<td>-áis</td>
+<td>-éis</td>
+<td>-ís</td>
+</tr>
+<tr>
+<td>Ellos/Ellas/Ustedes</td>
+<td>-an</td>
+<td>-en</td>
+<td>-en</td>
+</tr>
+</table>
+</details>
+<div id="task">
+<div id="tasktext">
+Здесь появляется задание
+</div>
+<input type="text" id="taskans" placeholder="сюда писать ответ" onkeypress="checkKey(event)">
+<div id="buttons">
+<button id="checkbtn" onclick="checkTask()">&rarr;</button>
+</div>
+</div>
+</body>
+</html>

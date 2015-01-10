@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Дивергенция и ротор магнитного поля}\\
+
+	Отсутствие "магнитных зарядов" означает то, что линии вектора $\vec B$ замкнуты -- нигде не начинаются и не заканчиваются. Отсюда следует, что поток $\vec B$ через замкнутую поверхность равен нулю:
+	\begin{equation}
+		\oint_S \vec B d\vec S = 0
+	\end{equation}
+
+	По теореме Остроградского-Гаусса получаем:
+	\begin{equation}
+		\oint_V \vec\nabla\vec B dV = 0
+	\end{equation}
+	\begin{equation}
+		(\vec\nabla;\vec B) = 0
+	\end{equation}
+
+	Теперь вычислим циркуляцию $\vec B$ по замкнутому контуру $l$, охватывающему прямой ток $I$, создающий магнитное поле:
+	\begin{equation}
+		\oint \vec B d\vec l
+	\end{equation}
+
+	Известно, что поле прямого тока равно:
+	\begin{equation}
+		B = \frac{\mu_0 I}{2\pi r}
+	\end{equation}
+
+	Здесь $\vec r \perp \vec j$. Модуль приращения $d\vec l$ вектора $\vec r$ можно представить как $rd\alpha$. Получаем:
+	\begin{equation}
+		\oint \vec Bd\vec l = \frac{\mu_0 I}{2\pi r}r\oint d\alpha
+	\end{equation} 
+
+	Если контур охватывает ток I, то $\oint d\alpha = 2\pi$. В противном случае, $\oint d\alpha = 0$.\\
+
+	Пользуясь принципом суперпозиции, можно утверждать, что циркуляция $\vec B$ по замкнутому контуру равна сумме токов, охватываемых этим контуром, помноженной на $\mu_0$:
+	\begin{equation}
+		\oint \vec B d\vec l = \mu_0 I
+	\end{equation}
+
+	Отсюда по теореме Стокса получаем выражение для ротора $\vec B$:
+	\begin{equation}
+		\int_S [\vec\nabla;\vec B] d\vec S = \mu_0 \int \vec j d\vec S
+	\end{equation}
+	\begin{equation}
+		[\vec\nabla;\vec B] = \mu_0 \vec j
+	\end{equation}
+\end{document}

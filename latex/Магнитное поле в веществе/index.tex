@@ -1,0 +1,119 @@
+ \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Магнитное поле в веществе}\\
+
+	Каждое вещество является магнетиком, т.е. способно под действием внешнего магнитного поля приобретать магнитный момент (намагничиваться). Намагниченный магнетик создает поле $\vec B'$, накладывающееся на внешнее поле $\vec B_0$. Таким образом, результирующее поле:
+	\begin{equation}
+		\vec B = \vec B_0 + \vec B'
+	\end{equation}
+
+	Намагничение магнетика характеризуется магнитным моментом единицы объема. Эта величина называется намагниченностью $\vec J$:
+	\begin{equation}
+		\vec J = \frac{1}{\Delta V}\sum_{\Delta V}\vec p_m
+	\end{equation}
+
+	Выражение для ротора магнитной индукции принимает вид:
+	\begin{equation}
+		[\vec\nabla;\vec B] = [\vec\nabla;\vec B_0] + [\vec\nabla;\vec B']
+	\end{equation}
+
+	Переходим к плотностям токов (создающих внешнее поле и молекулярных):
+	\begin{equation}
+		[\vec\nabla;\vec B] = \mu_0(\vec j + \vec j_\text{мол})
+	\end{equation}
+
+	Вычислим поток плотности молекулярных токов через поверхность некоторого контура:
+	\begin{equation}
+		\int_S \vec j_\text{мол} d\vec S
+	\end{equation}
+
+	Вклад в поток вносят только "нанизанные" на контур токи.\\
+
+	Элемент контура $dl$, образующий с направлением намагниченности угол $\alpha$, нанизывает на себя молекулярные токи, центры которых попадают внутрь косого цилиндра с объемом $S_\text{мол}\cos\alpha dl$ ($S_\text{мол}$ -- площадь молекулярного тока). Если $n$ -- число молекул в единице объема, то $I_\text{мол}S_\text{мол}n\cos\alpha dl$ -- суммарный ток, охватываемый элементом контура $dl$. $I_\text{мол}S_\text{мол}n$ дает магнитный момент единицы объема $\vec J$, а $I_\text{мол}S_\text{мол}n\cos\alpha$ -- проекцию вектора $\vec J$ на направление $d\vec l$. Таким образом:
+	\begin{equation}
+		\int_S \vec j_\text{мол}d\vec S = \oint_l \vec J d\vec l
+	\end{equation}
+
+	По теореме Стокса:
+	\begin{equation}
+		\int_S \vec j_\text{мол}d\vec S = \int_S [\vec\nabla;\vec J]dS
+	\end{equation}
+	\begin{equation}
+		\vec j_\text{мол} = [\vec\nabla;\vec J]
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		[\vec\nabla;\vec B] = \mu_0\vec j + \mu_0[\vec\nabla;\vec J]
+	\end{equation}
+
+	Объединим роторы:
+	\begin{equation}
+		[\vec\nabla;\frac{\vec B}{\mu_0} - \vec J] = \vec j
+	\end{equation}
+
+	Таким образом, величина $\frac{\vec B}{\mu_0} - \vec J$ такова, что ее ротор зависит только от плотности токов, создающих внешнее магнитное поле. Эта величина называется напряженностью магнитного поля $\vec H$:
+	\begin{equation}
+		\vec H = \frac{\vec B}{\mu_0} - \vec J
+	\end{equation}
+
+	Получили, что
+	\begin{equation}
+		[\vec\nabla;\vec H] = \vec j
+	\end{equation}
+
+	Перейдем к циркуляции по теореме Стокса:
+	\begin{equation}
+		\int_S [\vec\nabla;\vec H] d\vec S = \int_S \vec j d\vec S
+	\end{equation}
+	\begin{equation}
+		\oint_l \vec H d\vec l = \int_S \vec j d\vec S
+	\end{equation}
+
+	Т.е. циркуляция $\vec H$ по замкнутому контуру равна сумме макроскопических токов, охватываемых им:
+	\begin{equation}
+		\oint_l \vec H d\vec l = \sum_k I_k
+	\end{equation}
+
+	Намагниченность принято связывать с напряженностью магнитного поля. Для этого вводится коэффициент пропорциональности $\chi$, называемый магнитной восприимчивостью вещества:
+	\begin{equation}
+		\vec J = \chi\vec H
+	\end{equation} 
+
+	Отсюда:
+	\begin{equation}
+		\vec H = \frac{\vec B}{\mu_0} - \chi\vec H
+	\end{equation}
+	\begin{equation}
+		\vec H = \frac{\vec B}{\mu_0(1+\chi)}
+	\end{equation}
+
+	Величину $1+\chi$ называют магнитной проницаемостью вещества и обозначают через $\mu$:
+	\begin{equation}
+		\vec H = \frac{\vec B}{\mu_0\mu}
+	\end{equation}
+
+	Иногда условно полагают, что напряженность поля в магнетике имеет вид:
+	\begin{equation}
+		\vec H = \vec H_0 - \vec H_\text{разм}
+	\end{equation}
+
+	Здесь $H_0$ -- напряженность внешнего поля, а $H_\text{разм}$ -- напряженность т.н. размагничивающего поля, равная:
+	\begin{equation}
+		\vec H_\text{разм} = N\vec J
+	\end{equation}
+
+	$N$ -- размагничивающий фактор, табличная величина (например, для диска, перпендикулярного $\vec H_0$ $N=1$, для шара $N=\frac{1}{3}$).
+	
+\end{document}

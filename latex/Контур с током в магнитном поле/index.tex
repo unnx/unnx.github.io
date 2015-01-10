@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Контур с током в магнитном поле}\\
+
+	Пусть дан замкнутый контур с током $I$ в однородном магнитном поле $\vec B = const$.\\
+
+	На каждый элемент контура $d\vec l$ действует сила Ампера:
+	\begin{equation}
+		d\vec F = I[d\vec l;\vec B]
+	\end{equation}
+
+	Сила, действующая на весь контур:
+	\begin{equation}
+		\vec F = \oint I[d\vec l;\vec B]
+	\end{equation}
+	\begin{equation}
+		\vec F = I[\oint d\vec l;\vec B]
+	\end{equation}
+
+	Но $\oint d\vec l = 0$, поэтому результирующая сила $\vec F=0$. Это справедливо для контуров любой формы.\\
+
+	Момент силы $\vec F$, действующей на контур, относительно выбранной точки $O'$ определяется выражением:
+	\begin{equation}
+		\vec N = \oint[\vec r;d\vec F]
+	\end{equation}
+
+	Возьмем точку $O'$, смещенную относительно $O$ на отрезок $\vec b$. Тогда $\vec r = \vec r' + \vec b$ и $\vec r' = \vec r - \vec b$. Момент относительно этой точки равен:
+	\begin{equation}
+		\vec N' = \int[\vec r';d\vec F] = \int[(\vec r - \vec b),d\vec F] = \int [\vec r;d\vec F] - \int [\vec b; d\vec F] = \vec N - 0 = \vec N
+	\end{equation}
+
+	Таким образом, моменты силы $\vec F$ относительно двух точек совпадают. \\
+
+	Представим плоский контур в однородном магнитном поле, направленном параллельно плоскости контура. Выделим в контуре тонкую полоску площади $dS = xdy$, параллельную $\vec B$. На края этой полоски действуют силы, модули которых равны $F_1=F_2=IBdy$.\\
+
+	Момент пары этих сил равен:
+	\begin{equation}
+		dN = IBxdy = IBdS
+	\end{equation}
+
+	$d\vec N$ перпендикулярен нормали к контуру и вектору $\vec B$, поэтому можно написать:
+	\begin{equation}
+		d\vec N = I[\vec n;\vec B]dS
+	\end{equation}
+
+	Просуммировав выражение по всем полоскам, получим момент сил, действующих на контур с током со стороны магнитного поля, параллельного контуру:
+	\begin{equation}
+		\vec N = \int I[\vec n;\vec B]dS = I[\vec n;\vec B]\int dS = I[\vec n;\vec B]S = [IS\vec n; \vec B] = [I\vec S;\vec B]
+	\end{equation}
+
+	Перепишем через магнитный момент:
+	\begin{equation}
+		\vec N = [\vec p_m;\vec B]
+	\end{equation}
+
+	Теперь представим, что поле $\vec B$ совпадает с нормалью $\vec n$. Момент сил имеет вид:
+	\begin{equation}
+		\vec N = \int d\vec N = \int [\vec r;d\vec F] = I\oint[\vec r;[d\vec l;\vec B]]
+	\end{equation}
+
+	Отсюда по формуле "бац минус цаб":
+	\begin{equation}
+		\vec N = I - (\oint (\vec r;\vec B)d\vec l - \oint \vec B(\vec r;d\vec l))
+	\end{equation}
+
+	$\vec r\perp \vec B$, поэтому первый интеграл равен нулю. Скалярное произведение под знаком второго интеграла равно $rdr = \frac{1}{2}d(r^2)$, т.е. второй интеграл равен:
+	\begin{equation}
+		\frac{1}{2}\vec B \oint d(r^2)
+	\end{equation}
+
+	Он тоже равен нулю. Таким образом, при данном направлении $\vec B$ момент сил равен нулю.\\
+
+	Наконец, пусть направления векторов $\vec p_m$ и $\vec B$ образуют угол $\alpha$. Видно, что вращающий момент создается только тангенциальной (параллельной контуру) составляющей $B_\perp$\\
+
+	Таким образом, в самом общем случае момент магнитных сил, действующих на контур с током, равен:
+	\begin{equation}
+		\vec N = [\vec p_m;\vec B]
+	\end{equation}
+
+	Чтобы увеличить угол между $\vec p_m$ и $\vec B$ на $d\alpha$, требуется совершить работу
+	\begin{equation}
+		dA = Nd\alpha = p_m B \sin\alpha d\alpha
+	\end{equation}
+
+	Эта работа равна приращению механической потенциальной энергии контура:
+	\begin{equation}
+		dW_p = p_mB\sin\alpha d\alpha
+	\end{equation}
+
+	Интегрируем:
+	\begin{equation}
+		W_p = -p_mB\cos\alpha + const
+	\end{equation}
+
+	Отсюда (принято считать $const=0$):
+	\begin{equation}
+		W_p = -p_mB\cos\alpha = -(\vec p_m;\vec B)
+	\end{equation}
+
+	Если поле $\vec B$ неоднородно, контур будет втягиваться в область с большим значением $B$. Силу такого "втягивания" можно найти как $-\vec\nabla W_p$.
+
+\end{document}

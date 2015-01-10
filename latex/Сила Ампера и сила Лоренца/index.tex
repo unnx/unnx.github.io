@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Сила Ампера и сила Лоренца}\\
+
+	Экспериментально установлено, что сила, действующая на заряд $q$, движущийся со скоростью $\vec v$ со стороны магнитного поля индукции $\vec B$ равна:
+	\begin{equation}
+		\vec F = q[\vec v;\vec B]
+	\end{equation}
+
+	Помимо магнитных сил, на заряд действуют и электростатические, поэтому полная сила равна:
+	\begin{equation}
+		\vec F = q\vec E + q[\vec v;\vec B]
+	\end{equation}
+
+	Эта сила называется силой Лоренца.\\
+
+	Найдем силу $d\vec F$, действующую со стороны поля на элемент проводника $d\vec l$. На каждый из носителей тока в проводнике действует сила:
+	\begin{equation}
+		\vec F = e[\vec u;\vec B]
+	\end{equation}
+
+	В элементе провода длины $dl$ содержится $nSdl$ зарядов $e$, поэтому сила, действующая на этот элемент:
+	\begin{equation}
+		d\vec F = [ne\vec u;\vec B]Sdl
+	\end{equation} 
+
+	$ne\vec v$ есть плотность тока $\vec j$, поэтому
+	\begin{equation}
+		d\vec F = [\vec j;\vec B]Sdl
+	\end{equation}
+
+	$\vec jSdl$ можно заменить на $jSd\vec l$, если $\vec j \uparrow\uparrow \vec l$:
+	\begin{equation}
+		d\vec F = I[d\vec l;\vec B]
+	\end{equation}
+
+	Эта сила называется силой Ампера.
+
+\end{document}

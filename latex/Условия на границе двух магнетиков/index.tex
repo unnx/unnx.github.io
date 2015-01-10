@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Условия на границе двух магнетиков}\\
+
+	Выясним, как изменяются $\vec B$ и $\vec H$ при переходе из одного магнетика в другой. Будем руководствоваться известными соотношениями:
+	\begin{equation}
+		(\vec\nabla;\vec B) = 0; \;\;\; [\vec\nabla;\vec H] = \vec j
+	\end{equation}
+
+	Выберем поверхность параллелепипеда, пересекающую границу раздела. Площади оснований -- $S$, высота $h\rightarrow 0$. Выберем также нормаль $\vec n$. Поток вектора $\vec B$ через эту замкнутую поверхность будет равен: 
+	\begin{equation}
+		B_{1_n}S - B_{2_n}S = 0
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		B_{1n} = B_{2n}
+	\end{equation}
+
+	Теперь выберем прямоугольный контур, охватывающий часть границы раздела, со сторонами $a$ и $h\rightarrow 0$. Выберем также направление тангенциали $\vec\tau$. По теореме Стокса:
+	\begin{equation}
+		\oint \vec H d\vec l = H_{1\tau}a - H_{2\tau}a = 0
+	\end{equation}
+
+	(Поток равен $0$, т.к. по границе раздела не текут макроскопические токи)\\
+
+	Получаем:
+	\begin{equation}
+		H_{1\tau} = H_{2\tau}
+	\end{equation}
+
+	Легко найти изменения составляющих $H_n$ и $B_\tau$. Выразим $B$ через $H$:
+	\begin{equation}
+		\mu_0\mu_1 H_{1n} = \mu_0\mu_2 H_{2n}
+	\end{equation}
+	\begin{equation}
+		\frac{H_{1n}}{H_{2n}} = \frac{\mu_2}{\mu_1}
+	\end{equation}
+
+	Теперь сделаем обратное:
+	\begin{equation}
+		\frac{B_{1\tau}}{\mu_0\mu_1} = \frac{B_{2\tau}}{\mu_0\mu_2}
+	\end{equation}
+	\begin{equation}
+		\frac{B_{1\tau}}{B_{2\tau}} = \frac{\mu_1}{\mu_2}
+	\end{equation}
+
+	Получили группу соотношений:
+	\begin{equation}
+		B_{1n} = B_{2n}, \;\;\; \frac{B_{1\tau}}{B_{2\tau}} = \frac{\mu_1}{\mu_2}
+	\end{equation}
+	\begin{equation}
+		H_{1\tau} = H_{2\tau}, \;\;\; \frac{H_{1n}}{H_{2n}} = \frac{\mu_2}{\mu_1}
+	\end{equation}
+
+\end{document}

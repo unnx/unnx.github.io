@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Энергия магнитного поля}\\
+
+	Представим соленоид с параллельно подключенным сопротивлением $R$ и источником тока $I$. Если отключить источник, появляется ЭДС самоиндукции. Работа $dA$, совершаемая магнитным полем за $dt$ равна:
+	\begin{equation}
+		dA = \mathcal{E}_s I dt = -\frac{d\Psi}{dt}Idt = -Id\Psi
+	\end{equation}
+
+	Если индуктивность не зависит от $I$, то $d\Psi=LdI$ 
+	\begin{equation}
+		dA = -LIdI
+	\end{equation}
+	\begin{equation}
+		A = -\int_I^0 LI dI = \frac{LI^2}{2}
+	\end{equation}
+
+	Работа, создаваемая полем, равна запасу его потенциальной энергии. Отсюда:
+	\begin{equation}
+		W = \frac{LI^2}{2}
+	\end{equation}
+
+	В случае бесконечного соленоида:
+	\begin{equation}
+		L = \mu_0\mu n^2 V,\;\;\;H=nI
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		W = \frac{\mu_0\mu H^2}{2}V
+	\end{equation}
+
+	Плотность энергии, соответственно, равна:
+	\begin{equation}
+		w = \frac{\mu_0\mu H^2}{2}
+	\end{equation}
+
+	Или
+	\begin{equation}
+		w = \frac{HB}{2}
+	\end{equation}
+
+	Внутри изотропных магнетиков $\vec B || \vec H$, поэтому:
+	\begin{equation}
+		w = \frac{(\vec H;\vec B)}{2}
+	\end{equation}
+\end{document}
