@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Законы Ома и Джоуля-Ленца в дифференциальной форме}\\
+
+	Закон Ома для однородного участка цепи гласит:
+	\begin{equation}
+		I = \frac{U}{R}
+	\end{equation}
+
+	При этом
+	\begin{equation}
+		R = \rho\frac{l}{S}
+	\end{equation}
+
+	Перейдем к плотности тока в цилиндре длины $dl$ с основанием $dS$:
+	\begin{equation}
+		jdS = \frac{UdS}{\rho dl} = \frac{dS}{\rho dl}Edl
+	\end{equation}
+	\begin{equation}
+		j = \frac{1}{\rho} E
+	\end{equation}
+
+	Введя величину $\sigma = \frac{1}{\rho}$, называемую удельной электрической проводимостью, получаем:
+	\begin{equation}
+		\vec j = \sigma\vec E
+	\end{equation}
+
+	Полученное выражение -- закон Ома для однородного участка цепи в дифференциальной форме.\\
+
+	В случае неоднородного участка цепи имеется поле сторонних сил $\vec E^*$:
+	\begin{equation}
+		\vec j = \sigma(\vec E + \vec E^*)
+	\end{equation}
+
+	Закон Джоуля-Ленца в интегральной форме утверждает:
+	\begin{equation}
+		Q = UIt = RI^2 t
+	\end{equation}
+
+	Перейдем к элементарным величинам:
+	\begin{equation}
+		dQ = RI^2 dt
+	\end{equation}
+
+	Раскроем сопротивление:
+	\begin{equation}
+		dQ = \frac{\rho dl}{dS}I^2 dt
+	\end{equation}
+
+	И силу тока:
+	\begin{equation}
+		dQ = \frac{\rho dl}{dS}(j dS)^2 dt
+	\end{equation}
+
+	Получаем:
+	\begin{equation}
+		dQ = \rho j^2 dV dt
+	\end{equation}
+
+	Разделив на $dVdt$ получаем количество теплоты, выделяемое в единице объема за единицу времени $Q_\text{уд}$ (поскольку $j$ стоит в квадрате, можно перейти к вектору $\vec j $):
+	\begin{equation}
+		Q_\text{уд} = \rho \vec j\;^2
+	\end{equation}
+
+	Полученная формула выражает закон Джоуля-Ленца в дифференциальной форме. Она определяет удельную мощность тока:
+	\begin{equation}
+		P_\text{уд} = \rho \vec j\;^2
+	\end{equation}
+
+	Аналогичный результат будет, если в формулу для удельной мощности $P_\text{уд} = (\vec j;\vec E + \vec E^*)$ подставить $\vec E + \vec E^* = \rho \vec j$.
+\end{document}
