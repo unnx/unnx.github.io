@@ -65,7 +65,7 @@ p.tex {
 	padding: 0.2em;
 }
 
-time {
+#time {
 	color: #ff0;
 	font-family: Terminus;
 	margin: 0.2em;
@@ -74,7 +74,7 @@ time {
 li.menu {
 	font-size: 20pt;
 	margin: 1em;
-	list-style-type: none;
+	
 	margin: 0.5em;
 }
 
