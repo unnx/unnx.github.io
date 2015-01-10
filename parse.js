@@ -74,9 +74,9 @@ function getFiles(folder,template1,template2) {
 			var files2 = fs.readdirSync("txt"+folder+files[i]+"/");
 			for(var j in files2) {
 				if(fs.lstatSync("txt"+folder+files[i]+"/"+files2[j]).isDirectory()) {
-					t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='"+files2[j]+"/'>" + files2[j] + "</a></li><!--O-->");
+					t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='"+encodeURIComponent(files2[j])+"/'>" + files2[j] + "</a></li><!--O-->");
 				} else {
-					t = t.split("<!--O-->").join("<li class='menu'><a class='file' href='"+files2[j]+".html'>" + files2[j] + "</a></li><!--O-->");
+					t = t.split("<!--O-->").join("<li class='menu'><a class='file' href='"+encodeURIComponent(files2[j])+".html'>" + files2[j] + "</a></li><!--O-->");
 				}
 			}
 			t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
@@ -98,8 +98,8 @@ function mkLatex() {
 		var q = data;
 		for(var j in files) {
 			if(fs.lstatSync("latex/"+files[j]).isDirectory()) {
-				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+files[j]+"/index.pdf'>" + files[j] + "</a></li><!--O-->");
-				q = q.split("<!--O-->").join("<li class='menu'><a class='folder' type='text/plain' href='/latex/"+files[j]+"/index.tex'>" + files[j] + "</a></li><!--O-->");
+				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/latex/"+encodeURIComponent(files[j])+"/index.pdf'>" + files[j] + "</a></li><!--O-->");
+				q = q.split("<!--O-->").join("<li class='menu'><a class='folder' type='text/plain' href='/latex/"+encodeURIComponent(files[j])+"/index.tex'>" + files[j] + "</a></li><!--O-->");
 			}
 		}
 		t = t.split("$SRCLINK$").join("<a href='/notes-src.html'>Исходники LaTeX</a>");
@@ -117,9 +117,9 @@ function mkIndex() {
 		var t = data;
 		for(var j in files) {
 			if(fs.lstatSync("txt/"+files[j]).isDirectory()) {
-				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/html/"+files[j]+"/'>" + files[j] + "</a></li><!--O-->");
+				t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='/html/"+encodeURIComponent(files[j])+"/'>" + files[j] + "</a></li><!--O-->");
 			} else {
-				t = t.split("<!--O-->").join("<li class='menu'><a class='file' href='/html/"+files[j]+".html'>" + files[j] + "</a></li><!--O-->");
+				t = t.split("<!--O-->").join("<li class='menu'><a class='file' href='/html/"+encodeURIComponent(files[j])+".html'>" + files[j] + "</a></li><!--O-->");
 			}
 		}
 		t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
