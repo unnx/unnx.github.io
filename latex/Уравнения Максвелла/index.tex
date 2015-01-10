@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Уравнение Максвелла}\\
+
+	Открытие тока смещения позволило Максвеллу создать единую теорию электрических и магнитных явлений. Она полностью покрывается уравнениями Максвелла.\\
+
+	Первая пара:
+	\begin{equation}
+		[\vec\nabla;\vec E] = -\frac{\partial B}{\partial t}
+	\end{equation}
+	\begin{equation}
+		(\vec\nabla;\vec B) = 0
+	\end{equation}
+
+	Вторая пара:
+	\begin{equation}
+		[\vec\nabla;\vec H] = \vec j + \frac{\partial\vec D}{\partial t}
+	\end{equation}
+	\begin{equation}
+		(\vec\nabla;\vec D) = \rho
+	\end{equation}
+
+	Пользуясь теоремами Остроградского-Гаусса и Стокса, можно переписать уравнения Максвелла в интегральной форме.\\
+
+	Первая пара в интегральной форме:
+	\begin{equation}
+		\oint_l \vec E d\vec l = -\frac{\partial}{\partial t}\int_S \vec B d\vec S
+	\end{equation}
+	\begin{equation}
+		\oint_S \vec B d\vec S = 0
+	\end{equation}
+
+	Вторая пара в интегральной форме:
+	\begin{equation}
+		\oint_l \vec H d\vec l = \int_S \vec j d\vec S + \frac{\partial}{\partial t} \int_S \vec D d\vec S
+	\end{equation}
+	\begin{equation}
+		\oint_l \vec D d\vec S = \int_V \rho dV
+	\end{equation}
+
+
+\end{document}

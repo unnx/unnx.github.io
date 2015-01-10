@@ -5,21 +5,20 @@
 
 body {
 	visibility: hidden;
-	background-color: #030;
-	color: #ccc;
+	background-color: #fff;
+	color: #333;
 	margin: 1em;
 	font-family: Terminus;
 	font-size: 16pt;
 }
 
 *::selection {
-	color: #003;
-	background-color: #ff3;
-	opacity: 1;
+	color: #000;
+	background-color: #888;
 }
 
 a { 
-	color: #ccc;
+	color: #555;
 	text-decoration: underline;
 	outline: none;
 }
@@ -29,12 +28,12 @@ a.folder {
 }
 
 a:hover {
-	background-color: #ff3;
+	background-color: #ff9;
 	color: #005;
 }
 
 a:focus {
-	background-color: #ff3;
+	background-color: #ff9;
 	color: #005;	
 }
 
@@ -47,8 +46,11 @@ h1 {
 	margin-bottom: 0.8em;
 	font-family: Terminus;
 	font-size: 24pt;
-	color: #380; /* # 3c0 */
-	background-color: #9f6; /* #69f */
+	border-style: solid;
+	border-width: 1px;
+	border-color: #003;
+	color: #333; /* # 3c0 */
+	background-color: #ff9; /* #69f */
 	padding: 0.2em;
 }
 
@@ -56,7 +58,7 @@ h4{
 	font-size: 20pt;
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
-	color: #fff;
+	color: #333;
 }
 
 p.tex {

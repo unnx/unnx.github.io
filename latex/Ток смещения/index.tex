@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Ток смещения}\\
+
+	Ротор $\vec H$ равен плотности макроскопических токов:
+	\begin{equation}
+		[\vec\nabla;\vec H] = \vec j
+	\end{equation}
+
+	Вектор $\vec j$ связан с плотностью сторонних зарядов уравнением непрерывности:
+	\begin{equation}
+		(\vec\nabla;\vec j) = -\frac{\partial\rho}{\partial t}
+	\end{equation}
+
+	Представим заряжающийся конденсатор. Рассмотрим одну из его пластин: по проводнику, соединенному с ней течет ток $I$, который прекращается после зарядки конденсатора. Выберем поверхность $S_1$, пересекающую провод, и другую поверхность $S_2$ -- между обкладками конденсатора. По теореме Стокса:
+	\begin{equation}
+		\oint_{l_1} \vec H d\vec l = \int_{S_1} \vec j d\vec S = I 
+	\end{equation}
+	\begin{equation}
+		\oint_{l_2} \vec H d\vec l = \int_{S_2} \vec j d\vec S = 0 
+	\end{equation}
+
+	Поверхность $S_2$ не охватывает токов, поэтому циркуляция $\vec H$ по контуру, ограничивающему эту поверхность, равна нулю. Этого не может быть, т.к. напряженность поля между обкладками точно не равна нулю. \\
+
+	Следовательно, в случае изменяющегося во времени магнитного поля, теорема о циркуляции $H$ не работает. \\
+
+	Несоответствие также выражается в том, что если взять дивергенцию от левой и правой части уравнения $[\vec\nabla;\vec H] = \vec j$, слева всегда будет $0$, а справа -- необязательно. Это противоречит уравнению непрерывности.\\
+
+	Максвелл ввел в правую часть уравнения $[\vec\nabla;\vec H] = \vec j$ дополнительное слагаемое $\vec j_\text{смещ}$:
+	\begin{equation}
+		[\vec\nabla;\vec H] = \vec j + \vec j_\text{смещ} = \vec j_\text{полн}
+	\end{equation}
+
+	Это слагаемое называется током смещения и имеет размерность плотности тока. Если $(\vec\nabla;\vec j_\text{смещ}) = -(\vec\nabla;\vec j)$, то мы действительно получим тождество, взяв дивергенцию от обеих частей уравнения $(5)$:
+	\begin{equation}
+		0 = (\vec\nabla;[\vec\nabla;\vec H]) = -(\vec\nabla;\vec j) + (\vec\nabla;\vec j) = 0
+	\end{equation}
+
+	Из уравнения непрерывности:
+	\begin{equation}
+		(\vec\nabla;\vec j) = \frac{\partial\rho}{\partial t}
+	\end{equation}
+
+	По теореме о потоке вектора $\vec D$:
+	\begin{equation}
+		(\vec\nabla;\vec D) = \rho
+	\end{equation}
+	\begin{equation}
+		\frac{\partial}{\partial t}(\vec\nabla;\vec D) = \frac{\partial\rho}{\partial t}
+	\end{equation}
+	\begin{equation}
+		\frac{\partial\rho}{\partial t} = (\vec\nabla;\frac{\partial\vec D}{\partial t})
+	\end{equation}
+	\begin{equation}
+		(\vec\nabla;j_\text{смещ}) = (\vec\nabla;\frac{\partial\vec D}{\partial t})
+	\end{equation}
+
+	Окончательное выражение для $\vec j_\text{смещ}$:
+	\begin{equation}
+		\vec j_\text{смещ} = \frac{\partial \vec D}{\partial t}
+	\end{equation}
+
+\end{document}
