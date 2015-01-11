@@ -95,13 +95,16 @@ function R(min, max) {
 }
 
 function nextTask() {
-	switch(R(0,1)) {
+	switch(R(0,2)) {
 		case 0:
 			task1();
 			break;
 		case 1:
 			task2();
-			break;		
+			break;
+		case 2:
+			task3();
+			break;			
 	}
 }
 
