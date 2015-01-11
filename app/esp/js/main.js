@@ -396,6 +396,10 @@ function task3() {
 				["&mdash;Чья? &mdash;<b>Наша</b>","Nuestra"],
 				["&mdash;Чьи парни? &mdash;<b>Наши</b>","Nuestros"],
 				["&mdash;Чей девчонки? &mdash;<b>Наши</b>","Nuestras"],
+				["&mdash;Чей? &mdash;<b>Ваш</b>","Vuestro"],
+				["&mdash;Чья? &mdash;<b>Ваша</b>","Vuestra"],
+				["&mdash;Чьи парни? &mdash;<b>Ваши</b>","Vuestros"],
+				["&mdash;Чей девчонки? &mdash;<b>Ваши</b>","Vuestras"],
 				["&mdash;Чей парень? &mdash;<b>Твой</b>","Tuyo"],
 				["&mdash;Чья девчонка? &mdash;<b>Моя</b>","Tuya"],
 				["&mdash;Чьи парни? &mdash;<b>Твои</b>","Tuyos"],
@@ -408,10 +412,10 @@ function task3() {
 				["&mdash;Чья девчонка? &mdash;<b>Их</b>","Suya"],
 				["&mdash;Чьи парни? &mdash;<b>Их</b>","Suyos"],
 				["&mdash;Чьи девчонки? &mdash;<b>Их</b>","Suyas"],
-				["&mdash;Чей парень? &mdash;<b>Ваш</b>","Suyo"],
-				["&mdash;Чья девчонка? &mdash;<b>Ваша</b>","Suya"],
-				["&mdash;Чьи парни? &mdash;<b>Ваши</b>","Suyos"],
-				["&mdash;Чьи девчонки? &mdash;<b>Ваши</b>","Suyas"]																											
+				["&mdash;Чей парень? &mdash;<b>Ваш</b> <em>(уваж.)</em>","Suyo"],
+				["&mdash;Чья девчонка? &mdash;<b>Ваша</b> <em>(уваж.)</em>","Suya"],
+				["&mdash;Чьи парни? &mdash;<b>Ваши</b> <em>(уваж.)</em>","Suyos"],
+				["&mdash;Чьи девчонки? &mdash;<b>Ваши</b> <em>(уваж.)</em>","Suyas"]																											
 			];
 			var r = R(0,a.length-1);
 			var C1 = a[r][3];
@@ -419,19 +423,34 @@ function task3() {
 			break;
 		case 3:
 			var a = [
-				["<b>Mi</b>","о"],
+				["<b>Mío</b>","м"],
+				["<b>Mía</b>","ж"],
+				["<b>Míos</b>","м"],
+				["<b>Mías</b>","ж"],
 				["<b>Nuestro</b>","м"],
 				["<b>Nuestra</b>","ж"],
 				["<b>Nuestros</b>","м"],
 				["<b>Nuestras</b>","ж"],
-				["<b>Tu</b>","о"],
-				["<b>Tus</b>","о"],
 				["<b>Vuestro</b>","м"],
 				["<b>Vuestra</b>","ж"],
 				["<b>Vuestros</b>","м"],
-				["<b>Vuestras</b>","ж"],		
-				["<b>Su</b>","о"],
-				["<b>Sus</b>","о"]																									
+				["<b>Vuestras</b>","ж"],
+				["<b>Tuyo</b>","м"],
+				["<b>Tuya</b>","ж"],
+				["<b>Tuyos</b>","м"],
+				["<b>Tuyas</b>","ж"],
+				["<b>Suyo</b> <em>(ед. ч.)</em>","м"],
+				["<b>Suya</b> <em>(ед. ч.)</em>","ж"],
+				["<b>Suyos</b> <em>(ед. ч.)</em>","м"],
+				["<b>Suyas</b> <em>(ед. ч.)</em>","ж"],
+				["<b>Suyo</b> <em>(мн. ч.)</em>","м"],
+				["<b>Suya</b> <em>(мн. ч.)</em>","ж"],
+				["<b>Suyos</b> <em>(мн. ч.)</em>","м"],
+				["<b>Suyas</b> <em>(мн. ч.)</em>","ж"],
+				["<b>Suyo</b> <em>(вежл.)</em>","м"],
+				["<b>Suya</b> <em>(вежл.)</em>","ж"],
+				["<b>Suyos</b> <em>(вежл.)</em>","м"],
+				["<b>Suyas</b> <em>(вежл.)</em>","ж"]																								
 			];
 			var r = R(0,a.length-1);
 			var C1 = a[r][3];
@@ -439,20 +458,30 @@ function task3() {
 			break;
 		case 4:
 			var a = [
-				["<b>Mi</b>","1"],
-				["<b>Mis</b>","1"],
+				["<b>Mío</b>","1"],
+				["<b>Mía</b>","1"],
+				["<b>Míos</b>","1"],
+				["<b>Mías</b>","1"],
 				["<b>Nuestro</b>","1"],
 				["<b>Nuestra</b>","1"],
 				["<b>Nuestros</b>","1"],
 				["<b>Nuestras</b>","1"],
-				["<b>Tu</b>","2"],
-				["<b>Tus</b>","2"],
 				["<b>Vuestro</b>","2"],
 				["<b>Vuestra</b>","2"],
 				["<b>Vuestros</b>","2"],
 				["<b>Vuestras</b>","2"],
-				["<b>Su</b>","3"],
-				["<b>Sus</b>","3"]																									
+				["<b>Tuyo</b>","2"],
+				["<b>Tuya</b>","2"],
+				["<b>Tuyos</b>","2"],
+				["<b>Tuyas</b>","2"],
+				["<b>Suyo</b> <em>(ед. ч.)</em>","3"],
+				["<b>Suya</b> <em>(ед. ч.)</em>","3"],
+				["<b>Suyos</b> <em>(ед. ч.)</em>","3"],
+				["<b>Suyas</b> <em>(ед. ч.)</em>","3"],
+				["<b>Suyo</b> <em>(мн. ч.)</em>","3"],
+				["<b>Suya</b> <em>(мн. ч.)</em>","3"],
+				["<b>Suyos</b> <em>(мн. ч.)</em>","3"],
+				["<b>Suyas</b> <em>(мн. ч.)</em>","3"]																								
 			];
 			var r = R(0,a.length-1);
 			var C1 = a[r][3];
@@ -460,10 +489,10 @@ function task3() {
 			break;
 		case 5:
 			var a = [
-				["<b>M...</b> <em>ед. ч</em>","i"],
-				["<b>T...</b> <em>ед. ч.</em>","u"],
-				["<b>M...</b> <em>мн. ч</em>","is"],
-				["<b>T...</b> <em>мн. ч.</em>","us"],
+				["<b>M...o</b>","í"],
+				["<b>M...a</b>","í"],
+				["<b>M...os</b>","í"],
+				["<b>M...as</b>","í"],
 				["<b>N...o</b>","uestr"],
 				["<b>N...a</b>","uestr"],
 				["<b>N...os</b>","uestr"],
@@ -472,12 +501,18 @@ function task3() {
 				["<b>V...a</b>","uestr"],
 				["<b>V...os</b>","uestr"],
 				["<b>V...as</b>","uestr"],
-				["<b>S... <em>ед. ч</em></b>","u"],		
-				["<b>S... <em>мн. ч.</em></b>","us"]																										
+				["<b>T...o</b>","uy"],
+				["<b>T...a</b>","uy"],
+				["<b>T...os</b>","uy"],
+				["<b>T...as</b>","uy"],
+				["<b>S...o</b>","uy"],
+				["<b>S...a</b>","uy"],
+				["<b>S...os</b>","uy"],
+				["<b>S...as</b>","uy"]																										
 			];
 			var r = R(0,a.length-1);
 			var C1 = a[r][3];
-			setTask(a[r][0],"Заполни пропуски в притяжательных местоимениях-прилагательных",a[r][1],"см. местоимения");
+			setTask(a[r][0],"Заполни пропуски в притяжательных местоимениях-существительных",a[r][1],"см. местоимения");
 			break;
 	}
 }
