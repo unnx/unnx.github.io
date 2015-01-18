@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Задача Коши для ОДУ 1-го порядка}\\
+
+	ОДУ 1-го порядка имеет вид:
+	\begin{equation}
+		y' = f(x,y)
+	\end{equation}
+
+	Здесь $f$ -- заданная функция:
+	\begin{equation}
+		f\in C(D),\;D\in \mathbb{R}^2
+	\end{equation}
+
+	Пусть дано начальное условие:
+	\begin{equation}
+		y(x_0) = y_0,\;(x_0,y_0)\in D
+	\end{equation}
+
+	Задача Коши состоит в нахождении частного решения ОДУ $(1)$, которое удовлетворяло бы начальному условию, т.е. найти $y=y(x)$, такую, что:
+	\begin{equation}
+		y' = f(x,y)
+	\end{equation}
+	\begin{equation}
+		y(x_0) = y_0
+	\end{equation}
+
+	Если $y=y(x)$ -- решение $(1)$, то график этого решения называется интегральной кривой.\\
+
+	Геометрическая интерпретация задачи Коши: найти интегральную кривую, проходящую через заданную точку.\\
+
+	Теорема о существовании и единственности решения задачи Коши (ТСЕ):\\
+
+	Пусть функция $f(x,y)$ и $\frac{\partial f}{\partial y}$ непрерывна в области $D \in \mathbb{R}^2$. Тогда $\forall (x_0,y_0)\in D$:\\
+
+	1) $\exists$ окрестность $(x_0-\delta,x_0+\delta)$, в которой имеется решение $y=y(x)$ задачи Коши.\\
+
+	2) Если $y=y_1(x)$ и $y=y_2(x)$ -- два решения задачи Коши, то $y_1(x)=y_2(x)$ в некоторой окрестности точки $x_0$.
+\end{document}

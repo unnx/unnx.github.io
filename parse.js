@@ -39,29 +39,29 @@ function parseMonth() {
 	var d = new Date();
 	switch(d.getMonth()) {
 		case 0:
-			return "янв.";
+			return "января";
 		case 1:
-			return "фев.";
+			return "февраля";
 		case 2:
-			return "мар.";
+			return "марта";
 		case 3:
-			return "апр.";
+			return "апреля";
 		case 4:
 			return "мая";
 		case 5:
-			return "июн.";
+			return "июня";
 		case 6:
-			return "июл.";
+			return "июля";
 		case 7:
-			return "авг.";
+			return "августа";
 		case 8:
-			return "сен.";
+			return "сентября";
 		case 9:
-			return "окт.";
+			return "октября";
 		case 10:
-			return "нояб.";
+			return "ноября";
 		case 11:
-			return "дек.";
+			return "декабря";
 	}
 }
 
@@ -123,8 +123,12 @@ function mkIndex() {
 			}
 		}
 		t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
-		fs.writeFileSync("index.html",t);
 		fs.writeFileSync("html/index.html",t);
+	})
+	fs.readFile("tmp/preface.html",{encoding: "utf8"},function(err,data) {
+		var t = data;
+		t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
+		fs.writeFileSync("index.html",t);
 	})
 	mkLatex();
 }

@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{ОДУ в полных дифференциалах}\\
+
+	Рассмотрим уравнение:
+	\begin{equation}
+		P(x,y)dx + Q(x,y)dy = 0
+	\end{equation}
+
+	Здесь $P(x,y), Q(x,y) \in C(D), D\in \mathbb{R}^2$. Оно называется уравнением в полных дифференциалах, если $\exists f=f(x,y)$, полный дифференциал которой $df = Pdx + Qdy$.\\
+
+	Критерий того, что уравнение является уравнением в полных дифференциалах:\\
+
+	Пусть $D$ -- односвязная область в $\mathbb{R}^2$. Тогда уравнение $(1)$ является в этой области уравнением в полных дифференциалах тогда и только тогда, когда выполняется:
+	\begin{equation}
+		\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+	\end{equation}
+
+	Доказательство.\\
+
+	Необходимость.\\
+
+	Пусть $(1)$ -- ОДУ в полных дифференциалах и $P, Q \in C(D)$. По определению $\exists f$: $df = Pdx + Qdy$, т.е. $\frac{\partial f}{\partial x} = P$ и $\frac{\partial f}{\partial y} = Q$. Тогда $\frac{\partial P}{\partial y} = \frac{\partial f}{\partial x\partial y}$ и $\frac{\partial Q}{\partial x} = \frac{\partial f}{\partial y\partial x}$.\\
+
+	Достаточность.\\
+
+	Пусть $D$ -- односвязная область в $\mathbb{R}^2$, $P, Q \in C(D)$ и $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$. Фиксируем $(x_0,y_0)$ и рассмотрим криволинейный интеграл:
+	\begin{equation}
+		\int_{(x_0;y_0)}^{(x;y)} Pdx + Qdy
+	\end{equation}
+
+	Воспользуемся формулой Грина:
+	\begin{equation}
+		\int_{(x_0;y_0)}^{(x;y)} Pdx + Qdy = \iint (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x})dxdy
+	\end{equation}
+
+	Таким образом, если $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$, то $df=Pdx+Qdy$.\\
+
+	Доказано.\\
+
+	Метод решения: проинтегрировать $Pdx$, обозначить произвольную постоянную как $\varphi(y)$, продифференцировать полученное выражение по $y$ и приравнять к $Q$. Найти $\varphi(y)$. Общее решение будет иметь вид:
+	\begin{equation}
+		\int Pdx = C,
+	\end{equation}
+
+	Где в качестве произвольной постоянной интегрирования взята $\varphi(y)$. Можно идти по обратному пути, интегрируя $Qdy$ (далее аналогично).\\
+
+	Интегрирующим множителем для уравнения $(1)$ является такая функция $m(x,y), \exists (x_1,y_1): m(x_1,y_1)\neq 0$, что при умножении на нее уравнение $(1)$ становится уравнением в полных дифференциалах.
+
+
+\end{document}

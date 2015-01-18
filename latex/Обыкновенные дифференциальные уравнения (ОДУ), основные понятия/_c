@@ -1,0 +1,6 @@
+#/bin/bash
+
+pdflatex ./index.tex
+rm "./index.log"
+rm "./index.aux"
+rm "./texput.log"

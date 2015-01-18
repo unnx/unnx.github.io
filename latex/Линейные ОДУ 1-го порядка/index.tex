@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Линейные ОДУ 1-го порядка}\\
+
+	Линейным ОДУ первого порядка является уравнение:
+	\begin{equation}
+		y' + a(x)y + b(x) = 0
+	\end{equation}
+
+	Если $b(x)$ тождественно $0$, то уравнение $(1)$ называется однородным, в противном случае -- неоднородным линейным ОДУ 1-го порядка.\\
+
+	Однородное линейное ОДУ 1-го порядка является ОДУ с разделяющимися переменными:
+	\begin{equation}
+		y' = -a(x)y
+	\end{equation}
+
+	Для решения линейных ОДУ 1-го порядка применяют метод Лагранжа вариации произвольных постоянных. Сначала находят общее решение однородного уравнения:
+	\begin{equation}
+		y = y(x)+C
+	\end{equation}
+
+	Затем произвольную постоянную обозначают как $C(x)$ и подставляют $y$ и $y'$ в исходное уравнение, находя $C(x)$. Затем ответ записывают в виде:
+	\begin{equation}
+		y(x) + C(x)
+	\end{equation}
+\end{document}

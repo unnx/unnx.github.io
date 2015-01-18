@@ -103,3 +103,29 @@ img.img:active {
 span.light {
 	color: #ccc;
 }
+
+#herald {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 90%;
+	border-style: none;
+	background-color: transparent;
+	outline: none;
+	background-image: url('/me.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+#update {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 7%;
+	height: 5%;
+	font-size: 1em;
+	text-align: center;
+	color: #aaa;
+}

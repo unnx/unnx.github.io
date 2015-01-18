@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Теорема об общем решении однородного линейного ОДУ с постоянными коэффициентами в случае кратных корней характеристического уравнения}\\
+
+	Имеем ОДУ:
+	\begin{equation}
+		l(D)y = 0
+	\end{equation}
+
+	И характеристическое уравнение:
+	\begin{equation}
+		l(\lambda) = 0
+	\end{equation}
+
+	Пусть $\lambda_1,\lambda_2,...\lambda_s$ -- все различные корни характеристического уравнения кратностей $k_1,k_2,...k_s$ соответственно. Тогда общее решение ОДУ задается формулой $(*)$:
+	\begin{equation}
+		y = \sum_{j=1}^s P_j(x) e^{\lambda_j x}
+	\end{equation}
+
+	Здесь $P_j(x)$ -- многочлен степени $k_j - 1$, коэффициенты которого есть произвольные постоянные, $j = 1, s$.\\
+
+	Доказательство.\\
+
+	1)\\
+
+	Покажем, что всякий квазиполином $(*)$ -- решение ОДУ. Покажем вначале, что $e^{\lambda_jx}$ есть решение ОДУ.
+	\begin{equation}
+		l(D)e^{\lambda_jx}=...=e^{\lambda_jx}l(\lambda_j)=0
+	\end{equation}
+
+	Это следует из аналогичной теоремы для случая простых корней.\\
+
+	При $k_j\geq 2$ надо далее проверять, что $xe^{\lambda}_j x$ -- решение ОДУ, т.е. $l(D)(xe^{\lambda_jx})=0$. $l(D)$ -- линейный дифференциальный оператор:
+	\begin{equation}
+		l(D)=\sum_{k=0}^n a_{n-k} D^k = a_nD^0 + a_{n-1}D + ... + a_0D^n
+	\end{equation}
+
+	Используя формулу Лейбница, получаем:
+	\begin{equation}
+		D^k(xe^{\lambda_jx}) = \sum_{m=0}^k C_k^m x^{(m)}(e^{\lambda_j x})^{(k-m)} = 
+	\end{equation}
+	\begin{equation}
+		= \sum_{m=0}^{k} C_k^mx^{(k-m)}(e^{\lambda_jx})^{(m)}=(e^{\lambda_jx})^{(k)}+C_k^{k-1}(e^{\lambda_jx})^{(k-1)} = 
+	\end{equation}
+	\begin{equation}
+		= \lambda_j^ke^{\lambda_jx}x+k\lambda_j^{k-1}e^{\lambda_jx}=\lambda_j^{k-1}e^{\lambda_jx}(\lambda_jx+k),\;\;k=1..n
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		l(D)(xe^{\lambda_j x}) = a_n x e^{\lambda_j x} + a_{n-1}e^{\lambda_j x}(\lambda_j x + 1)+...+a_0\lambda_j^{n-1}e^{\lambda_j x}(\lambda_j x + n) = xe^{\lambda_j x}(a_n + a_{n-1}\lambda_j + ... + a_0\lambda_j) + e^{\lambda_jx}(a_{n-1}+...+a_0n\lambda_j^{n-1}) = 0
+	\end{equation}
+	\begin{equation}
+		l(\lambda_j) = l'(\lambda_j) = ... = l^{(k_j-1)}(\lambda_j)=0.\;\;l^{(k_j)}\neq 0
+	\end{equation}
+
+	Продолжая процесс, получим, что
+	\begin{equation}
+		l(D)(x^pe^{\lambda_jx})=0,\;\;\forall p=0, k_j-1,\;\forall j=1..s
+	\end{equation}
+
+	Из линейности $l(D)$ следует:
+	\begin{equation}
+		l(D)(\sum_{j=1}^s P_j(x)e^{\lambda_jx})=0
+	\end{equation}
+
+	Доказано, что $\forall$ функция вида $(*)$ -- решение ОДУ.\\
+
+	2)\\
+
+	Докажем, что всякое решение ОДУ представлено в виде $(*)$.
+	\begin{equation}
+		l(\lambda) = (\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}...(\lambda-\lambda_{s-1})^{k_{s-1}}(\lambda-\lambda_s)^{k_s}
+	\end{equation}
+
+	$\lambda_j$ различны, $k_j$ -- их кратность.\\
+
+	\begin{equation}
+		l(D) = (D-\lambda_1)^{k_1}(D-\lambda_2)^{k_2}...(D-\lambda_{s-1})^{k_{s-1}}(D-\lambda_s)^{k_s}
+	\end{equation}
+
+	Обозначим $(D-\lambda_1)^{k_1}(D-\lambda_2)^{k_2}...(D-\lambda_{s-1})^{k_{s-1}}$ через $l_1(D)$. Доказательство проведем по индукции.\\
+
+	Для $n=1$ доказано, т.к. это случай простых корней (см. соотв. теорему).\\
+
+	Предположим, что утверждение справедливо для дифференциальных уравнений порядка $(n-1)$:
+	\begin{equation}
+		l(D)y = 0
+	\end{equation}
+	\begin{equation}
+		l(D)(D-\lambda_s)y = 0
+	\end{equation}
+
+	Обозначим $z=(D-\lambda_s)y$:
+	\begin{equation}
+		l_1(D)z = 0
+	\end{equation}
+	\begin{equation}
+		z = y'-\lambda_sy
+	\end{equation}
+
+	Применим предположение индукции:
+	\begin{equation}
+		y = Q_1(x)e^{\lambda_1x} + Q_2(x)e^{\lambda_2x}+...+Q_{s-1}(x)e^{\lambda_{s-1}}x
+	\end{equation}
+	\begin{equation}
+		y = P_1(x)e^{\lambda_1x}+P_2(x)e^{\lambda_2x}+...+P_s(x)e^{\lambda_s x}
+	\end{equation}
+
+	$P_j(x)$ -- многочлен степени $k_j-1$ с произвольными постоянными, $j=1..s$. $Q_j(x)$ -- многочлен степени $k_j-1$, $j=1..s-1$.\\
+
+	Введем $\overline Q_s(x)e^{\lambda_sx}$, где $Q_s(x)=0$ при $k_s=1$ и $Q_s(x)$ -- многочлен степени $k_s-\lambda$ при $k\geq$ 2.
+	\begin{equation}
+		y'-\lambda_sy = \sum_{j=1}^{s-1}Q_j(x)e^{\lambda_j x}+\overline Q_s(x)e^{\lambda_s x}
+	\end{equation}
+
+	-- Линейное ОДУ 1 порядка с правой частью в виде квазиполинома.
+	\begin{equation}
+		y = C_se^{\lambda_jx} + \sum_{j=1}^{s-1} P_j(x)e^{\lambda_jx} + x\overline P_s(x)e^{\lambda_sx}
+	\end{equation}
+
+	Первое слагаемое -- общее решение однородного уравнения, второе -- частное решение неоднородного.\\
+
+	$P_j(x)$ -- многочлен степени $k_{j-1}$, $j=1..s-1$. $\overline P_s(x)$ -- $0$ при $k_s=1$ и многочлен степени $k_s-2$ при $k_s\geq 2$. 
+	\begin{equation}
+		y = \sum_j=1^{s-1}P_j(x)e^{\lambda_j x}+(C_s+x\overline P_s(x))e^{\lambda_s x}
+	\end{equation}
+
+	Т.е. утверждение справедливо и для ОДУ порядка $n$. По математической индукции доказано.\\
+
+	Доказано.
+
+
+
+
+\end{document}

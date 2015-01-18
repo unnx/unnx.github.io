@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	\textbf{Лемма о частном решении ОДУ 1-го порядка со специальной правой частью}\\
+
+	Пусть дано уравнение:
+	\begin{equation}
+		y' - \lambda y = P_m(x)e^{\mu x}
+	\end{equation}
+
+	Тогда по лемме:\\
+
+	При $\lambda\neq\mu$ (нерезонансный случай) ОДУ всегда имеет частное решение вида:
+	\begin{equation}
+		y_\text{ч.н.} = Q_m(x)e^{\mu x}
+	\end{equation}
+
+	При $\lambda = \mu$ (резонансный случай):
+	\begin{equation}
+		y_\text{ч.н.} = xQ_m(x)e^{\mu x}
+	\end{equation}
+
+	Доказательство:\\
+
+	Ищем частное решение в виде:
+	\begin{equation}
+		y=ze^{\mu x},\;\;z - ?
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		y'=z'e^{\mu x} + z\mu e^{\mu x}
+	\end{equation}
+
+	Подставляем в $(1)$:
+	\begin{equation}
+		z'e^{\mu x} + z\mu e^{\mu x} - \lambda ze^{\mu x} = P_m(x)e^{\mu x}
+	\end{equation}
+
+	Делим на $e^{\mu x}$:
+	\begin{equation}
+		z' + z(\mu - \lambda) = P_m(x)
+	\end{equation}
+
+	1) Пусть $\lambda\neq\mu$. Будем искать частное решение уравнения $(7)$ в виде многочлена:
+	\begin{equation}
+		z=Q_m(x)=b_0x^m+b_1x^{m-1}+...+b_m
+	\end{equation}
+
+	Полагаем:
+	\begin{equation}
+		P_m(x)=a_0x^m+a_1x^{m-1}+...+a_m
+	\end{equation}
+
+	Подставляем все в $(1)$:
+	\begin{equation}
+		mb_0x^{m-1}+(m-1)b_1x^{m-2}+...+b_{m-1}+(\mu-\lambda)(b_0x^m+b_1x^{m-1}+...+b_m)=a_0x^m+a_1x^{m-1}+...+a_m
+	\end{equation}
+
+	Методом неопределенных коэффициентов находим $b_0..b_m$:
+	\begin{equation}
+		x^m: (m-\lambda)b_0 = a_0 \Rightarrow b_0=\frac{a_0}{m-\lambda}\neq 0
+	\end{equation}
+	\begin{equation}
+		x^{m-1}: mb_0 = a_1 \Rightarrow b_1=\frac{a_1-mb_0}{m-\lambda}
+	\end{equation}
+
+	и т.д.\\
+
+	Записываем частное решение:
+	\begin{equation}
+		z_\text{ч.н.}=Q_m(x)\Rightarrow y_\text{ч.н.} = Q_m(x)e^{\mu x}
+	\end{equation}
+
+	2) Пусть $\lambda=\mu$. Тогда уравнение принимает вид:
+	\begin{equation}
+		z'=P_m(x)
+	\end{equation}
+
+	Частное решение:
+	\begin{equation}
+		z_\text{ч.н.} = \frac{a_0}{m+1}x^{m+1}+\frac{a_1}{m}x^m+...+a_mx=x(\frac{a_0}{m+1}x^m+\frac{a_1}{m}x^{m-1}+...+a_m)=xQ_m(x)
+	\end{equation}
+
+	Доказано.\\
+
+	Принцип суперпозиции:\\
+
+	Если уравнение представлено в виде:
+	\begin{equation}
+		l(D)[y] = \sum_{j=1}^N f_j(x)
+	\end{equation}
+
+	И $y_{\text{ч.н.}_j}$ -- частное решение уравнения вида $l(D)[y] = f_j(x)$, то частное решение исходного уравнения -- есть сумма соответсвующих частных решений $y_{\text{ч.н.}_j}$:
+	\begin{equation}
+		y_{\text{ч.н.}} = \sum_{j=1}^N y_{\text{ч.н.}_j}
+	\end{equation}
+
+\end{document}

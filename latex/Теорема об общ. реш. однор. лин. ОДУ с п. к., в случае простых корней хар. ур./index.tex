@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	\textbf{Теорема об общем решении однородного линейного ОДУ с постоянными коэффициентами в случае простых корней характеристического уравнения}\\
+
+	Пусть характеристическое уравнение имеет простые корни $\lambda_1...\lambda_n$, $\lambda\in\mathbb{C}$. Тогда:\\
+
+	1) $\forall$ функция вида $(*)$: $y=\sum_{j=1}^n C_j e^{\lambda_j x}$ ($C_j$ -- постоянная) является решением ОДУ.\\
+
+	2) Всякое решение ОДУ можно записать в виде $(*)$.\\
+
+	Доказательство\\
+
+	1)\\
+
+	Пусть $C$ -- постоянная, $y=\sum_{j=1}^{n} C_je^{\lambda_jx}$. Проверим, что $y$ является решением ОДУ. Проверим вначале, что $\forall j = 1..n$ $e^{\lambda_ix}$ есть решение.\\
+
+	Имеем:
+	\begin{equation}
+		l(D)e^{\lambda_j x} = \sum_{k=0}^n a_{n-k} D^k(e^{\lambda_jx})=\sum_{k=0}^n a_{n-k}(e^{\lambda_jx})^{(k)} = \sum_{k=0}^n a_{n-k}\lambda_j^ke^{\lambda_jx}=e^{\lambda_jx}\sum_{k=0}^n a_{n-k}\lambda_j^k = e^{\lambda_jx}(a_0\lambda_j^n+a_1\lambda_j^{n-1}+...+a_n)=e^{\lambda_jx}l(\lambda_j)=0
+	\end{equation}
+
+	$\forall j=1..n$ $l(D)e^{\lambda j x}=0$, т.е. $e^{\lambda_j x}$ -- решение ОДУ.\\
+
+	По утверждению о линейности множества решений ОДУ получаем, что всякая функция вида $(*)$ является решением ОДУ.\\
+
+	2)\\
+
+	Разложим характеристическое уравнение на множители:
+	\begin{equation}
+		l(\lambda) = (\lambda - \lambda_1)(\lambda - \lambda_2)...(\lambda - \lambda_n)
+	\end{equation}
+
+	Все $\lambda_j$ различные, поэтому для линейного дифференциального оператора $l(D)$ можно написать:
+	\begin{equation}
+		l(D) = (D - \lambda_1)(D - \lambda_2)...(D-\lambda_{n-1})(D-\lambda_n)
+	\end{equation}
+
+	Обозначим за $l_1(D)$ выражение $(D - \lambda_1)(D - \lambda_2)...(D-\lambda_{n-1})$. Исходное уравнение можно представить так:
+	\begin{equation}
+		l_1(D)(D-\lambda_n)y=0
+	\end{equation}
+
+	Обозначим: $z=(D-\lambda_n)$, т.е. $z=y'-\lambda_n y$. Далее рассматриваем уравнение $(**)$: $l_1(D)z=0$\\
+
+	Доказываем по индукции.\\
+
+	При $n=1$:
+	\begin{equation}
+		y'-\lambda_1y=0
+	\end{equation}
+	\begin{equation}
+		y = C_1e^{\lambda_1 x}
+	\end{equation}
+
+	Утверждение верно. Теперь предположим, что оно верно для $n-1$, $n\geq 2$. Это, в частности, означает, что решение $z$ уравнения $(**)$ записывается в виде:
+	\begin{equation}
+		z = \sum_{j=1}^{n-1} A_j e^{\lambda_j x}
+	\end{equation}
+	\begin{equation}
+		y' - \lambda_n y = \sum_{j=1}^{n-1} A_j e^{\lambda_j x} \Rightarrow y = C_n e^{\lambda_n x} + \sum_{j=1}^{n-1}C_j e^{\lambda_i x} 
+	\end{equation}
+
+	(т.к. $\lambda_n\neq \lambda_j$, $j=1..n-1$, нет резонанса)\\
+
+	$y=\sum_{j=1}^n C_j e^{\lambda_jx}$ -- это вид $(*)$.\\
+
+	Доказано.
+\end{document}

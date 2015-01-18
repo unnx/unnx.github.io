@@ -2,6 +2,7 @@ var answer;
 var hint;
 var points = 0;
 var score = "0";
+var game = false;
 
 function $(o) {
 	return document.getElementById(o);
@@ -31,6 +32,13 @@ var timer = {
 		if(timer.time==0) {
 			$("timeleft").innerHTML = "↻"
 		}
+		if(timer.time>60) {
+			$("grammar").style.opacity = "0";
+			$("grammar").style.visibility = "hidden";
+		} else {
+			$("grammar").style.opacity = "1";
+			$("grammar").style.visibility = "visible";
+		}
 	},
 	check: function() {
 		if(timer.time==0) {
@@ -57,7 +65,7 @@ function incPoints(s){
 		points=999;
 		gameOver();
 	}
-	$("mypoints").innerHTML = points + " б";
+	$("mypoints").innerHTML = points;
 }
 
 function decPoints(s){
@@ -65,30 +73,42 @@ function decPoints(s){
 	if(points<0){
 		points=0;
 	}
-	$("mypoints").innerHTML = points.toString() + " б";
+	$("mypoints").innerHTML = points.toString();
 }
 
 function gameOver() {
-	timer.stop();
-	timer.set(0);
-	if(points>parseInt(score)) {
-		score = points.toString();
-		localStorage.setItem("score",score);
-		msg("Игра окончена, новый рекорд!","#0aa",5000);
-	} else {
-		msg("Игра окончена, рекорд не побит","#f00",5000);
+	if(game==true) {
+		clearTimeout(hint);
+		timer.stop();
+		timer.set(0);
+		if(points>parseInt(score)) {
+			score = points.toString();
+			localStorage.setItem("score",score);
+			msg("Игра окончена, новый рекорд!","#0aa",5000);
+		} else {
+			msg("Игра окончена, рекорд не побит","#f00",5000);
+		}
+		points = 0;
+		$("stop").style.right = "-3em";
+		$("taskwall").style.bottom = "0";
+		$("tasktext").innerHTML = "Здесь появляется задание";
+		$("taskans").placeholder = "сюда писать ответ";
+		game = false;
 	}
-	points = 0;
 }
 
 function newGame() {
-	timer.set(70+parseInt(score));
+	game = true;
+	timer.set(60+parseInt(score));
 	timer.start();
 	nextTask();
 	points = 0;
-	$("mypoints").innerHTML = points + " б";
+	$("mypoints").innerHTML = points;
 	msg("Удачи!","#0a0",300);
+	$("stop").style.right = "0";
+	$("taskwall").style.bottom = "-15em";
 }
+
 
 function R(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -115,10 +135,14 @@ function msg(text,color,wait) {
 	$("msg").style.color = color;
 	if(wait!==undefined) {
 		setTimeout(function(){
-			$("msg").style.visibility = "hidden";
-			$("msg").style.opacity = "0";
+			hideMsg();
 		},wait);
 	}
+}
+
+function hideMsg() {
+	$("msg").style.visibility = "hidden";
+	$("msg").style.opacity = "0";
 }
 
 // Личные местоимения

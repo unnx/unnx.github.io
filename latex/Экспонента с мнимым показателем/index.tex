@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Экспонента с мнимым показателем}\\
+
+	Определение:
+	\begin{equation}
+		\lambda = \alpha + \beta i \in \mathbb{C},\;\;\alpha,\beta\in\mathbb{R}
+	\end{equation}
+	\begin{equation}
+		e^\lambda = e^\lambda(\cos\beta + i\sin\beta)
+	\end{equation}
+	\begin{equation}
+		e^{\lambda x}: \mathbb{R}\rightarrow\mathbb{C},\forall x\in\mathbb{R}\rightarrow e^{\lambda x} = e^{\alpha x}(\cos\beta x + i\sin\beta x)
+	\end{equation}
+
+	-- Комплекснозначная функция вещественного аргумента.
+	\begin{equation}
+		f(x): \mathbb{R}\rightarrow\mathbb{C} = U(x)+iV(x)
+	\end{equation}
+
+	$U(x), V(x)$ -- вещественная и мнимая компоненты $f(x)$. $f(x)$ считается дифференцируемой/интегрируемой, если $U$ и $V$ дифференцируемы/интегрируемы.\\
+
+	Свойства:\\
+
+	1) $e^{\lambda_1}e^{\lambda_2}=e^{\lambda_1+\lambda_2}$, $\forall\lambda_1,\lambda_2\in\mathbb{C}$\\
+
+	2) $\frac{d}{dx}(e^{\lambda x}) = \lambda e^{\lambda x}$, $\forall \lambda\in\mathbb{C},\;\forall x\in\mathbb{R}$\\
+
+	3) $\int_0^{x_0}e^{\lambda x}dx = \frac{e^{\lambda x_0}-1}{\lambda},\;\forall\lambda\in\mathbb{C}\setminus 0,\;\forall x_0\in\mathbb{R}$
+
+	Доказательство второго свойства:
+	\begin{equation}
+		\lambda = \alpha + \beta i,\;\;x\in\mathbb{R}
+	\end{equation}
+	\begin{equation}
+		e^{\lambda x} = e^{\alpha x}(\cos\beta x + i\sin\beta x) = e^{\alpha x}\cos\beta x + ie^{\alpha x}\sin\beta x
+	\end{equation}
+	\begin{equation}
+		\frac{d}{dx}(e^{\alpha x}) = (e^{\alpha x}\cos\beta x)' + i(e^{\alpha x}\sin\beta x)' = (\alpha e^{\alpha x}\cos\beta x - \beta e^{\alpha x}\sin\beta x) + i(\alpha e^{\alpha x}\sin\beta x + \beta e^{\alpha x}\cos\beta x) = 
+	\end{equation}
+	\begin{equation}
+		=e^{\alpha x}\cos\beta x(\alpha + \beta i) + i(e^{\alpha x}\sin\beta x(\alpha + \beta i)) = \lambda e^{\alpha x}(\cos\beta x + i\sin\beta x) = \lambda e^{\lambda x}
+	\end{equation}
+\end{document}

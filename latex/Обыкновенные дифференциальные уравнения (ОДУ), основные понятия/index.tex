@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Обыкновенные дифференциальные уравнения (ОДУ), основные понятия}\\
+
+	ОДУ $n$-ного порядка, где $n\in\mathbb{N}$ -- это уравнение вида:
+	\begin{equation}
+		F(x,y,y',...y^{(n)}) = 0
+	\end{equation}
+
+	Здесь $x$ -- независимая переменная, $y=y(x)$ -- неизвестная функция, $F(p_1,p_2,...p_{n+2})$ -- заданная функция $(n+2)$-х переменных, определенная в некоторой области $D\in R^{n+2}$, причем $\frac{\partial F}{\partial p_n}\neq 0$.\\
+
+	$n$ -- порядок ОДУ, т.е. порядок наивысшей производной $y$, входящей в $F$.\\
+
+	Если неизвестная функция имеет вид
+	\begin{equation}
+		y=y(x_1,x_2,...x_m),
+	\end{equation}
+
+	То соответствующее уравнение называется дифференциальным уравнением в частных производных.\\
+
+	Частное решение ОДУ $(1)$ -- это функция:
+	\begin{equation}
+		y(x) \in C^n(I),
+	\end{equation}
+
+	Где $I$ -- промежуток вида $(a,b), [a,b], [a,b), (a,b]$ ($a$ и $b$ конечные), $a<b$, $[a,+\infty]$ и т.д., такая, что при подстановке ее в $(1)$ получаем верное равенство $\forall x\in I$, т.е. выполняются два условия:
+	\begin{equation}
+		(x,y(x),y'(x),...y^{(n)}(x)) \in D,\;\forall x\in I
+	\end{equation}
+	\begin{equation}
+		F(x,y(x),y'(x),...y^{(n)}(x)) = 0,\;\forall x\in I
+	\end{equation}
+
+	Общим решением ОДУ $(1)$ называется совокупность всех его частных решений.\\
+
+	ОДУ называется разрешенным в квадратурах, если процесс его решения сводится к взятию конечного числа интегралов от известных функций.\\
+\end{document}

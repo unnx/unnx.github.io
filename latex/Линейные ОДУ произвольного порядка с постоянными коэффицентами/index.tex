@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Линейные ОДУ произвольного порядка с постоянными коэффициентами}\\
+
+	Однородные линейные ОДУ имеют вид:
+	\begin{equation}
+		a_0y^{n}+a_1y^{n-1}+...+a_{n-1}y'+a_ny=0
+	\end{equation}
+
+	Метод решения: составить характеристическое уравнение:
+	\begin{equation}
+		a_0\lambda^n+a_1\lambda^{n-1}+...+a_{n-1}\lambda+a_n = 0
+	\end{equation}
+
+	Найти все его корни.\\
+
+	Каждый корень характеристического уравнения добавляет в общее решение уравнения $(1)$ одно слагаемое.\\
+
+	В случае простого вещественного корня:
+	\begin{equation}
+		C_ie^\lambda_i x
+	\end{equation}
+
+	В случае вещественного корня кратности $k$:
+	\begin{equation}
+		(C_{m+1}+C_{m+2}x+C_{m+3}x^2+...+C_{m+k}x^{k-1})e^{\lambda x}
+	\end{equation}
+
+	Для каждой пары комплексных простых корней $\lambda = \alpha\pm\beta i$:
+	\begin{equation}
+		C_{m+1}e^{\alpha x}\cos\beta x + C_{m+2}e^{\alpha x}\sin\beta x
+	\end{equation}
+
+	Для каждой пары комплексных корней кратности $k$:
+	\begin{equation}
+		P_{k-1}e^{\alpha x}\cos\beta x + Q_{k-1}e^{\alpha x}\sin\beta x		
+	\end{equation}
+
+	(Многочлены $P$ и $Q$ имеют вид многочлена в скобках $(4)$)
+
+
+
+	
+\end{document}

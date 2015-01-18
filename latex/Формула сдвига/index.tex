@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Формула сдвига}\\
+
+	\begin{equation}
+		l(D)(ye^{\mu x}) = e^{\mu x} l(D+\mu)y
+	\end{equation}
+
+	При этом:
+	\begin{equation}
+		l(D) = D^n + a_1D^{n-1} + ... + a_{n-1}D + a_n
+	\end{equation}
+	\begin{equation}
+		l(D+\mu) = (D+\mu)^n + a_1 (D+\mu)^{n-1} + ... + a_{n-1}(D+\mu)+a_n
+	\end{equation}
+
+	Доказательство:\\
+
+	Фиксируем $k = 0..n$ и докажем, что $D^k(ye^{\mu x})=e^{\mu x}(D+\mu)^k y$. По формуле Лейбница:
+	\begin{equation}
+		D^k(ye^{\mu x}) = (ye^{\mu x})^{(k)} = \sum_{j=0}^k C_k^j(e^{\mu x})^{(j)}y^{(k-j)} = e^{\mu x}\sum_{j=0}^k C_k^j\mu^j y^{(k-j)} = e^{\mu x}(D+\mu)^k y
+	\end{equation}
+
+	Распишем линейную комбинацию:
+	\begin{equation}
+		\sum_{k=0}^n a_{n-k} D^k(ye^{\mu x}) = e^{\mu x}\sum_{k=0}^n a_{n-k} (D+\mu)^k y
+	\end{equation}
+
+	Получили формулу сдвига:
+	\begin{equation}
+		l(D)(ye^{\mu x}) = e^{\mu x}l(D+\mu)y
+	\end{equation}
+\end{document}

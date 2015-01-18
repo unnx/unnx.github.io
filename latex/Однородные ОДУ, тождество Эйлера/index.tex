@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Однородные ОДУ, тождество Эйлера}\\
+
+	Однородные ОДУ имеют вид:
+	\begin{equation}
+		y' = f(\frac{y}{x})
+	\end{equation}
+
+	Метод решения: замена $\frac{y}{x}=z$. $z=z(x)$ -- новая функция. Затем сведение к ОДУ с разделяющимися переменными:
+	\begin{equation}
+		\frac{y}{x}=z \Rightarrow y = zx \Rightarrow y' = z'x + z
+	\end{equation}
+	\begin{equation}
+		z'x = f(z) - z
+	\end{equation}
+
+	Разделение переменных, решение и обратная подстановка. Интегральные кривые образуют множество подобных кривых, проходящих через точку $(0,0)$.\\
+
+	Функция $f(x,y)$ называется однородной степени $m$, если для нее выполняется:
+	\begin{equation}
+		f(tx,ty) = t^mf(x,y)
+	\end{equation}
+
+	Здесь $m\in\mathbb{Z}$, либо $m=\frac{p}{2q+1}$, где $p, q \in\mathbb{Z}$. Однородные функции удовлетворяют тождеству Эйлера:
+	\begin{equation}
+		x\frac{\partial f}{\partial x} + y\frac{\partial f}{\partial y} = mf
+	\end{equation}
+
+	Для доказательства -- продифференцировать $(4)$ и положить $t=1$.\\
+
+
+	Если $f(x,y)$ однородна при $t>0$, то она называется положительно однородной.
+
+	Рассмотрим уравнение:
+	\begin{equation}
+		P(x,y)dx + Q(x,y)dy = 0
+	\end{equation}
+
+	Если $P$ и $Q$ -- однородные функции одной степени, то $(6)$ является однородным ОДУ.
+\end{document}

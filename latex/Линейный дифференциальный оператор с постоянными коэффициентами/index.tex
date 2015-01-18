@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Линейный дифференциальный оператор с постоянными коэффициентами}\\
+
+	Имеет вид:
+	\begin{equation}
+		l(D) = \sum_{k=0}^n a_{n-k}D^k,
+	\end{equation}
+
+	Где $D$ -- оператор дифференцирования $\frac{d}{dx}$, а $a_{n-k}..a_0$ -- постоянные коэффициенты, вещественные или комплексные.\\
+
+	Линейный дифференциальный оператор $D$ имеет два свойства:\\
+
+	1) Умножение на действительную постоянную $c\in\mathbb{R}$:
+	\begin{equation}
+		cl(D)[y] = l(D)[cy]
+	\end{equation}
+	\begin{equation}
+		cl(D)[y] = \sum_{k=0}^n ca_{n-k}D^k[y] = \sum_{k=0}^n a_{n-k}D^k[cy] 
+	\end{equation}
+
+	2) Сложение двух операторов:
+	\begin{equation}
+		l(D)[y_1+y_2] = l(D)[y_1] + l(D)[y_2]
+	\end{equation}
+	\begin{equation}
+		l(D)[y_1+y_2] = \sum_{k=0}^n ca_{n-k}D^k[y_1 + y_2] = \sum_{k=0}^n ca_{n-k}D^k[y_1] + \sum_{k=0}^n ca_{n-k}D^k[y_2]
+	\end{equation}
+
+\end{document}

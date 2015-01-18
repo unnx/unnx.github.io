@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{ОДУ с разделяющимися переменными и сводящиеся к ним}\\
+
+	ОДУ с разделяющимися переменными имеют вид:
+	\begin{equation}
+		y' = f(x)g(y),\;f(x)\in C(I),\;g(x)\in C(J)
+	\end{equation}
+
+	Метод решения -- разделение переменных и интегрирование:
+	\begin{equation}
+		\frac{dy}{dx} = f(x)g(y)
+	\end{equation}
+	\begin{equation}
+		\frac{dy}{g(y)} = f(x)dx
+	\end{equation}
+	\begin{equation}
+		\int_{y_0}^y \frac{dy}{g(y)} = \int_{x_0}^x f(x)dx + C
+	\end{equation}
+
+	Здесь $x_0\in I,\;y_0\in J$ -- фиксированные.\\
+
+	Конечное уравнение:
+	\begin{equation}
+		G(y) = F(x) + C
+	\end{equation}
+
+	Формула $(5)$ может не содержать всех решений ОДУ $(1)$: если уравнение $g(y)=0$ имеет корень $y=y^*$, то $y=y^*$ -- решение ОДУ $(1)$.\\
+
+	Задача Коши состоит в отыскании решения ОДУ $(1)$, удовлетворяющего условиям:
+	\begin{equation}
+		y' = f(x)g(y)
+	\end{equation}
+	\begin{equation}
+		y(x_0) = y_0
+	\end{equation}
+
+	Если $g(y_0)\neq 0$, то задача Коши имеет единственное решение:
+	\begin{equation}
+		\int_{y_0}^y \frac{dy}{g(y)} = \int_{x_0}^x f(x)dx
+	\end{equation}
+
+	Если $g(y_0)=0$, то $y = y_0$ -- решение задачи Коши, но у этой задачи Коши могут быть и другие решения, если несобственный интеграл $\int_{y_0}^y$ сходится.\\
+
+	К ОДУ с разделяющимися переменными, например, сводятся:\\
+
+	Однородные ОДУ:
+	\begin{equation}
+		y' = f(\frac{y}{x})
+	\end{equation}
+
+	Линейные ОДУ первого порядка:
+	\begin{equation}
+		y' + a(x)y = b(x)
+	\end{equation}
+\end{document}

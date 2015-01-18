@@ -3,6 +3,15 @@ body {
 	font-family: 'PT Serif';
 }
 
+summary {
+	cursor: pointer;
+	outline: none;
+}
+
+summary:hover {
+	text-decoration: underline;
+}
+
 table {
 	border-style: solid;
 }
@@ -22,6 +31,20 @@ td {
 	height: 10em;
 	background-color: rgba(255,255,255,0.5);
 	padding: 1em;
+}
+
+#taskwall {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 10em;
+	background-color: rgba(255,200,200,0.5);
+	padding: 1em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 #tasktext {
@@ -52,18 +75,27 @@ td {
 }
 
 #time:hover {
-	background-color: rgba(200,200,200,0.5);	
+	background-color: rgba(200,255,200,0.5);	
+}
+
+#points:hover {
+	background-color: rgba(200,200,255,0.5);	
+}
+
+#stop:hover {
+	background-color: rgba(255,200,200,0.5);	
 }
 
 #msg {
 	position: fixed;
-	left: 0;
+	left: 25%;
 	top: 4em;
 	height: 4em;
 	font-size: 3em;
-	width: 100%;
+	width: 50%;
+	min-width: 10em;
 	font-family: 'PT Serif';
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.8);
 	border-style: none;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -71,6 +103,8 @@ td {
 	transition: all 0.3s;
 	visibility: hidden;
 	opacity: 0;
+	border-radius: 1em;
+	outline: none;
 }
 
 #points {
@@ -83,4 +117,35 @@ td {
 	background-color: rgba(255,255,255,0.5);
 	border-style: none;
 	font-family: 'PT Serif';
+	z-index: 10;
+}
+
+#stop {
+	position: fixed;
+	right: -3em;
+	top: 6em;
+	width: 3em;
+	height: 3em;
+	font-size: 3em;
+	background-color: rgba(255,255,255,0.5);
+	border-style: none;
+	font-family: 'PT Serif';
+	z-index: 10;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#nop {
+	position: absolute;
+	width: 100%;
+	height: 15em;
+}
+
+#grammar {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }

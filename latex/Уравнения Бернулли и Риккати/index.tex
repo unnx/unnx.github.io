@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Уравнения Бернулли и Риккати}\\
+
+	Уравнением Бернулли называется уравнение
+	\begin{equation}
+		y' + a(x)y = b(x)y^\alpha
+	\end{equation}
+
+	При $\alpha\neq 0$ и $\alpha\neq 1$ (легко видеть, что в противном случае получаются линейные ОДУ 1-го порядка, неоднородное и однородное соответственно).\\
+
+	Метод решения: разделить на $y^\alpha$:
+	\begin{equation}
+		\frac{y'}{y^\alpha} + a(x)y^{1-\alpha} = b(x)
+	\end{equation}
+
+	Сделать замену $z = y^{1-\alpha}$ (тогда $z'=(1-\alpha)y^{-\alpha}y'$, т.е. $\frac{y'}{y^\alpha}=\frac{z'}{1-\alpha}$):
+	\begin{equation}
+		\frac{1}{1-\alpha}z' + a(x)z = b(x)
+	\end{equation}
+
+	Решить полученное уравнение и в общем решении сделать обратную подстановку.\\
+
+	Уравнение Риккати:
+	\begin{equation}
+		y' + a(x)y + b(x)y^2 = c(x)
+	\end{equation}
+
+	В общем случае не решается в квадратурах. Если известно одно частное решение $y_1(x)$, то заменой $y = y_1(x)+z$ уравнение Риккати сводится к уравнению Бернулли.\\
+
+	Свойства.\\
+
+	1) В уравнении Риккати можно провести замену:
+	\begin{equation}
+		x = \varphi(\widetilde x)
+	\end{equation}
+
+	Где $\widetilde x$ -- гладкая функция, либо дробно-линейную замену:
+	\begin{equation}
+		y = \frac{\alpha(x)\widetilde y + \beta x}{\gamma(x)\widetilde y + \delta x},\;\; \begin{vmatrix} \alpha & \beta \\ \gamma & \delta \end{vmatrix}\neq 0
+	\end{equation}
+
+	2) Заменой $y = z\varphi(x)$, $z = w + \psi(x)$ уравнение Риккати можно привести к виду:
+	\begin{equation}
+		w' = w + f(x)
+	\end{equation}
+
+	3) Уравнение Риккати можно привести к линейному однородному ОДУ 2-го порядка (с переменными коэффициентами):
+	\begin{equation}
+		y = a(x)z,\;\;z = -\frac{u'}{u}
+	\end{equation}
+
+	Частный случай уравнения Риккати:
+	\begin{equation}
+		y' + y^2 = \frac{a}{x^2}
+	\end{equation}
+
+	Лиувилль доказал, что это уравнение решается только при $\alpha=2$ и $\alpha = \frac{4k}{2k-1},\;k\in\mathbb{Z}$.
+
+\end{document}
