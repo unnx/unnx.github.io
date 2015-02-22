@@ -30,7 +30,7 @@ var timer = {
 	updateView: function() {
 		$("timeleft").innerHTML = ":" + timer.time;
 		if(timer.time==0) {
-			$("timeleft").innerHTML = "↻"
+			$("timeleft").innerHTML = "▶"
 		}
 		if(timer.time>60) {
 			$("grammar").style.opacity = "0";
@@ -115,7 +115,7 @@ function R(min, max) {
 }
 
 function nextTask() {
-	switch(R(0,2)) {
+	switch(R(0,3)) {
 		case 0:
 			task1();
 			break;
@@ -124,7 +124,28 @@ function nextTask() {
 			break;
 		case 2:
 			task3();
-			break;			
+			break;		
+		case 3:
+			task4();
+			break;	
+		case 4:
+			task5();
+			break;
+		case 5:
+			task6();
+			break;
+		case 6:
+			task7();
+			break;		
+		case 7:
+			task8();
+			break;	
+		case 8:
+			task9();
+			break;		
+		case 9:
+			task10();
+			break;
 	}
 }
 
@@ -543,6 +564,355 @@ function task3() {
 			break;
 	}
 }
+
+// Указательные местоимения
+
+function task4() {
+	switch(R(1,5)) { 
+		case 1:
+			var a = [
+				["<b>Este</b>","Этот"],
+				["<b>Esta</b>","Эта"],
+				["<b>Estos</b>","Эти"],
+				["<b>Estas</b>","Эти"],
+				["<b>Ese</b>","Этот"],
+				["<b>Esa</b>","Эта"],
+				["<b>Esos</b>","Эти"],
+				["<b>Esas</b>","Эти"],
+				["<b>Aquel</b>","Тот"],
+				["<b>Aquella</b>","Та"],
+				["<b>Aquellos</b>","Те"],
+				["<b>Aquellas</b>","Те"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Переведи на русский",a[r][1],"см. местоимения");
+			break;
+		case 2:
+			var a = [
+				["<b>Этот</b> <em>(ближе к говорящему)</em>","Este"],
+				["<b>Эта</b> <em>(ближе к говорящему)</em>","Esta"],
+				["<b>Эти</b> <em>(м.р., ближе к говорящему)</em>","Estos"],
+				["<b>Эти</b> <em>(ж.р., ближе к говорящему)</em>","Estos"],
+				["<b>Этот</b> <em>(ближе к собеседнику)</em>","Ese"],
+				["<b>Эта</b> <em>(ближе к собеседнику)</em>","Esa"],
+				["<b>Эти</b> <em>(м.р., ближе к собеседнику)</em>","Esos"],
+				["<b>Эти</b> <em>(ж.р., ближе к собеседнику)</em>","Esas"],
+				["<b>Тот</b>","Aquel"],
+				["<b>Та</b>","Aquella"],
+				["<b>Те</b> <em>(м.р.)</em>","Aquellos"],
+				["<b>Те</b> <em>(м.р.)</em>","Aquellas"]	
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Переведи на испанский",a[r][1],"см. местоимения");
+			break;
+	}
+}
+
+// Спряжения глаголов
+
+function task5() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","-o"],
+				["<b>Tú (-ar)</b>","-as"],
+				["<b>Él (-ar)</b>","-a"],
+				["<b>Nosotros (-ar)</b>","-amos"],
+				["<b>Vosotros (-ar)</b>","-áis"],
+				["<b>Ellos (-ar)</b>","-an"],
+				["<b>Ellas (-ar)</b>","-an"],
+				["<b>Ustedes (-ar)</b>","-an"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола наст. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","-o"],
+				["<b>Tú (-er)</b>","-es"],
+				["<b>Él (-er)</b>","-e"],
+				["<b>Nosotros (-er)</b>","-emos"],
+				["<b>Vosotros (-er)</b>","-éis"],
+				["<b>Ellos (-er)</b>","-en"],
+				["<b>Ellas (-er)</b>","-en"],
+				["<b>Ustedes (-er)</b>","-en"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола наст. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","-o"],
+				["<b>Tú (-ir)</b>","-es"],
+				["<b>Él (-ir)</b>","-e"],
+				["<b>Nosotros (-ir)</b>","-imos"],
+				["<b>Vosotros (-ir)</b>","-ís"],
+				["<b>Ellos (-ir)</b>","-en"],
+				["<b>Ellas (-ir)</b>","-en"],
+				["<b>Ustedes (-ir)</b>","-en"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола наст. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
+
+function task6() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","-aba"],
+				["<b>Tú (-ar)</b>","-abas"],
+				["<b>Él (-ar)</b>","-aba"],
+				["<b>Nosotros (-ar)</b>","-ábamos"],
+				["<b>Vosotros (-ar)</b>","-abais"],
+				["<b>Ellos (-ar)</b>","-aban"],
+				["<b>Ellas (-ar)</b>","-aban"],
+				["<b>Ustedes (-ar)</b>","-aban"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","-í"],
+				["<b>Tú (-er)</b>","-ías"],
+				["<b>Él (-er)</b>","-ía"],
+				["<b>Nosotros (-er)</b>","-íamos"],
+				["<b>Vosotros (-er)</b>","-íais"],
+				["<b>Ellos (-er)</b>","-ían"],
+				["<b>Ellas (-er)</b>","-ían"],
+				["<b>Ustedes (-er)</b>","-ían"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","-ía"],
+				["<b>Tú (-ir)</b>","-ías"],
+				["<b>Él (-ir)</b>","-ía"],
+				["<b>Nosotros (-ir)</b>","-íamos"],
+				["<b>Vosotros (-ir)</b>","-íais"],
+				["<b>Ellos (-ir)</b>","-ían"],
+				["<b>Ellas (-ir)</b>","-ían"],
+				["<b>Ustedes (-ir)</b>","-ían"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
+function task7() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","-í"],
+				["<b>Tú (-ar)</b>","-aste"],
+				["<b>Él (-ar)</b>","-ó"],
+				["<b>Nosotros (-ar)</b>","-amos"],
+				["<b>Vosotros (-ar)</b>","-asteis"],
+				["<b>Ellos (-ar)</b>","-aron"],
+				["<b>Ellas (-ar)</b>","-aron"],
+				["<b>Ustedes (-ar)</b>","-aron"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","-í"],
+				["<b>Tú (-er)</b>","-iste"],
+				["<b>Él (-er)</b>","-ió"],
+				["<b>Nosotros (-er)</b>","-imos"],
+				["<b>Vosotros (-er)</b>","-isteis"],
+				["<b>Ellos (-er)</b>","-ieron"],
+				["<b>Ellas (-er)</b>","-ieron"],
+				["<b>Ustedes (-er)</b>","-ieron"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","-í"],
+				["<b>Tú (-ir)</b>","-iste"],
+				["<b>Él (-ir)</b>","-ió"],
+				["<b>Nosotros (-ir)</b>","-imos"],
+				["<b>Vosotros (-ir)</b>","-isteis"],
+				["<b>Ellos (-ir)</b>","-ieron"],
+				["<b>Ellas (-ir)</b>","-ieron"],
+				["<b>Ustedes (-ir)</b>","-ieron"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
+function task8() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","he -ado"],
+				["<b>Tú (-ar)</b>","has -ado"],
+				["<b>Él (-ar)</b>","ha -ado"],
+				["<b>Nosotros (-ar)</b>","hemos -ado"],
+				["<b>Vosotros (-ar)</b>","habéis -ado"],
+				["<b>Ellos (-ar)</b>","han -ado"],
+				["<b>Ellas (-ar)</b>","han -ado"],
+				["<b>Ustedes (-ar)</b>","han -ado"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. только что соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","he -ido"],
+				["<b>Tú (-er)</b>","has -ido"],
+				["<b>Él (-er)</b>","ha -ido"],
+				["<b>Nosotros (-er)</b>","hemos -ido"],
+				["<b>Vosotros (-er)</b>","habéis -ido"],
+				["<b>Ellos (-er)</b>","han -ido"],
+				["<b>Ellas (-er)</b>","han -ido"],
+				["<b>Ustedes (-er)</b>","han -ido"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. только что соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","he -ido"],
+				["<b>Tú (-ir)</b>","has -ido"],
+				["<b>Él (-ir)</b>","ha -ido"],
+				["<b>Nosotros (-ir)</b>","hemos -ido"],
+				["<b>Vosotros (-ir)</b>","habéis -ido"],
+				["<b>Ellos (-ir)</b>","han -ido"],
+				["<b>Ellas (-ir)</b>","han -ido"],
+				["<b>Ustedes (-ir)</b>","han -ido"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола прош. только что соверш. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
+function task9() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","-aré"],
+				["<b>Tú (-ar)</b>","-arás"],
+				["<b>Él (-ar)</b>","-ará"],
+				["<b>Nosotros (-ar)</b>","-aremos"],
+				["<b>Vosotros (-ar)</b>","-aréis"],
+				["<b>Ellos (-ar)</b>","-arán"],
+				["<b>Ellas (-ar)</b>","-arán"],
+				["<b>Ustedes (-ar)</b>","-arán"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","-eré"],
+				["<b>Tú (-er)</b>","-erás"],
+				["<b>Él (-er)</b>","-erá"],
+				["<b>Nosotros (-er)</b>","-eremos"],
+				["<b>Vosotros (-er)</b>","-eréis"],
+				["<b>Ellos (-er)</b>","-erán"],
+				["<b>Ellas (-er)</b>","-erán"],
+				["<b>Ustedes (-er)</b>","-erán"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","-iré"],
+				["<b>Tú (-ir)</b>","-irás"],
+				["<b>Él (-ir)</b>","-irá"],
+				["<b>Nosotros (-ir)</b>","-iremos"],
+				["<b>Vosotros (-ir)</b>","-iréis"],
+				["<b>Ellos (-ir)</b>","-irán"],
+				["<b>Ellas (-ir)</b>","-irán"],
+				["<b>Ustedes (-ir)</b>","-irán"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. несоверш. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
+function task10() {
+	switch(R(1,3)) { 
+		case 1:
+			var a = [
+				["<b>Yo (-ar)</b>","habré -ado"],
+				["<b>Tú (-ar)</b>","habrás -ado"],
+				["<b>Él (-ar)</b>","habrá -ado"],
+				["<b>Nosotros (-ar)</b>","habremos -ado"],
+				["<b>Vosotros (-ar)</b>","habréis -ado"],
+				["<b>Ellos (-ar)</b>","habrán -ado"],
+				["<b>Ellas (-ar)</b>","habrán -ado"],
+				["<b>Ustedes (-ar)</b>","habrán -ado"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 2:
+			var a = [
+				["<b>Yo (-er)</b>","habré -ido"],
+				["<b>Tú (-er)</b>","habrás -ido"],
+				["<b>Él (-er)</b>","habrá -ido"],
+				["<b>Nosotros (-er)</b>","habremos -ido"],
+				["<b>Vosotros (-er)</b>","habréis -ido"],
+				["<b>Ellos (-er)</b>","habrán -ido"],
+				["<b>Ellas (-er)</b>","habrán -ido"],
+				["<b>Ustedes (-er)</b>","habrán -ido"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+		case 3:
+			var a = [
+				["<b>Yo (-ir)</b>","habré -ido"],
+				["<b>Tú (-ir)</b>","habrás -ido"],
+				["<b>Él (-ir)</b>","habrá -ido"],
+				["<b>Nosotros (-ir)</b>","habremos -ido"],
+				["<b>Vosotros (-ir)</b>","habréis -ido"],
+				["<b>Ellos (-ir)</b>","habrán -ido"],
+				["<b>Ellas (-ir)</b>","habrán -ido"],
+				["<b>Ustedes (-ir)</b>","habrán -ido"]																								
+			];
+			var r = R(0,a.length-1);
+			var C1 = a[r][3];
+			setTask(a[r][0],"Спряжение глагола буд. соверш. вр.",a[r][1],"см. глаголы");
+			break;
+	}
+}
+
 
 function setTask(A,B,C,D) {
 	$("tasktext").innerHTML = A;
