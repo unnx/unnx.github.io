@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Формула Эйлера}\\
+
+	\begin{equation}
+		e^{i\varphi} = \cos\varphi + i\sin\varphi
+	\end{equation}
+
+	Доказательство:\\
+
+	Вспомним ряд Тейлора-Маклорена:
+	\begin{equation}
+		f(x) = f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+...+\frac{f^{(n)}(0)}{n!}x^n + ... = \sum_{n=1}^{+\infty} \frac{f^{(n)}(0)}{n!}x^n
+	\end{equation}
+
+	Разложим по нему синус и косинус угла $\varphi$:
+	\begin{equation}
+		\sin\varphi = \sum_{n=0}^{+\infty} \frac{\sin^{(n)}(0)}{n!}\varphi^n;\;\;\;\cos\varphi = \sum_{n=0}^{+\infty} \frac{\cos^{(n)}(0)}{n!}\varphi^n;
+	\end{equation}
+
+	Можно выразить $\sin^{(n)}(0)$ и $\cos^{(n)}(0)$ через $[e^{i\varphi}]^{(n)}$ (пользуемся тем, что $i^2=-1$):
+	\begin{equation}
+		\sin^{(n)}(0) = \frac{1-(-1)^n}{2i}[e^{i\varphi}]^{(n)};\;\;\;\cos^{(n)}(0) = \frac{1-(-1)^{n+1}}{2}[e^{i\varphi}]^{(n)}
+	\end{equation}
+
+	Рассмотрим $n$-ный член разложения $\cos\varphi+i\sin\varphi$ в ряд Тейлора-Маклорена:
+	\begin{equation}
+		(cos\varphi+i\sin\varphi)_n = \frac{\cos^{(n)}(0)+i\sin^{(n)}(0)}{n!}\varphi^n
+	\end{equation}
+
+	Распишем производные синуса и косинуса по выкладке $(4)$:
+	\begin{equation}
+		\cos^{(n)}(0)+i\sin^{(n)}(0) = \frac{1-(-1)^{n+1}}{2}[e^{i\varphi}]^{(n)} + \frac{1-(-1)^n}{2}[e^{i\varphi}]^{(n)} = [e^{i\varphi}]^{(n)}(\frac{2-((-1)^{n+1}-(-1)^n)}{2})
+	\end{equation}
+
+	Для любых целых неотрицательных $n$ выполняется: $(-1)^{n+1}+(-1)^n=0$. Получили:
+	\begin{equation}
+		\cos^{(n)}(0)+i\sin^{(n)}(0) = [e^{i\varphi}]^{(n)}
+	\end{equation}
+
+	Доказали равенство соответствующих членов разложения в ряд Тейлора-Маклорена:
+	\begin{equation}
+		(cos\varphi+i\sin\varphi)_n = (e^{i\varphi})_n
+	\end{equation}
+
+	Доказали формулу Эйлера:
+	\begin{equation}
+		e^{i\varphi} = \cos\varphi + i\sin\varphi
+	\end{equation}
+
+
+
+
+
+\end{document}

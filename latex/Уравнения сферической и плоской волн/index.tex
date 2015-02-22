@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Уравнения сферической и плоской волн}\\
+
+	1) Сферическая волна\\
+
+	Сферическая продольная волна одномерна: ее волновая поверхность -- сфера, поэтому смещение $\xi$ зависит только от одной координаты $r$:
+	\begin{equation}
+		\xi = \xi(r,t)
+	\end{equation}
+
+	Решение волнового уравнения для одномерной упругой волны имеет вид:
+	\begin{equation}
+		\xi(x,t) = a\cos(\omega t - \frac{\omega}{v}x + \varphi)
+	\end{equation}
+
+	Если энергия волны не поглащается средой, то $a=const$, равная амплитуде на единичном расстоянии от источника волны. В случае сферического распространения, энергия волны с увеличением $r$ приходится на все большую волновую поверхность. Таким образом, в уравнение сферической волны вносится поправка:
+	\begin{equation}
+		\xi(r,t) = \frac{a}{r}\cos(\omega t - \frac{\omega}{v}x + \varphi)
+	\end{equation}
+
+	(Причина появления коэффициента $\frac{1}{r}$ в том, что в выражении для энергии волны, которая должна быть постоянной при отсутствии поглащения средой, амплитуда и радиус стоят во второй степени: $a^2r^2=const$. См. энергия упругих волн)\\
+
+	2) Плоская волна\\
+
+	Пусть колебания в плоскости, проходящей через начало координат, имеют вид:
+	\begin{equation}
+		\xi_0 = a\cos(\omega t + \varphi)
+	\end{equation}
+
+	Рассмотрим волновую поверхность (плоскость), отстоящую от данной на расстояние $l$. Колебания в этой плоскости будут отставать на время $\tau = \frac{l}{v}$:
+	\begin{equation}
+		\xi_l = \xi = a\cos(\omega(t-\frac{l}{v})+\varphi) = a\cos(\omega t - kl + \varphi)
+	\end{equation}
+
+	Выразим $l$ через радиус-вектор $\vec r$ -- тогда мы сможем найти колебания волны в любой точке пространства:
+	\begin{equation}
+		(\vec n; \vec r) = l
+	\end{equation}
+
+	$\vec n$ -- нормаль, соответствующая направлению распространения волны. Отсюда:
+	\begin{equation}
+		\xi = a\cos(\omega t - (k\vec n;\vec r) + \varphi)
+	\end{equation}
+
+	Введем вектор $\vec k = k\vec n$ (он называется волновым вектором). Таким образом, уравнение представимо в виде:
+	\begin{equation}
+		\xi = a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+
+	Можно разложить скалярное произведение $(\vec k;\vec r)$ по координатам и получить:
+	\begin{equation}
+		\xi(x,y,z,t) = a\cos(\omega t - k_xx - k_yy - k_zz + \varphi)
+	\end{equation}
+
+	Поскольку $(\vec k;\vec r) = \frac{2\pi}{\lambda}(\vec n;\vec r)$:
+	\begin{equation}
+		k_x = \frac{2\pi}{\lambda}\cos\alpha,\;\;k_y= \frac{2\pi}{\lambda}\cos\beta,\;\;k_z = \frac{2\pi}{\lambda}\cos\gamma
+	\end{equation}
+
+	$\alpha, \beta, \gamma$ -- углы, между направлением распространения волны и осями $x, y, z$ соответственно.
+\end{document}

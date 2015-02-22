@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Волновые уравнения для одномерных упругих волн} \\
+
+	Рассмотрим одномерные волны, распространяющиеся в упругой среде.\\
+
+	1) Представим упругую струну, чья форма задается графиком функции $\xi=\xi(x,t)$. Волна, распространяющаяся по струне, будет поперечной: каждая точка струны будет смещаться по оси $\xi$ при распространении волны вдоль оси $x$. Выделим на оси $x$ малый участок $dx$ (координаты крайних точек: $x$ и $x+dx$). Поскольку $dx$ бесконечно мал, длину струны на этом участке тоже можно положить равной $dx$. Запишем второй закон Ньютона для участка $dx$ (в проекции на ось $\xi$):
+	\begin{equation}
+		ma = F
+	\end{equation}
+	\begin{equation}
+		m\frac{\partial^2 \xi}{\partial t^2} = F
+	\end{equation}
+
+	$F$ -- проекция суммарной силы натяжения, действующей на участок струны $dx$ со стороны прилежащих к нему других участков струны. Обозначим модули двух сил натяжения через $F_\text{н}$. Углы между этими силами и положительным направлением оси $\xi$ обозначим через $\varphi$ и $\varphi'$. Таким образом, второй закон Ньютона:
+	\begin{equation}
+		m\frac{\partial^2 \xi}{\partial t^2} = F_\text{н}(\sin\varphi' - \sin\varphi)
+	\end{equation}
+
+	Из-за малости $dx$, можно положить $\sin\varphi = \tg\varphi$ и $\sin\varphi' = \tg\varphi'$. Тангенсы этих углов легко выразить через углы наклона касательных к графику функции $\xi(x,t)$ (к струне). Получаем:
+	\begin{equation}
+		\sin\varphi' = \tg\varphi' = \frac{\partial\xi(x+dx,t)}{\partial x}
+	\end{equation}
+	\begin{equation}
+		\sin\varphi = \tg\varphi = \frac{\partial\xi(x,t)}{\partial x}
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		m\frac{\partial^2 \xi}{\partial t^2} = F_\text{н}(\frac{\partial\xi(x+dx,t)}{\partial x} - \frac{\partial\xi(x,t)}{\partial x})
+	\end{equation}
+
+	В скобках справа -- часть полного дифференциала функции $\frac{\partial\xi}{\partial x}$, соответствующая частной производной по $\partial x$:
+	\begin{equation}
+		\frac{\partial\xi(x+dx,t)}{\partial x} - \frac{\partial\xi(x,t)}{\partial x} = \frac{\partial^2 \xi}{\partial x^2}dx
+	\end{equation}
+
+	Распишем $m$ -- массу участка струны $dx$ -- через линейную плотность $\rho = \rho l = \rho dx$:
+	\begin{equation}
+		\rho \frac{\partial^2 \xi}{\partial t^2} dx = F_\text{н}\frac{\partial^2 \xi}{\partial x^2}dx
+	\end{equation}
+
+	Сократив на $dx$ и объединив коэффициенты, получим:
+	\begin{equation}
+		\frac{\rho}{F_\text{н}} \frac{\partial^2 \xi}{\partial t^2} = \frac{\partial^2 \xi}{\partial x^2}
+	\end{equation}
+
+	Получили волновое уравнение для одномерных поперечных волн, распространяющихся по упругой струне.\\
+
+	2) Представим трубку с идеальным газом и продольную волну, распространяющуюся в ней по оси $x$ (параллельно стенкам). Если рассмотреть объем $V_0$, ограниченный стенками и перпендикулярными им плоскостями с абсциссами $x$ и $x+dx$, а затем объем $V$, который будет заключен между этими плоскостями по прохождении времени $t$ (координаты смещенных плоскостей будут равны $x+\xi(x,t)$ и $x+dx+\xi(x+dx,t)$ соответственно), выяснится, что эти объемы равны:
+	\begin{equation}
+		V_0 = Sdx
+	\end{equation}
+	\begin{equation}
+		V = S(dx + \xi(x+dx,t) - \xi(x,t))
+	\end{equation}
+
+	Здесь $S$ -- площади перпендикулярных плоскостей, ограниченных трубкой (считаем, что обе они равны $S$ -- трубка не расширяется и не сужается). Проведя аналогичные п. 1 рассуждения про часть полного дифференциала, получаем:
+	\begin{equation}
+		V = S(dx + \frac{\partial \xi}{\partial x}dx) = (1+\frac{\partial \xi}{\partial x})Sdx
+	\end{equation}
+
+	Запишем второй закон Ньютона для объема $V$ в проекции на $x$:
+	\begin{equation}
+		m\frac{\partial^2\xi}{\partial t^2} = F
+	\end{equation}
+
+	$F$ -- проекция суммарной силы давления, действующей на объем $V$ со стороны остального газа (поскольку газ идеальный, эта сила по третьему закону Ньютона равна по модулю силе, действующей на газ со стороны объема $V$):
+	\begin{equation}
+		F = pS
+	\end{equation}
+
+	Требуется найти давление внутри объема $V$. Пусть в объеме $V_0$ давление равно $p_0$. Считаем, что волна распространяется довольно быстро -- это значит, что термодинамические процессы, происходящие в рассматриваемых объемах, можно считать адиабатическими. Запишем уравнение Пуассона для наших объемов:
+	\begin{equation}
+		p_0V_0^\gamma = pV^\gamma
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		p = p_0(\frac{V_0}{V})^\gamma = p_0\frac{Sdx}{(1+\frac{\partial \xi}{\partial x})Sdx} = (1+\frac{\partial \xi}{\partial x})^{-\gamma}
+	\end{equation}
+
+	Давление в пределах элелементарных объемов изменяется слабо. Из этих соображений можно представить его в виде суммы первых двух членов его разложения в ряд Тейлора:
+	\begin{equation}
+		p = p_0(1+\frac{\partial \xi}{\partial x})^{-\gamma} = p_0(1 - \gamma \frac{\partial \xi}{\partial x})
+	\end{equation}
+
+	Второй закон Ньютона для выделенного объема:
+	\begin{equation}
+		m\frac{\partial^2\xi}{\partial t^2} = p_0(1 - \gamma \frac{\partial \xi}{\partial x})S
+	\end{equation}
+
+	Выразим массу через плотность газа $\rho=\frac{m}{V}=\frac{m}{Sdx}$:
+	\begin{equation}
+		\rho Sdx \frac{\partial^2\xi}{\partial t^2} = p_0(1 - \gamma \frac{\partial \xi}{\partial x})S
+	\end{equation}
+
+	Разделим на $Sdx$, объединим коэффициенты:
+	\begin{equation}
+		\frac{\rho}{\gamma p_0} \frac{\partial^2\xi}{\partial t^2} = \frac{\partial^2 \xi}{\partial x^2}
+	\end{equation}
+
+	Получили волновое уравнение для одномерных продольных волн, распространяющихся в идеальном газе.\\
+
+	3) Представим прямой твердый стержень. Аналогично предыдущему случаю, выделим в нем объем, ограниченный плоскостями, перпендикулярными границам стержня (абсциссы этих плоскостей равны $x$ и $x+dx$), а также объем, заключенный между смещенными плоскостями (абсциссы $x+\xi(x,t)$ и $x+dx+\xi(x+dx,t)$).\\
+
+	Второй закон Ньютона для выделенного объема имеет вид:
+	\begin{equation}
+		\rho V \frac{\partial^2 \xi}{\partial t^2} = F
+	\end{equation}
+
+	При малых деформациях $\varepsilon = \frac{\partial \xi}{\partial x}$ нормальное напряжение $\sigma$ пропорционально величине деформации ($E$ -- модуль Юнга):
+	\begin{equation}
+		\sigma = E\varepsilon = E\frac{\partial \xi}{\partial x}
+	\end{equation}
+
+	Деформация $\varepsilon$ есть относительное удлинение $\frac{\Delta l}{l_0}$, а нормальное напряжение $\sigma = \frac{F}{S}$. Таким образом:
+	\begin{equation}
+		F =(\sigma_2-\sigma_1) S = ES(\frac{\partial\xi(x+dx+\xi(x+dx))}{\partial x} - \frac{\partial\xi(x+\xi(x,t))}{\partial x}) = ES\frac{\partial^2 \xi}{\partial x^2}dx
+	\end{equation}
+
+	Вернемся ко второму закону Ньютона:
+	\begin{equation}
+		\rho V \frac{\partial^2 \xi}{\partial t^2} = EV\frac{\partial^2 \xi}{\partial x^2}
+	\end{equation}
+	\begin{equation}
+		\frac{\rho}{V} \frac{\partial^2 \xi}{\partial t^2} = \frac{\partial^2 \xi}{\partial x^2}
+	\end{equation}
+
+	Получили волновое уравнение для одномерных продольных упругих волн, распространяющихся в твердом стержне.
+
+\end{document}
