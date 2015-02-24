@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Волновое уравнение для упругих волн}\\
+
+	Попробуем восстановить волновое уравнение по его решению:
+	\begin{equation}
+		\xi = a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+
+	Для этого распишем вторые производные $\xi$ по координатам и времени:
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial t^2} = -\omega^2 a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial x^2} = -k_x^2 a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial y^2} = -k_y^2 a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial z^2} = -k_z^2 a\cos(\omega t - (\vec k;\vec r) + \varphi)
+	\end{equation}
+
+	Можно выразить эти производные через исходную функцию $\xi$:
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial t^2} = -\omega^2\xi
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial x^2} = -k_x^2\xi
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial y^2} = -k_y^2\xi
+	\end{equation}
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial z^2} = -k_z^2\xi
+	\end{equation}
+
+	Сложим производные по координатам:
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial x^2}+\frac{\partial^2\xi}{\partial y^2}+\frac{\partial^2\xi}{\partial z^2} = -(k_x^2+k_y^2+k_z^2)\xi = -k^2\xi
+	\end{equation}
+
+	Выразим $\xi$ через ее производную по времени:
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial x^2}+\frac{\partial^2\xi}{\partial y^2}+\frac{\partial^2\xi}{\partial z^2} = \frac{k^2}{\omega^2}\frac{\partial\xi}{\partial t^2}		
+	\end{equation}
+
+	Поскольку $\frac{k^2}{\omega^2}=\frac{\omega^2}{v^2\omega^2}=\frac{1}{v^2}$, получаем:
+	\begin{equation}
+		\frac{\partial^2\xi}{\partial x^2}+\frac{\partial^2\xi}{\partial y^2}+\frac{\partial^2\xi}{\partial z^2} = \frac{1}{v^2}\frac{\partial\xi}{\partial t^2}	
+	\end{equation}
+
+	Это волновое уравнение для упругих волн. Его левую часть записывают с помощью оператора Лапласа:
+	\begin{equation}
+		\Delta\xi = \frac{1}{v^2}\frac{\partial^2\xi}{\partial t^2}
+	\end{equation}
+\end{document}

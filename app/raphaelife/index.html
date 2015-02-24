@@ -3,9 +3,40 @@
   <head>
     <title>Conway's game of life</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+    	body {
+    		background-color: #eee;
+    	}
+
+    	#panel {
+    		position: fixed;
+    		left: 50%;
+    		top: 16px;
+    		bottom: 16px;
+    		right: 0;
+    		background-color: #333;
+    	}
+
+    	#panel input{
+    		margin: 0.5em;
+    		width: 100%;
+    		font-size: 2em;
+    	}
+
+    	#panel div {
+    		color: #eee;
+    	}
+    </style>
   </head>
-  <body id="render">
+  <body>
     <script type="text/javascript" src="js/raphael-min.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
+    <div id="panel">
+    	<textarea type="text" onfocus="pause()" onblur="resume()" onkeydown="load(this.value)" onkeyup="load(this.value)"/></textarea><br/>
+    	<div>
+    		Живых клеток: <span id="l"></span> <br>
+    		Прирост: <span id="d"></span>
+    	</div>
+  	</div>
   </body>
 </html>

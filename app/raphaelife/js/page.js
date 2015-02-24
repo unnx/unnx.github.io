@@ -1,15 +1,21 @@
 var P;
-var len=25;
+var len=32;
 var fieldR = [];
 var fieldA = [];
 var fieldB = [];
 var colors = [
-  [250,0,0],
-  [0,250,0],
-  [0,0,250]
+  [200,0,0],
+  [0,0,200],
+  [200,200,0]
 ];
 var mode = 3;
 var int;
+var L=0;
+var LO=0;
+
+function $(o) {
+	return document.getElementById(o);
+}
 
 function RI(min, max)
 {
@@ -17,7 +23,7 @@ function RI(min, max)
 }
 
 window.onload = function () {
-       P = Raphael(0, 0, 1000, 1000, "render");
+       P = Raphael(0, 0, screen.width*0.5, screen.height*0.88, "render");
        seed();
        field();
        clear();
@@ -29,7 +35,7 @@ function pause() {
 }
 
 function resume() {
-  int = setInterval(function(){update()},100);  
+  int = setInterval(function(){update()},10);  
 }
 
 function clear() {
@@ -45,7 +51,7 @@ function field() {
   for(var x=0;x<len;x++) {
     var r = new Array();
     for(var y=0;y<len;y++) {
-      b = P.circle(16+x*26,16+y*26,12).attr({"stroke-width":"0.1","stroke-color":"#efefef"}).data("x",x).data("y",y);
+      b = P.rect(16+x*(screen.width/70),16+y*(screen.width/70),(screen.width/70),(screen.width/70)).attr({"stroke-width":"0.0","stroke-color":"#ffffff"}).data("x",x).data("y",y);
       r.push(b);
     }
     fieldR[x]=r;
@@ -108,14 +114,55 @@ function seed() {
   } 
 }
 
+function load(v) {
+	var ar = eval("[" + v + "]");
+	var rc,gc,bc;
+	clear();
+	for(var i=0;i<ar.length;i+=1) {
+		fieldA[ar[i][0]][ar[i][1]] = true;
+		switch(ar[i][2]) {
+			case "К":
+				rc = 255;
+				gc = 0;
+				bc = 0;
+				break;
+			case "З":
+				rc = 0;
+				gc = 255;
+				bc = 0;
+				break;
+			case "С":
+				rc = 0;
+				gc = 0;
+				bc = 255;
+				break;
+			case "Ж":
+				rc = 255;
+				gc = 255;
+				bc = 0;
+				break;
+			case "О":
+				rc = 255;
+				gc = 100;
+				bc = 0;
+				break;
+		}
+		fieldR[ar[i][0]][ar[i][1]].data("rc",rc);
+		fieldR[ar[i][0]][ar[i][1]].data("gc",gc);
+		fieldR[ar[i][0]][ar[i][1]].data("bc",bc);
+		fieldR[ar[i][0]][ar[i][1]].attr({"fill":"RGB("+fieldR[ar[i][0]][ar[i][1]].data("rc")+","+fieldR[ar[i][0]][ar[i][1]].data("gc")+","+fieldR[ar[i][0]][ar[i][1]].data("bc")+")"})
+	}
+}
+
 function update() {
   var c;
     for(var x=0;x<len;x++) {
       for(var y=0;y<len;y++) {
-	if(fieldA[x][y]==true){fieldB[x][y]=true;}else{fieldB[x][y]=false;};
+	  		if(fieldA[x][y]==true){fieldB[x][y]=true;}else{fieldB[x][y]=false;};
       }
     }
-    
+    LO = L;
+    L = 0;
     for(var x=0;x<len;x++) {
       for(var y=0;y<len;y++) {
 	  c = 0;
@@ -145,9 +192,12 @@ function update() {
 	      break;
 	    default:
 	      fieldA[x][y]=false;
-	      fieldR[x][y].attr({"fill":"#fafafa"});
+	      fieldR[x][y].attr({"fill":"#fff"});
 	      break;
 	  }
+	  	if(fieldB[x][y]==true) L++;
       }
     }
+	$("l").innerHTML = L;
+	$("d").innerHTML = L-LO;	
 }
