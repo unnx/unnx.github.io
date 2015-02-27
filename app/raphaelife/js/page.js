@@ -55,8 +55,8 @@ function field() {
       r.push(b);
     }
     fieldR[x]=r;
-    for(var y=0;y<len;y++) {
-      fieldR[x][y].mousedown(function() {
+    for(var y=0;y<len/2;y++) {
+    /*fieldR[x][y].mousedown(function() {
 	fieldA[this.data("x")-1][this.data("y")] = true;
 	fieldA[this.data("x")+1][this.data("y")] = true;
 	fieldA[this.data("x")][this.data("y")-1] = true;
@@ -95,7 +95,7 @@ function field() {
 	fieldR[this.data("x")][this.data("y")+1].data("rc",rc);
 	fieldR[this.data("x")][this.data("y")+1].data("gc",gc);
 	fieldR[this.data("x")][this.data("y")+1].data("bc",bc);
-      });
+      }); */
     }
   }   
 }

@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Стоячие упругие волны}\\
+
+	Стоячие волны -- это волны, в которых не осуществляется перенос энергии. Они образуются при наложении нескольких волн друг на друга.\\
+
+	Представим две упругие одномерные волны:
+	\begin{equation}
+		\xi_1 = a\cos(\omega t - kx + \varphi_1)
+	\end{equation}
+	\begin{equation}
+		\xi_2 = a\cos(\omega t - kx + \varphi_2)
+	\end{equation}
+
+	При сложении получается:
+	\begin{equation}
+		\xi = 2a\cos(kx+\frac{\varphi_2-\varphi_1}{2})\cos(\omega t + \frac{\varphi_1+\varphi_2}{2})
+	\end{equation}
+
+	При соответствующем выборе начал отсчета времени и координаты избавимся от смещения фаз:
+	\begin{equation}
+		\xi = 2a\cos(kx)\cos(\omega t)
+	\end{equation}
+
+	Это уравнение стоячей волны. Из него следует, что в стоячей волне амплитуда зависит от координаты:
+	\begin{equation}
+		\text{амплитуда} = |2a\cos(kx)|=|2a\cos(2\pi\frac{x}{\lambda})|
+	\end{equation}
+
+	Пучностями называются участки волны с максимальной амплитудой. Чтобы найти их координаты в нашем случае, требуется найти максимум косинуса (далее $n\in\mathbb{Z}$):
+	\begin{equation}
+		2\pi\frac{x}{\lambda}=\pi n
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		x_\text{пучн.} = n\frac{\lambda}{2}
+	\end{equation}
+
+	Узлами называются участки волны с нулевой амплитудой. В стоячей волне в узлах колебания отсутствуют. Найдем условия равенства нулю амплитуды:
+	\begin{equation}
+		2\pi\frac{x}{\lambda}=\frac{\pi}{2}+\pi n=(n+\frac{1}{2})\pi
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		x_\text{узл.} = (n+1)\frac{\lambda}{2}
+	\end{equation}
+
+	Легко видеть, что:\\
+
+	1) Расстояние между двумя ближайшими узлами или пучностями равно $\frac{\lambda}{2}$.\\
+
+	2) Расстояние между ближайшими пучностью и узлом равно $\frac{\lambda}{4}$\\
+
+	Рассмотрим колебания струны, закрепленной в концах. Из закрепленности концов следует, что в них должны наблюдаться узлы. Следовательно, в этой струне будут возбуждаться колебания, половина длины волны которых укладывается на длине струны целое число раз:
+	\begin{equation}
+		l = n\frac{\lambda}{2}
+	\end{equation}
+
+	Отсюда (далее $n\in\mathbb{N}$):
+	\begin{equation}
+		\lambda_n = \frac{2l}{n}
+	\end{equation}
+
+	Легко найти частоту:
+	\begin{equation}
+		\nu_n = \frac{v}{2l}n
+	\end{equation}
+
+	Мы нашли длину волны и частоту $n$-ной гармоники струны: т.е. колебания, при котором половина длины получаемой волны укладывается между ближайшими узлами $n\in\mathbb{N}$ раз.
+
+
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Плоская электромагнитная волна}\\
+
+	Рассмотрим плоскую электромагнитную волну, распространяющуюся в нейтральной непроводящей однородной среде $(\rho = 0,\; j = 0,\; \varepsilon = const,\; \mu = const)$. Пусть волна одномерна: ось $x$ перпендикулярна волновым поверхностям. $\vec E$ и $\vec H$ не зависят от координат $y$ и $z$. Преобразуем соответствующим образом уравнения Максвелла, написанные в координатной форме:
+	\begin{equation}
+		0 = \mu\mu_0\frac{\partial H_x}{\partial t},\;\;\frac{\partial E_z}{\partial x}=\mu\mu_0\frac{\partial H_y}{\partial t},\;\;\frac{\partial E_y}{\partial x}=-\mu\mu_0\frac{\partial H_z}{\partial t}
+	\end{equation}
+	\begin{equation}
+		\frac{\partial B_x}{\partial x} = \mu\mu_0 = 0
+	\end{equation}
+	\begin{equation}
+		0 = \varepsilon\varepsilon_0\frac{\partial E_x}{\partial t},\;\;\frac{\partial H_z}{\partial x}=-\varepsilon\varepsilon_0\frac{\partial E_y}{\partial t},\;\;\frac{\partial H_y}{\partial x}=\varepsilon\varepsilon_0\frac{\partial E_z}{\partial t}		
+	\end{equation}
+	\begin{equation}
+		\frac{\partial D_x}{\partial x} = \varepsilon\varepsilon_0 = 0		
+	\end{equation}
+
+	Отсюда следует, что $E_x$ и $H_x$ не могут зависеть ни от $x$, ни от $t$, а значит, поля перпендикулярны распространению волны: электромагнитные волны поперечные (если нет постоянных полей $E_x$ и $H_x$).\\
+
+	Два последних уравнения $(1)$ и два последних уравнения $(3)$ можно объединить в две независимые группы:
+	\begin{equation}
+		\frac{\partial E_y}{\partial x}=-\mu\mu_0\frac{\partial H_z}{\partial t},\;\;\frac{\partial H_z}{\partial x}=-\varepsilon\varepsilon_0\frac{\partial E_y}{\partial t}
+	\end{equation}
+	\begin{equation}
+		\frac{\partial E_z}{\partial x}=\mu\mu_0\frac{\partial H_y}{\partial t},\;\;\frac{\partial H_y}{\partial x}=\varepsilon\varepsilon_0\frac{\partial E_z}{\partial t}
+	\end{equation}
+
+	Для описания плоской электромагнитной волны достаточно взять одну из систем уравнений $(5)$ или $(6)$, положив компоненты, фигурирующие в другой системе, равными нулю.\\
+
+	Возьмем для описания волны уравнения $(5)$, положив $E_z=H_y=0$. Продифференцируем первое уравнение по $x$ и произведем замену: $\frac{\partial}{\partial x}(\frac{\partial H_z}{\partial t})=(\frac{\partial}{\partial t})(\frac{\partial H_z}{\partial x})$, подставим $\frac{\partial H_z}{\partial x}$ из второго уравнения и получим волновое уравнения для $H_z$:
+	\begin{equation}
+		\frac{\partial^2 E_y}{\partial x^2} = \frac{\varepsilon \mu}{c^2} \frac{\partial^2 E_y}{\partial t^2}
+	\end{equation}
+
+	Продифференцируя по $x$ второе уравнение и проведя аналогичные преобразования, получим волновое уравнение для $H_z$:
+	\begin{equation}
+		\frac{\partial^2 H_z}{\partial x^2}=\frac{\varepsilon \mu}{c^2}\frac{\partial^2 H}{\partial t^2}
+	\end{equation}
+
+	Простейшим решением этих уравнений являются функции:
+	\begin{equation}
+		E_y=E_m\cos(\omega t-kx+\varphi_1)
+	\end{equation}
+	\begin{equation}
+		H_z=H_m\cos(\omega t-kx+\varphi_2)
+	\end{equation}
+
+	Подставим в уравнения $(5)$ эти функции:
+	\begin{equation}
+		kE_m\sin(\omega t - kx + \varphi_1) = \mu\mu_0\omega H_m\sin(\omega t - kx + \varphi_2)
+	\end{equation}
+	\begin{equation}
+		kH_m\sin(\omega t - kx + \varphi_2) = \varepsilon\varepsilon_0\omega E_m\sin(\omega t - kx + \varphi_1)
+	\end{equation}
+
+	Отсюда следует, что для удовлетворения волновых уравнений необходимо равенство фаз:
+	\begin{equation}
+		\varphi_1=\varphi_2
+	\end{equation}
+
+	А также выполнение соотношений:
+	\begin{equation}
+		kE_m = \mu\mu_0\omega H_m
+	\end{equation}
+	\begin{equation}
+		\varepsilon\varepsilon_0\omega E_m=kH_m
+	\end{equation}
+
+	Перемножив эти равенства, находим:
+	\begin{equation}
+		\varepsilon\varepsilon_0E_m^2 = \mu\mu_0 H_m^2
+	\end{equation}
+
+	Таким образом, колебания электрического и магнитного векторов в электромагнитной волне происходят с одинаковой фазой $\varphi_1=\varphi_2$, а амплитуды этих векторов связаны соотношением
+	\begin{equation}
+		E_m\sqrt{\varepsilon\varepsilon_0}=H_m\sqrt{\varepsilon\varepsilon_0}
+	\end{equation}
+
+	Можно записать решения волновых уравнений и в векторном виде:
+	\begin{equation}
+		\vec E = \vec E_m\cos(\omega t - kx),\;\;\vec H = \vec H_m\cos(\omega t - kx)
+	\end{equation}
+\end{document}

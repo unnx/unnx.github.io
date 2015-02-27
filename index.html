@@ -2,11 +2,53 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Дерево интересов</title>
+<title>Архив — Далеко не первый коммит</title>
 <link rel="stylesheet" href="/css/main.css">
+<script type="text/javascript">
+function check() {
+	var c = document.getElementById("commit");
+	if(c.innerHTML != localStorage.getItem("commit")) {
+		localStorage.setItem("commit",c.innerHTML);
+		document.getElementById("star").style.visibility = "visible"
+	}
+}
+</script>
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
 </head>
-<body onload="document.body.style.visibility='visible';">
-<a href="html/"><button id="herald"></button></a>
-<div id="update">Обновление от 24 февраля. Добро пожаловать!</div>
+<body onload="document.body.style.visibility='visible';check()">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="herald">
+<h3 style="margin-bottom:0.2em"><a id="commit" href="/html/">Далеко не первый коммит</a><sup style="visibility:hidden;color:#0a0" id="star">*</sup></h3>
+<h5 style="margin:0.5em;color:#666;">(27 февраля)</h5>
+<a href='latex/Стоячие упругие волны/index.pdf'>Стоячие упругие волны</a><br><a href='latex/Интенсивность звука и громкость/index.pdf'>Интенсивность звука и громкость</a><br>В <a href='/hamilton'>hamilton</a> появились первые главы: <a href='https://dl.dropboxusercontent.com/u/70025850/%D0%9A%D0%BE%D1%88%D1%88%D0%B0%D1%80.pdf'>Кошшар</a> и <a href='https://dl.dropboxusercontent.com/u/70025850/%D0%92%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0.pdf'>Встреча</a><br><a href='latex/Принцип наименьшего действия/index.pdf'>Принцип наименьшего действия</a><br><a href='latex/Принцип относительности Галилея/index.pdf'>Принцип относительности Галилея</a><br><a href='latex/Волновое уравнение для электромагнитного поля/index.pdf'>Волновое уравнение для электромагнитного поля</a><br><a href='latex/Плоская электромагнитная волна/index.pdf'>Плоская электромагнитная волна</a><br><a href='latex/Энергия электромагнитных волн/index.pdf'>Энергия электромагнитных волн</a>
+<div align="center" style="margin-left:auto;margin-right:auto;margin-top:2em;width:50%;">
+<table>
+<tr>
+<td>
+<div style="width:100%;height:0.068em;"></div>
+<script type="text/javascript"><!--
+document.write(VK.Share.button(false,{type: "button_nocount", text: "Поделиться"}));
+--></script>
+</td>
+<td>
+<div style="width:100%;height:0.35em;"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ru" data-count="none">Твитнуть</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</td>
+<td>
+<div class="fb-share-button" data-href="http://unnx.github.com" data-layout="button"></div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </body>
 </html>

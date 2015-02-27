@@ -25,14 +25,31 @@
 
     	#panel div {
     		color: #eee;
+            margin-left: 1em;
     	}
+
+        #code {
+            min-width: 100%;
+            min-height: 80%;
+            resize: none;
+        }
     </style>
   </head>
-  <body>
+  <body onload="load(document.getElementById('code').value)">
     <script type="text/javascript" src="js/raphael-min.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
     <div id="panel">
-    	<textarea type="text" onfocus="pause()" onblur="resume()" onkeydown="load(this.value)" onkeyup="load(this.value)"/></textarea><br/>
+    	<textarea type="text" id="code" onfocus="pause()" onblur="resume()" onkeydown="load(this.value)" onkeyup="load(this.value)"/>[0,2,"К"],
+[1,2,"К"],
+[2,2,"К"],
+[2,1,"К"],
+[1,0,"К"],
+
+[5,2,"С"],
+[6,2,"С"],
+[7,2,"С"],
+[7,1,"С"],
+[6,0,"С"]</textarea><br/>
     	<div>
     		Живых клеток: <span id="l"></span> <br>
     		Прирост: <span id="d"></span>

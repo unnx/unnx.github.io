@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Принцип наименьшего действия}\\
+
+	Самый общий закон движения механических систем называется принципом наименьшего действия (принципом Гамильтона). Каждая механическая система характеризуется функцией, зависящей только от координат, скоростей и времени:
+	\begin{equation}
+		L(q_1,q_2,...q_s,\dot q_1,\dot q_2,...\dot q_s,t)
+	\end{equation}
+
+	Если в моменты времени $t_1$ и $t_2$ система характеризуется обобщенными координатами $q^{(1)}$ и $q^{(2)}$ соответственно, то между этими моментами времени система движется так, что интеграл
+	\begin{equation}
+		S = \int_{t_1}^{t_2} L(q,\dot q, t)dt
+	\end{equation}
+
+	имеет наименьшее значение. Функция $L(q,\dot q, t)$ называется функцией Лагранжа данной системы, а интеграл $S$ -- действием.\\
+
+	Механическое состояние системы полностью определяется заданием координат и скоростей -- функция Лагранжа не может зависеть от высших производных.\\
+
+	Пусть $q=q(t)$ -- функция, для которой $S$ имеет минимум. Рассмотрим функцию:
+	\begin{equation}
+		q(t)+\delta q(t)
+	\end{equation}
+
+	$\delta q(t)$ -- бесконечно малая на $[t_1,t_2]$ функция (ее называют вариацией функции $q(t)$). При $t=t_1$ и $t=t_2$ все функции вида $(3)$ должны принимать одни и те же значения $q^{(1)}$ и $q^{(2)}$, поэтому:
+	\begin{equation}
+		\delta q(t_1)=\delta q(t_2) = 0
+	\end{equation}
+
+	Найдем изменение $S$ при замене $q$ на $q+\delta q$:
+	\begin{equation}
+		\Delta S = \int_{t_1}^{t_2}L(q+\delta q,\dot q+\delta\dot q,t)dt - \int_{t_1}^{t_2}L(q,\dot q,t)dt
+	\end{equation}
+
+	Перейдем от разности к вариации:
+	\begin{equation}
+		\delta S = \delta \int_{t_1}^{t_2} L(q,\dot q,t)dt = \int_{t_1}^{t_2}(\frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial\dot q}\delta\dot q)dt
+	\end{equation}
+
+	Таким образом, принцип наименьшего действия можно записать в виде:
+	\begin{equation}
+		\delta S = \delta \int_{t_1}^{t_2} L(q,\dot q,t)dt = \int_{t_1}^{t_2}(\frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial\dot q}\delta\dot q)dt = 0
+	\end{equation}
+
+	$\delta q = \frac{d}{dt}\delta q$. Проинтегрируем второй член по частям:
+	\begin{equation}
+		\delta S = \left. \frac{\partial L}{\partial\dot q}\delta q \right|_{t_1}^{t_2} + \int_{t_1}^{t_2}(\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial\dot q})\delta q\;dt = 0
+	\end{equation}
+
+	Из условия $(4)$ первое слагаемое равно нулю. Интеграл равен нулю при любых $\delta q$ тогда и только тогда, когда равно нулю подынтегральное выражение. Получили уравнение:
+	\begin{equation}
+		\frac{d}{dt}\frac{\partial L}{\partial\dot q} - \frac{\partial L}{\partial q} = 0
+	\end{equation}
+
+	Оно называется уравнением Лагранжа.\\
+
+	При наличии нескольких степеней свободы имеем систему дифференциальных уравнений второго порядка:
+	\begin{equation}
+		\frac{d}{dt}\frac{\partial L}{\partial\dot q_i} - \frac{\partial L}{\partial q_i} = 0		
+	\end{equation}
+
+	Рассмотрим функцию Лагранжа $L'$, отличающуюся от $L$ на некоторое слагаемое -- полную производную функции координат и времени:
+	\begin{equation}
+		L'(q,\dot q,t) = L(q,\dot q, t)+\frac{d}{dt}f(q,t)
+	\end{equation}
+
+	Распишем действие:
+	\begin{equation}
+		S'= \int_{t_1}^{t_2} L'(q,\dot q,t)dt = \int_{t_1}^{t_2} L(q,\dot q, t)dt + \int_{t_1}^{t_2}\frac{df}{dt}dt = S + f(q^{(2)},t)-f(q^{(1)},t)
+	\end{equation}
+
+	При варьировании исчезнет $f(q^{(2)},t)-f(q^{(1)},t)$ -- уравнение Лагранжа не изменит вид. Таким образом, функция Лагранжа определена с точностью до прибавления к ней полной производной от любой функции координат и времени.
+\end{document}

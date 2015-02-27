@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Волновое уравнение для электромагнитного поля}\\
+
+	Переменное электрическое поле порождает переменное магнитное и наоборот. Если возбудить с помощью колеблющихся зарядов переменное электромагнитное поле, то в окружающем заряды пространстве возникнет электромагнитная волна.\\
+
+	Рассмотрим однородную электронейтральную $(\rho = 0)$ непроводящую $(\vec j = 0)$ среду с постоянными проницаемостями $\varepsilon$, $\mu$. Рассмотрим связи векторов напряженности и индукции/электросмещения полей:
+	\begin{equation}
+		\frac{\partial\vec B}{\partial t} = \mu\mu_0\frac{\partial\vec H}{\partial t},\;\;\frac{\partial\vec D}{\partial t}=\varepsilon\varepsilon_0\frac{\partial\vec E}{\partial t}
+	\end{equation}
+	\begin{equation}
+		(\vec\nabla;\vec B) = \mu\mu_0(\vec\nabla;\vec H),\;\;(\vec\nabla;\vec D)=\varepsilon\varepsilon_0(\vec\nabla;\vec E)
+	\end{equation}
+
+	Учитывая эти связи, запишем уравнения Максвелла:
+	\begin{equation}
+		[\vec\nabla;\vec E] = -\mu\mu_0\frac{\partial\vec H}{\partial t},\;\;(\vec\nabla;\vec H) = 0
+	\end{equation}
+	\begin{equation}
+		[\vec\nabla;\vec H] = \varepsilon\varepsilon_0\frac{\partial\vec E}{\partial t},\;\;(\vec\nabla;\vec E)=0
+	\end{equation}
+	
+	Возьмем ротор от обеих частей левого уравнения $(3)$:
+	\begin{equation}
+		[\vec\nabla;[\vec\nabla;\vec E]]=-\mu\mu_0[\vec\nabla;\frac{\partial\vec H}{\partial t}]
+	\end{equation}
+
+	Поскольку $[\vec\nabla;\frac{\partial\vec H}{\partial t}]=\frac{\partial}{\partial t}[\vec\nabla;\vec H]$, получаем: 
+	\begin{equation}
+		[\vec\nabla;[\vec\nabla;\vec E]]=-\varepsilon\varepsilon_0\mu\mu_0\frac{\partial^2\vec E}{\partial t^2}
+	\end{equation}
+
+	$[\vec\nabla;[\vec\nabla;\vec E]]=\vec\nabla(\vec\nabla;\vec E)-(\vec\Delta;\vec E)$, но дивергенция потенциального поля равна нулю, поэтому:
+	\begin{equation}
+		(\vec\Delta;\vec E) = \varepsilon\varepsilon_0\mu\mu_0\frac{\partial^2\vec E}{\partial t^2}
+	\end{equation}
+
+	Известно, что $\varepsilon_0\mu_0=\frac{1}{c^2}$:
+	\begin{equation}
+		(\vec\Delta;\vec E) = \frac{\varepsilon\mu}{c^2}\frac{\partial^2\vec E}{\partial t^2}
+	\end{equation}
+
+	Раскрываем оператор Лапласа:
+	\begin{equation}
+		\frac{\partial^2\vec E}{\partial x^2} + \frac{\partial^2\vec E}{\partial y^2} + \frac{\partial^2\vec E}{\partial z^2} = \frac{\varepsilon\mu}{c^2}\frac{\partial^2\vec E}{\partial t^2}
+	\end{equation}
+
+	Те же операции можно провести с левым уравнением $(4)$ и получить:
+	\begin{equation}
+		\frac{\partial^2\vec H}{\partial x^2} + \frac{\partial^2\vec H}{\partial y^2} + \frac{\partial^2\vec H}{\partial z^2} = \frac{\varepsilon\mu}{c^2}\frac{\partial^2\vec H}{\partial t^2}		
+	\end{equation}
+
+	Это типичные волновые уравнения. Легко найти фазовую скорость -- ее квадрат равен единице, деленой на коэффициент перед производной по времени в волновом уравнении:
+	\begin{equation}
+		\frac{1}{v^2}=\frac{\varepsilon\mu}{c^2},\;\;v=\frac{c}{\sqrt{\varepsilon\mu}}
+	\end{equation}
+
+	В вакууме скорость электромагнитных волн совпадает со скоростью света в вакууме.
+\end{document}

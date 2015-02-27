@@ -112,6 +112,7 @@ function mkLatex() {
 }
 
 function mkIndex() {
+	var diff;
 	fs.readFile("tmp/index.html",{encoding: "utf8"},function(err,data) {
 		var files = fs.readdirSync("txt/");
 		var t = data;
@@ -123,11 +124,22 @@ function mkIndex() {
 			}
 		}
 		t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
+		diff = fs.readFileSync("diff").toString();
+		diff = diff.split("\n").join("<br>");
+		t = t.split("$COMMIT$").join(diff.split("<br>")[0]);		
 		fs.writeFileSync("html/index.html",t);
 	})
 	fs.readFile("tmp/preface.html",{encoding: "utf8"},function(err,data) {
 		var t = data;
+		diff = fs.readFileSync("diff").toString();
 		t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
+		diff = diff.split("\n").join("<br>");
+		diff = diff.split("[[").join("<a href='");
+		diff = diff.split("||").join("'>");
+		diff = diff.split("]]").join("</a>");
+		t = t.split("$COMMIT$").join(diff.split("<br>")[0]);
+		diff = diff.split(diff.split("<br>")[0]+"<br><br>").join("");	
+		t = t.split("$DIFF$").join(diff);
 		fs.writeFileSync("index.html",t);
 	})
 	mkLatex();

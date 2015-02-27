@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Terminus;
-	src: url("/fonts/Terminus.ttf");
+	src: url("/fonts/PTSansNormal.ttf");
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 	color: #333;
 	margin: 1em;
 	font-family: Terminus;
-	font-size: 16pt;
+	font-size: 12pt;
 }
 
 *::selection {
@@ -17,8 +17,12 @@ body {
 	background-color: #888;
 }
 
+ol {
+	margin-top: 0; 
+}
+
 a { 
-	color: #555;
+	color: #139;
 	text-decoration: underline;
 	outline: none;
 }
@@ -28,13 +32,19 @@ a.folder {
 }
 
 a:hover {
-	background-color: #ff9;
-	color: #005;
+	color: #b31;
 }
 
 a:focus {
-	background-color: #ff9;
-	color: #005;	
+	color: #b31;	
+}
+
+a:visited {
+	color: #136;	
+}
+
+a:visited:hover {
+	color: #831;
 }
 
 img.tex {
@@ -43,19 +53,15 @@ img.tex {
 
 h1 {
 	margin-top: 0.2em;
-	margin-bottom: 0.8em;
+	margin-bottom: 0.3em;
 	font-family: Terminus;
-	font-size: 24pt;
-	border-style: solid;
-	border-width: 1px;
+	font-size: 16pt;
 	border-color: #003;
 	color: #333; /* # 3c0 */
-	background-color: #ff9; /* #69f */
-	padding: 0.2em;
 }
 
 h4{
-	font-size: 20pt;
+	font-size: 14pt;
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
 	color: #333;
@@ -74,7 +80,7 @@ p.tex {
 }
 
 li.menu {
-	font-size: 20pt;
+	font-size: 12pt;
 	margin: 1em;
 	
 	margin: 0.5em;
@@ -107,26 +113,13 @@ span.light {
 #herald {
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 6em;
 	width: 100%;
-	height: 90%;
+	height: 5em;
 	border-style: none;
 	background-color: transparent;
-	outline: none;
-	background-image: url('/me.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 30%;
-	cursor: pointer;
-}
-
-#update {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 7%;
-	height: 5%;
-	font-size: 1em;
+	font-family: Terminus;
+	font-size: 12pt;
 	text-align: center;
-	color: #aaa;
+	outline: none;
 }
