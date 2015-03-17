@@ -1,0 +1,259 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{listings}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\usepackage{color}
+\lstset{ %
+  backgroundcolor=\color{white},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  captionpos=none,
+  keepspaces=false,
+  morekeywords={*,...},
+  showspaces=false,
+  showstringspaces=false, 
+  tabsize=2,
+  title=\lstname
+}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Haskell: простейшие операции со списками}\\
+
+	\textbf{(:)} -- конструктор списка; равен списку, составленному из некоторого значения и другого списка со значениями того же типа (либо пустого), посредством вставки данного значения в начало существующего списка\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	(:) :: a -> [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	1:[2, 3, 4, 5] == [1, 2, 3, 4, 5]
+	1:2:[3, 4, 5] == [1, 2, 3, 4, 5]
+	1:[] == [1]
+	's':[] == "s"
+	[]:[] == [[]]
+	[True]:[[False],[False]] == [[True],[False],[False]]
+	[1, 2, 3] : [[4, 5, 6]] == [[1, 2, 3],[4, 5, 6]]
+	[1, 2, 3] : [[4]] == [[1, 2, 3],[4]]
+	\end{lstlisting}
+
+	\null\textbf{(!!)} -- равна $n$-ному значению списка (нумерация с нуля)\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	(!!) :: [a] -> Int -> a
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	[1, 2, 3, 4, 5] !! 1 == 2
+	[[]] !! 0 == []
+	"Hello, world!" !! 1 == 'e'
+	[[[1],[2],[3]]] !! 0 !! 1 == [2]
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	getNth :: [a] -> Int -> a
+	getNth [] _ = error "index too large"
+	getNth (x:xs) 0 = x
+	getNth (x:xs) n = getNth xs (n-1)
+	\end{lstlisting}
+
+	\null\textbf{last} -- равна последнему значению данного списка\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	last :: [a] -> a
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	last [1,2,3] == 3
+	last "Hello!" == '!'
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	last' :: [a] -> a
+	last' [] = error "empty list"
+	last' [x] = x
+	last' (x:xs) = last' xs
+	\end{lstlisting}
+
+	\null\textbf{(++)} -- равна списку, составленному из двух данных посредством прямого слияния\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	(++) :: [a] -> [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	[1, 2, 3] ++ [4, 5, 6] == [1, 2, 3, 4, 5, 6]
+	[1, 2, 3] ++ [] == [1, 2, 3]
+	[] ++ [4, 5, 6] == [4, 5, 6]
+	[] ++ [] == []
+	"Hello," ++ " " ++ "world!" == "Hello, world!"
+	\end{lstlisting}
+
+	\null\textit{Плохая реализация}, $O(n^2)$:
+	\begin{lstlisting}
+	sumLists [] x = x
+	sumLists x [] = x
+	sumLists x y = sumLists (withoutLast x) (last x : y)
+
+	withoutLast [x] = []
+	withoutLast (x:xs) = x : withoutLast xs
+	\end{lstlisting}
+
+	\null\textit{Хорошая реализация}, $O(n_1)$:
+	\begin{lstlisting}
+	sumLists [] x = x
+	sumLists x [] = x
+	sumLists [x] (y:ys) = x : y : ys
+	sumLists (x:xs) (y:ys) = x : sumLists xs (y:ys)
+	\end{lstlisting}
+
+	\null\textbf{length} -- равна длине данного списка\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	length :: [a] -> Int
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	length [1, 2, 3] == 3
+	length "Hello" == 5
+	length [] == 0
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	length' [] = 0
+	length' (x:xs) = 1+length'(xs)
+	\end{lstlisting}
+
+	\null\textbf{reverse} -- равна списку, полученному из данного посредством его обращения задом-наперед\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	reverse :: [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	length [1, 2, 3] == [3, 2, 1]
+	length "Hello" == "olleH"
+	length [] == []
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	reverse' (x:xs) = reverse2 (x:xs) []
+	reverse2 (x:xs) (a:as) = reverse2 xs (x:a:as)
+	\end{lstlisting}
+
+	\null\textbf{take} -- равна списку из первых $n$ значений данного списка\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	take :: Int -> [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	take 2 [1, 2, 3] == [1, 2]
+	take 5 "Hello, world!" == "Hello"
+	take 0 [5, 6, 7] == []
+	take 5 [1, 2, 3] == [1, 2, 3]
+	take (-2) [5, 6, 7] == []
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	take' _ [] = []
+	take' n (x:xs)
+		| n<=0 = []
+		| True = x : take' (n-1) xs
+	\end{lstlisting}
+
+	\null\textbf{drop} -- равна списку, полученному из данного удалением первых $n$ значений\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	drop :: Int -> [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	drop 2 [1, 2, 3] == [3]
+	drop 5 "Hello, world!" == "Hello"
+	drop 0 [5, 6, 7] == []
+	drop 5 [1, 2, 3] == [1, 2, 3]
+	drop (-2) [5, 6, 7] == []
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	drop' _ [] = []
+	drop' n (x:xs)
+		| n<=0 = (x:xs)
+		| True = drop' (n-1) xs
+	\end{lstlisting}
+
+	\null\textbf{filter} -- равна списку, полученному из данного посредством выбора значений, удовлетворяющих предикату\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	filter :: (a -> Bool) -> [a] -> [a]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	filter (<4) [1, 4, 2, 65, 2, 1, 3, 5] == [1, 2, 2, 1, 3]
+	filter (\t->False) "Oh shi..." == []
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	filter' p (x:xs) = filter2 p (x:xs) []
+	filter2 p (x:xs) (a:as)
+		| p x = filter2 p xs (x:a:as)
+		| True = filter2 p xs (a:as)
+	\end{lstlisting}
+
+	\null\textbf{map} -- равна списку, полученному из данного посредством применения данной функции к каждому значению этого списка\\
+
+	\textit{Тип}:
+	\begin{lstlisting}
+	map :: (a -> b) -> [a] -> [b]
+	\end{lstlisting}
+
+	\null\textit{Пример}. Следующие выражения эквивалентны $True$:
+	\begin{lstlisting}
+	map (*2) [1, 2, 3, 4] == [2, 4, 6, 8]
+	map (\t->sin t) [0, pi/2] == [0, 1]
+	\end{lstlisting}
+
+	\null\textit{Реализация}, $O(n)$:
+	\begin{lstlisting}
+	map' f [] = []
+	map' f (x:xs) = (f x) : map' f xs
+	\end{lstlisting}
+
+\end{document}

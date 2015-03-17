@@ -35,21 +35,21 @@
         }
     </style>
   </head>
-  <body onload="load(document.getElementById('code').value)">
+  <body onload="load(document.getElementById('code').value);resume();">
     <script type="text/javascript" src="js/raphael-min.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
     <div id="panel">
-    	<textarea type="text" id="code" onfocus="pause()" onblur="resume()" onkeydown="load(this.value)" onkeyup="load(this.value)"/>[0,2,"К"],
-[1,2,"К"],
-[2,2,"К"],
-[2,1,"К"],
-[1,0,"К"],
+    	<textarea type="text" id="code" onfocus="pause()" onblur="resume()" onkeydown="load(this.value)" onkeyup="load(this.value)"/>[0,2,"R"],
+[1,2,"R"],
+[2,2,"R"],
+[2,1,"R"],
+[1,0,"R"],
 
-[5,2,"С"],
-[6,2,"С"],
-[7,2,"С"],
-[7,1,"С"],
-[6,0,"С"]</textarea><br/>
+[5,2,"G"],
+[6,2,"G"],
+[7,2,"G"],
+[7,1,"G"],
+[6,0,"G"]</textarea><br/>
     	<div>
     		Живых клеток: <span id="l"></span> <br>
     		Прирост: <span id="d"></span>

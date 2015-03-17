@@ -12,9 +12,9 @@ body {
 	font-size: 12pt;
 }
 
-*::selection {
-	color: #000;
-	background-color: #888;
+::selection {
+	color: #aaa;
+	background-color: #003;
 }
 
 ol {
@@ -45,6 +45,18 @@ a:visited {
 
 a:visited:hover {
 	color: #831;
+}
+
+a.task {
+	font-size: 120%;
+}
+
+.done-normal {
+	opacity: 1;
+}
+
+.done-normal::selection {
+	background-color: #afa;
 }
 
 img.tex {
@@ -123,3 +135,5 @@ span.light {
 	text-align: center;
 	outline: none;
 }
+
+

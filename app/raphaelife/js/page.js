@@ -121,27 +121,27 @@ function load(v) {
 	for(var i=0;i<ar.length;i+=1) {
 		fieldA[ar[i][0]][ar[i][1]] = true;
 		switch(ar[i][2]) {
-			case "К":
+			case "R":
 				rc = 255;
 				gc = 0;
 				bc = 0;
 				break;
-			case "З":
+			case "G":
 				rc = 0;
 				gc = 255;
 				bc = 0;
 				break;
-			case "С":
+			case "B":
 				rc = 0;
 				gc = 0;
 				bc = 255;
 				break;
-			case "Ж":
+			case "Y":
 				rc = 255;
 				gc = 255;
 				bc = 0;
 				break;
-			case "О":
+			case "O":
 				rc = 255;
 				gc = 100;
 				bc = 0;

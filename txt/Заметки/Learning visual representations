@@ -1,0 +1,20 @@
+Learning visual representations
+Andrea Vedaldi
+
+Linear predictor
+self-learning predictor
+non-learning predictor (kernel embedded)
+/-/ + metric learning
+deep learning predictor
+
+linear 3D filters?
+CNN
+
+Deep learning
+Shallow learning
+
+Non-linear filters
+Fisher vector, Fisher kernel
+
+Image with test -> detection (crop) -> classification
+Synth text generation

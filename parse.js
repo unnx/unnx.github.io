@@ -24,7 +24,8 @@ function parseFile(fname,path,template) {
 		t = t.split("||").join("'>");
 		t = t.split("]]").join("</a>");		
 		t = t.split("{{").join("<p class='img'><img class='img' src='");
-		t = t.split("}}").join("' alt='image'></p>");	
+		t = t.split("}}").join("' alt='image'></p>");
+		t = t.split("`v`").join("<span class='done-normal'>&nbsp;&nbsp;&nbsp;</span>");		
 		t1 = template.split("$HEADER$").join(fname);
 		t1 = t1.split("$TEXT$").join(t);
 		t1 = t1.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
@@ -76,7 +77,7 @@ function getFiles(folder,template1,template2) {
 				if(fs.lstatSync("txt"+folder+files[i]+"/"+files2[j]).isDirectory()) {
 					t = t.split("<!--O-->").join("<li class='menu'><a class='folder' href='"+encodeURIComponent(files2[j])+"/'>" + files2[j] + "</a></li><!--O-->");
 				} else {
-					t = t.split("<!--O-->").join("<li class='menu'><a class='file' href='"+encodeURIComponent(files2[j])+".html'>" + files2[j] + "</a></li><!--O-->");
+					t = t.split("<!--O-->").join("<li class='menu'><a class='file " + ((encodeURIComponent(files2[j])[0]=="_") ? "task" : "") + "' href='"+encodeURIComponent(files2[j])+".html'>" + files2[j] + "</a></li><!--O-->");
 				}
 			}
 			t = t.split("$TIMESTAMP$").join((new Date()).getDate() + " " + parseMonth());
@@ -137,6 +138,8 @@ function mkIndex() {
 		diff = diff.split("[[").join("<a href='");
 		diff = diff.split("||").join("'>");
 		diff = diff.split("]]").join("</a>");
+		diff = diff.split("{{").join("<img class='img' src='");
+		diff = diff.split("}}").join("'>");
 		t = t.split("$COMMIT$").join(diff.split("<br>")[0]);
 		diff = diff.split(diff.split("<br>")[0]+"<br><br>").join("");	
 		t = t.split("$DIFF$").join(diff);

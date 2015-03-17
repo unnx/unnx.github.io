@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Предел последовательности комплексных чисел}\\
+
+	\textit{Определение} ограниченной последовательности:
+	\begin{equation}
+		\{z_n\}\;\text{ограничена} \Leftrightarrow \exists M\in\mathbb{R}: \forall n\in\mathbb{N} \Rightarrow |z_n|<M
+	\end{equation}
+
+	\textit{Определение} предела последовательности комплексных чисел:
+	\begin{equation}
+		\lim_{n\rightarrow \infty} \{z_n\} = z\; \Leftrightarrow\; \forall\varepsilon>0 \; \exists N=N(\varepsilon)\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N \Rightarrow |z_n-z|<\varepsilon
+	\end{equation}
+
+	\textit{Критерий} сходимости последовательности комплексных чисел:
+	\begin{equation}
+		\exists\lim_{n\rightarrow \infty} \{z_n=a_n+ib_n\} \Leftrightarrow \exists\lim_{n\rightarrow \infty} \{a_n\},\;\exists\lim_{n\rightarrow \infty} \{b_n\}
+	\end{equation}
+
+	\textit{$\Rightarrow$}\\
+
+		Из определения предела, из неравенства треугольников, чисто действительного, чисто мнимого числа:
+		\begin{equation}
+			\exists\lim_{n\rightarrow \infty} \{z_n\}=a+ib \Rightarrow \lim_{n\rightarrow \infty} \{z_n\} = z\; \Leftrightarrow\; \forall\varepsilon>0 \; \exists N=N(\varepsilon)\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N \Rightarrow |a_n-a|\leq|z_n-z|<\varepsilon,\; |b_n-b|<\varepsilon
+		\end{equation}
+
+	\textit{$\Leftarrow$}\\
+
+		Из определения предела, определения модуля комплексного числа:
+		\begin{equation}
+			\exists\lim_{n\rightarrow \infty} \{a_n\},\;\exists\lim_{n\rightarrow \infty} \{b_n\}, |z_n-z|=\sqrt{(a_n-a)^2+(b_n-b)^2} \Rightarrow \exists\lim_{n\rightarrow \infty} \{z_n=a_n+ib_n\}
+		\end{equation}
+
+	$\#$\\
+
+	\textit{Критерий} Коши сходимости последовательности комплексных чисел:
+	\begin{equation}
+		\exists\lim_{n\rightarrow \infty} \{z_n\}\; \Leftrightarrow\; \forall\varepsilon>0 \; \exists N=N(\varepsilon)\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N,\;\forall (m\in\mathbb{Z})\geq 0 \Rightarrow |z_n-z_{n+m}|<\varepsilon
+	\end{equation}
+
+	\textit{$\Rightarrow$}\\
+
+		Из критерия сходимости последовательности комплексных чисел:
+		\begin{equation}
+			\exists\lim_{n\rightarrow \infty} \{z_n=a_n+ib_n\} \Rightarrow \exists\lim_{n\rightarrow \infty} \{a_n\},\;\exists\lim_{n\rightarrow \infty} \{b_n\} 
+		\end{equation}
+
+		т.е. выполняется критерий Коши для $\{a_n\}$ и $\{b_n\}$:
+		\begin{equation}
+			\exists\lim_{n\rightarrow \infty} \{a_n\}\; \Leftrightarrow\; \forall\varepsilon>0 \; \exists N_1=N_1(\varepsilon)\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N_1,\;\forall (m\in\mathbb{Z})\geq 0 \Rightarrow |a_n-a_{n+m}|<\frac{\varepsilon}{2}			
+		\end{equation}
+		\begin{equation}
+			\exists\lim_{n\rightarrow \infty} \{b_n\}\; \Leftrightarrow\; \forall\varepsilon>0 \; \exists N_2=N_2(\varepsilon)\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N_2,\;\forall (m\in\mathbb{Z})\geq 0 \Rightarrow |b_n-b_{n+m}|<\frac{\varepsilon}{2}			
+		\end{equation}
+
+		Из неравенства треугольников:
+		\begin{equation}
+			|a_n-a_{n+m}|<|z_n-z_{n+m}|<\varepsilon,\;\;|b_n-b_{n+m}|<|z_n-z_{n+m}|<\varepsilon
+		\end{equation}
+		
+		При $n\geq \max(N_1,N_2)$ выполняется $(8)$, $(9)$ вместе с $(10)$:
+		\begin{equation}
+			\forall\varepsilon>0 \; \exists N=\max(N_1(\varepsilon),N_2(\varepsilon))\in\mathbb{N}:\forall (n\in\mathbb{N})\geq N,\;\forall (m\in\mathbb{Z})\geq 0 \Rightarrow |z_n-z_{n+m}|<\varepsilon
+		\end{equation}
+
+	\textit{$\Leftarrow$}
+
+		\begin{equation}
+			(\text{правая часть}\; 6), \; (10) \Rightarrow \exists\lim_{n\rightarrow \infty} \{a_n\},\;\exists\lim_{n\rightarrow \infty} \{b_n\} \Rightarrow \exists\lim_{n\rightarrow \infty} \{z_n=a_n+ib_n\}
+		\end{equation}
+
+	$\#$\\
+
+	\textit{Понятие} бесконечно удаленной точки\\
+
+	Рассмотрим последовательность:
+	\begin{equation}
+		\{z_n\}: \forall R>0\; \exists N\in\mathbb{N}: \forall (n\in\mathbb{N})\geq N \Rightarrow |z_n|>R
+	\end{equation}
+
+	Это неограниченно возрастающая последовательность. Считается, что она сходится к специальному комплексному числу $z=\infty$. Т.н. полная комплексная плоскость состоит из обычной комплексной плоскости и единственной бесконечно удаленной точки $z=\infty$.
+
+	
+
+
+	
+\end{document}

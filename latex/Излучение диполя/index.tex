@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Излучение диполя}\\
+
+	Простейшей системой, излучающей электромагнитные волны, является колеблющийся электрический диполь, например, неподвижный точечный заряд $+q$ и колеблющийся около него точечный заряд $-q$. Дипольный момент такой системы изменяется по закону:
+	\begin{equation}
+		\vec p = -q\vec r = -q\vec l\cos\omega t = \vec p_m\cos\omega t
+	\end{equation}
+
+	($\vec l$ -- вектор оси диполя, $\vec r$ -- радиус-вектор отрицательного заряда)\\
+
+	Рассмотрим излучение диполя, размеры которого малы по сравнению с длиной волны ($l << \lambda$). Такой диполь называется элементарным. В непосредственной близости от диполя картина электромагнитного поля очень сложна. Она сильно упрощается в так называемой волновой зоне диполя, которая начинается на расстояниях $r$, много больших длины волны.\\
+
+	Если волна распространяется в однородной изотропной среде, то волновой фронт в волновой зоне будет сферическим.\\
+
+	Амплитуды $E_m$ и $H_m$ излучаемой волны зависят от расстояния до диполя $r$, а также от угла $\vartheta$, отсчитываемого от луча, перпендикулярного оси диполя. Зависимость для вакуума имеет вид:
+	\begin{equation}
+		E_m \sim H_m \sim \frac{1}{r}\sin\vartheta
+	\end{equation}
+
+	Среднее значение плотности потока энергии $<S>$ пропорционально произведению $E_mH_m$, поэтому:
+	\begin{equation}
+		<S>\sim\frac{1}{r^2}\sin^2\vartheta
+	\end{equation}
+
+	-- сильнее всего диполь излучает в направлении, перпендикулярном его оси.\\
+
+	Мощность излучения диполя пропорциональна квадрату второй производной дипольного момента по времени:
+	\begin{equation}
+		P\sim (\frac{\partial^2\vec p}{\partial t^2})^2
+	\end{equation}
+
+	Поскольку $(\frac{\partial^2\vec p}{\partial t^2})^2 = p_m^2\omega^4\cos^2\omega t$:
+	\begin{equation}
+		P\sim p_m^2\omega^4\cos^2\omega t
+	\end{equation}
+
+	Усредним это выражение по времени:
+	\begin{equation}
+		<P>\sim p_m^2\omega^4
+	\end{equation}
+
+	С другой стороны, $\frac{\partial^2\vec p}{\partial t^2}=-q\vec a$, где $\vec a$ -- ускорение колеблющегося заряда. Подставим в предыдущую формулу:
+	\begin{equation}
+		P\sim q^2a^2
+	\end{equation}
+
+	В СИ коэффициент пропорциональности равен $\frac{\sqrt{\mu_0/\varepsilon_0}}{6\pi c^2}=\frac{20}{c^2}$:
+	\begin{equation}
+		P = \frac{20}{c^2}q^2a^2
+	\end{equation}
+
+	Зная мощность излучения диполя, легко найти убыль его энергии за некоторое время.
+
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Импульс электромагнитного поля}\\
+
+	Когда электромагнитная волна поглащается в каком-либо теле, она оказывает на него давление. Покажем это.\\
+
+	Пусть плоская волна падает по нормали на плоскую поверхность слабо проводящего тела с $\varepsilon$ и $\mu$ равными $1$. Электрическое поле возбудит в теле ток плотности:
+	\begin{equation}
+		\vec j = \sigma\vec E
+	\end{equation}
+
+	Магнитное поле волны будет действовать на единицу объема тела с силой:
+	\begin{equation}
+		\vec F_\text{ед. об.}=[\vec j;\vec B] = [\vec j;\vec H]
+	\end{equation}
+
+	Направление этой силы совпадает с направлением распространения волны, т.к. $\vec j || \vec E$ и $\vec E\perp\vec H$\\
+
+	Поверхностному слою с площадью, равной единице, и толщиной $dl$ сообщается в единицу времени импульс:
+	\begin{equation}
+		dK = F_\text{ед. об.} dl = \mu_0 j H dl
+	\end{equation}
+
+	В этом же слое в единицу времени поглащается энергия:
+	\begin{equation}
+		dW = jEdl
+	\end{equation}
+
+	Она выделяется в виде теплоты.\\
+
+	Рассмотрим отношение импульса к энергии:
+	\begin{equation}
+		\frac{K}{W}=\mu_0\frac{H}{E}
+	\end{equation}
+
+	Учитывая, что $\mu_0H^2 = \varepsilon E^2$, получим:
+	\begin{equation}
+		\frac{K}{W} = \sqrt{\varepsilon_0\mu_0}=\frac{1}{c}
+	\end{equation}
+
+	Отсюда следует, что электромагнитная волна, несущая энергию $W$, обладает импульсом:
+	\begin{equation}
+		K=\frac{1}{c}W
+	\end{equation}
+
+	Переходя к единице объема:
+	\begin{equation}
+		K_\text{ед. об.} = \frac{1}{c}w
+	\end{equation}
+
+	-- это связь между плотностью импульса и плотностью энергии.\\
+
+	$w\vec c=\vec S$, поэтому:
+	\begin{equation}
+		\vec K_\text{ед. об.} = \frac{1}{c^2}\vec S = \frac{1}{c^2}[\vec E;\vec H]
+	\end{equation}
+
+	Если релятивистские частицы распределены в пространстве с плотностью $n$, плотность импульса, который они переносят, равна:
+	\begin{equation}
+		\vec K_\text{ед. об.} = n\frac{m\vec v}{\sqrt{1-v^2/c^2}}
+	\end{equation}
+
+	Частицы переносят с собой энергию, плотность потока которой обозначим через $\vec j_W$. Она равна плотности потока частиц, умноженной на энергию одной частицы:
+	\begin{equation}
+		\vec j_W = n\vec v\frac{mc^2}{\sqrt{1-v^2/c^2}}
+	\end{equation}
+
+	Поэтому:
+	\begin{equation}
+		\vec K_\text{ед. об.} = \frac{1}{c^2}\vec j_W
+	\end{equation}
+
+	Давление волны на единицу перпендикулярной абсолютно поглащающей поверхности равно:
+	\begin{equation}
+		p = <w>
+	\end{equation}
+
+	Аналогичное давление на абсолютно отражающую поверхность:
+	\begin{equation}
+		p = 2<w>
+	\end{equation}
+\end{document}
