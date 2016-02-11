@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Боровская теория атома, опыты Резерфорда и Франка-Герца}\\
+
+	\begin{equation}
+		F = \frac{2Ze^2}{r^2}
+	\end{equation}
+
+	\begin{equation}
+		|\;\Delta\vec p\;| = 2p_0\sin\frac{\vartheta}{2} = 2m_\alpha v\sin\frac{\vartheta}{2}
+	\end{equation}
+
+	 $\Delta \vec p = \int\vec F dt$.\\
+
+	\begin{equation}
+		|\;\Delta\vec p\;| = \int F_{\Delta\vec p}\;dt
+	\end{equation}
+
+	\begin{equation}
+		F_{\Delta\vec p} = F\cos(\frac{\pi}{2}-\frac{\vartheta}{2}-\varphi) = F\sin(\varphi+\frac{\vartheta}{2}) = \frac{2Ze^2}{r^2}\sin(\varphi+\frac{\vartheta}{2})
+	\end{equation}
+
+	$dt \to d\varphi/\dot\varphi$:
+	\begin{equation}
+		|\;\Delta\vec p\;| = 2Ze^2\int_0^{\pi-\vartheta}\frac{\sin(\dot\varphi+\vartheta/2)d\varphi}{r^2\dot\varphi}
+	\end{equation}
+
+	$r^2\dot\varphi=vb$, т.к. момент импульса альфа-частицы все время остается постоянным. Производим эту замену:
+	\begin{equation}
+		|\;\Delta\vec p\;| = \frac{2Ze^2}{vb}\int_0^{\pi-\vartheta}\sin(\varphi+\frac{\vartheta}{2})d\varphi = \frac{2Ze^2}{vb}2\cos\frac{\vartheta}{2}
+	\end{equation}
+
+	Сопоставим с выражением $(2)$:
+	\begin{equation}
+		2m_\alpha v\sin\frac{\vartheta}{2} = \frac{2Ze^2}{vb}2\cos\frac{\vartheta}{2}
+	\end{equation}
+
+	Поэтому:
+	\begin{equation}
+		\ctg\frac{\vartheta}{2} = \frac{m_\alpha v^2}{2Ze^2}b
+	\end{equation}
+
+	Предполагается, что каждая альфа-частица рассеивается только один раз. Для того чтобы испытать рассеяние на угол, лежащий в пределах $(\vartheta,\vartheta+d\vartheta)$, частица должна пролететь вблизи одного из ядер по траектории, прицельный параметр которой заключен в пределах $(b;b+db)$ и:
+	\begin{equation}
+		-\frac{1}{\sin^2 (\vartheta/2)}\frac{d\vartheta}{2} = \frac{m_\alpha v^2}{2Ze^2} db
+	\end{equation}
+
+	Обозначим площадь поперечного сечения пучка альфа-частиц буквой $S$. Тогда число атомов рассеивающей фольги на пути пучка можно представить в виде $nSa$, где $n$ -- число атомов в единице объема, $a$ -- толщина фольги. Если альфа-частицы распределены равномерно, то относительное число частиц, пролетающих вблизи одного из ядер по траектории с прицельным параметром от $b$ до $b+db$ равно:
+	\begin{equation}
+		\frac{dN_\vartheta}{N} = \frac{nSa2\pi b}{S}db
+	\end{equation}
+
+	Проведем замену $b$ на $\vartheta$ в соответствии с $(8, 9)$:
+	\begin{equation}
+		\frac{dN_\vartheta}{N} = na(\frac{2Ze^2}{m_\alpha v^2})^2 2\pi\ctg\frac{\vartheta}{2}\frac{1}{\sin^2 (\vartheta/2)}\frac{d\vartheta}{2}
+	\end{equation}
+
+	Преобразуем множители, содержащие $\vartheta$:
+	\begin{equation}
+		\frac{\ctg(\vartheta/2)}{\sin^2(\vartheta/2)} = \frac{\cos(\vartheta/2)\sin(\vartheta/2)}{\sin^4(\vartheta/2)} = \frac{\sin\vartheta}{2\sin^4 (\vartheta/2)}
+	\end{equation}
+
+	С учетом этого преобразования получим:
+	\begin{equation}
+		\frac{dN_\vartheta}{N} = na(\frac{2Ze^2}{m_\alpha v^2})^2\frac{2\pi\sin\vartheta d\vartheta}{4\sin^4 (\vartheta/2)}
+	\end{equation}
+
+	Перейдем к элементу телесного угла $d\Omega$, в пределах которого заключены направления, соответствующие кглам рассеяния $(\vartheta;\vartheta+d\vartheta)$:
+	\begin{equation}
+		\frac{dN_\vartheta}{N} = na(\frac{Ze^2}{m_\alpha v^2})^2\frac{d\Omega}{\sin^4(\vartheta/2)}
+	\end{equation}
+
+	Получили формулу Резерфорда для рассеяния альфа-частиц.\\
+
+	Однако, классическая модель атома не способна объяснить ни устойчивость атома, ни характер атомного спектра. Нильс Бор ввел постулаты, противоречащие классическим представлениям, но позволяющие объяснить экспериментальные данные.\\
+
+	1) Из многих классических орбит в атоме реально доступны для электрона только некоторые. Двигаясь по ним, он не излучает электромагнитных волн.\\
+
+	2) Излучение испускается атомом в виде кванта энергии $\hbar\omega$ при переходе электрона из одного устойчивого состояния в другое:
+	\begin{equation}
+		\hbar\omega = E_n-E_m
+	\end{equation}
+
+	Джеймс Франк и Генрих Герц провели опыт, подтверждающий выдвинутые Бором предположения. Их установка состояла из трубки с анодом, катодом и сеткой, заполненной парами ртути. Построив вольт-амперную характеристику этой трубки, они обнаружили, что сила тока вначале растет, затем падает, затем снова растет и т.д. Это означает, что атомы могут воспринимать энергию только порциями.\\
+
+	Согласно постулатам Бора возможны только такие орбиты, для которых момент импульса электрона $m_e vr$ удовлетворяет условию:
+	\begin{equation}
+		m_e vr = n\hbar,\;\;\;n=1,2,3...
+	\end{equation}
+
+	Рассмотрим электрон, движущийся в поле атомного ядра с зарядом $Ze$ (при $Z=1$ это атом водорода, при $Z>1$ -- водородоподобный ион).\\
+
+	Уравнение движения электрона:
+	\begin{equation}
+		m_e\frac{v^2}{r}=\frac{Ze^2}{r^2}
+	\end{equation}
+
+	Сопоставив $(16)$ и $(17)$, получим:
+	\begin{equation}
+		r_n = \frac{\hbar^2}{m_eZe^2}n^2,\;\;\;n=1,2,3,...
+	\end{equation}
+
+	Радиус первой орбиты водородного атома называется боровским радиусом:
+	\begin{equation}
+		r_0 = \frac{\hbar^2}{m_e c^2}
+	\end{equation}
+
+	Внутренняя энергия атома складывается из кинетической энергии электрона и энергии взаимодействия электрона с ядром:
+	\begin{equation}
+		E = \frac{m_ev^2}{2} - \frac{Ze^2}{r}
+	\end{equation}
+
+	Поскольку $\frac{m_e v^2}{2}=\frac{Z e^2}{2r}$:
+	\begin{equation}
+		E=\frac{Ze^2}{2r} - \frac{Ze^2}{r} = -\frac{Ze^2}{2r}
+	\end{equation}
+
+	Подставив $(18)$, найдем дозволенные значения $E$:
+	\begin{equation}
+		E_n=-\frac{m_e e^4}{2\hbar^2}\frac{Z^2}{n^2}\;\;\;(n=1,2,3,...)
+	\end{equation}
+
+	Таким образом, получена формула Бальмера, определяющая частоту излучения при переходе атома водорода из состояния $n$ в состояние $m$:
+	\begin{equation}
+		\omega = \frac{m_e e^4}{2\hbar^3}(\frac{1}{m^2}-\frac{1}{n^2})
+	\end{equation}
+
+
+
+
+
+
+
+	
+\end{document}

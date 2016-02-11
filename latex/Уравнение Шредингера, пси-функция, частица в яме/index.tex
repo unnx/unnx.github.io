@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Уравнение Шредингера, пси-функция, частица в яме}\\
+
+	Состояние микрочастицы характеризуется т.н. пси-функцией. Ее вид получается через решение уравнения Шредингера:
+	\begin{equation}
+		-\frac{\hbar^2}{2m}\nabla^2\Psi + U\Psi = i\hbar\frac{\partial\Psi}{\partial t}
+	\end{equation}
+
+	Если силовое поле, в котором движется частица, стационарно, то $U$ не зависит явно от времени. В этом случае решение уравнения распадается на два множителя:
+	\begin{equation}
+		\Psi(x,y,z,t) = \psi(x,y,z)e^{-i\frac{E}{\hbar}t}
+	\end{equation}
+
+	Подставив это решение в уравнение, получим:
+	\begin{equation}
+		-\frac{\hbar^2}{2m}\nabla^2\psi + U\psi = E\psi
+	\end{equation}
+
+	Это т.н. стационарное уравнение Шредингера. Его часто пишут в виде:
+	\begin{equation}
+		\nabla^2\psi + \frac{2m}{\hbar^2}(E-U)\psi = 0
+	\end{equation}
+
+	Квадрат модуля пси-функции определяет вероятность $dP$ того, что частица будет обнаружена в пределах объема $dV$:
+	\begin{equation}
+		dP = A|\Psi|^2dV = A\Psi\Psi^*dV
+	\end{equation}
+
+	Решим уравнение Шредингера для частицы, находящейся в одномерной бесконечно глубокой потенциальной яме. Уравнение упрощается следующим образом:
+	\begin{equation}
+		\frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}(E-U)\psi = 0
+	\end{equation}
+
+	Вероятность обнаружить частицу вне ямы равна нулю. Из условия непрерывности следует, что $\psi$ должна быть равна нулю и на границах ямы:
+	\begin{equation}
+		\psi(0) = \psi(l) = 0
+	\end{equation}
+
+	Таким образом, уравнение внутри ямы имеет вид:
+	\begin{equation}
+		\frac{d^2\psi}{dx^2}+\frac{2m}{\hbar^2}E\psi = 0
+	\end{equation}
+
+	Вводя обозначение $k^2=\frac{2m}{\hbar^2}E$, придем к уравнению $\psi''+k^2\psi = 0$, решение которого имеет вид:
+	\begin{equation}
+		\psi(x) = a\sin(kx+\alpha)
+	\end{equation}
+
+	Из граничных условий следует, что $\alpha=0$ и $\sin kl=0$, т.е. 
+	\begin{equation}
+		kl=\pm\pi n\;\;\;(n=1,2,3,...)
+	\end{equation}
+	\begin{equation}
+		E_n=\frac{\pi^2\hbar^2}{2ml^2}n^2
+	\end{equation}
+
+	Легко найти $\psi_n(x):$
+	\begin{equation}
+		\psi_n(x)=\sqrt{\frac{2}{l}}\sin\frac{\pi n x}{l}\;\;\;(n=1,2,3,...)
+	\end{equation}
+
+	($a$ находится из нормировки суммы всевозможных вероятностей на единицу).\\
+
+	Для гармонического осциллятора с потенциальной энергией $U=\frac{kx^2}{2}$ и $\omega = \sqrt{k/m}$, решения уравнения Шредингера соответствуют энергиям:
+	\begin{equation}
+		E_n=(n+\frac{1}{2})\hbar\omega\;\;\;(n=0,1,2,...)
+	\end{equation}
+
+	Для водородоподобного атома уравнение Шредингера имеет однозначные, конечные и непрерывные решения при любых положительных энергиях, а также при дискретных отрицательных:
+	\begin{equation}
+		E_n = -\frac{m_2 e^4}{2\hbar}\frac{Z}{n^2}\;\;\;(n=1,2,3,...)
+	\end{equation}
+
+	
+\end{document}

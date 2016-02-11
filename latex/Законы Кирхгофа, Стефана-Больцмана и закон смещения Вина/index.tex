@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Закон Кирхгофа, Стефана-Больцмана и закон смещения Вина}\\
+	
+	Поток энергии, испускаемый единицей поверхности тела, излучающей волну частоты $\omega$ обозначается как $dR_\omega=r_\omega d\omega$.\\
+
+	При малом $d\omega$ он пропорционален ей:
+
+	\begin{equation}
+		dR_\omega = r_\omega d\omega
+	\end{equation}
+
+	Коэф. пропорциональности называется испускательной способностью тела. Она зависит от температуры $(r_{\omega T})$.\\
+
+	Энергетическая светимость (полная плотность потока для всевозможных частот) тела равна:
+
+	\begin{equation}
+		R_T = \int dR_{\omega T} = \int_0^\infty r_{\omega T} d\omega
+	\end{equation}
+
+	Воспользовавшись переходом от частоты к длине волны $\lambda = \frac{2\pi c}{\omega};\;\;d\lambda = -\frac{2\pi c}{\omega^2}d\omega = -\frac{\lambda^2}{2\pi c}d\omega$, можно переписать выражение для светимости:
+
+	\begin{equation}
+		dR_\lambda = r_\lambda d\lambda, \text{\;\;причем\;\;} r_\omega = r_\lambda\frac{2\pi c}{\omega^2} = r_\lambda \frac{\lambda^2}{2\pi c}
+	\end{equation}
+
+	Если на единицу поверхности тела падает поток излучения $d\Phi_\omega$, и тело поглощает часть этого потока $d\Phi'_\omega$, то говорят о поглощательной способности тела:
+
+	\begin{equation}
+		a_{\omega T} = \frac{d\Phi'_\omega}{d\Phi_\omega}
+	\end{equation}
+
+	Тело с $a_{\omega T} \equiv 1$ называется абсолютно черным, тело с $a_{\omega T}=a_T<1$, называется серым.\\
+
+	Из равновесности теплового излучения следует закон Кирхгофа:
+
+	\begin{equation}
+		\frac{r_{\omega T}}{a_{\omega T}} = f(\omega,T)
+	\end{equation}
+
+	Где $f(\omega,T)$ (легко видеть) -- испускательная способность абсолютно черного тела.\\
+
+	Чтобы найти $f(\omega,T)$, рассмотрим область с абсолютно черными стенками. В каждой точке этоц области плотность потока энергии равна:
+
+	\begin{equation}
+		dj = cu\frac{d\Omega}{4\pi}
+	\end{equation}
+
+	(Здесь u -- плотность энергии)
+
+	Поток энергии, испускаемый элементом стенки $\Delta S$ в направлении телесного угла $d\Omega$ равен:
+	\begin{equation}
+		d\Phi_E = dj\Delta S \cos \vartheta = cu \frac{d\Omega}{4\pi}\Delta S \cos \vartheta = \frac{cu}{4\pi}\Delta S\cos \vartheta \sin \vartheta d\vartheta d\phi
+	\end{equation}
+
+	Проинтегрируем по половине телесного угла:
+	\begin{equation}
+		\Delta\Phi_E = \frac{cu}{4}\Delta S
+	\end{equation}
+
+	С другой стороны:
+	\begin{equation}
+		\Delta\Phi_E = R^*\Delta S
+	\end{equation}
+
+	($R^*$ -- энергетическая светимость абсолютно черного тела)\\
+
+	Поэтому:
+	\begin{equation}
+		f(\omega,T)=\frac{c}{4}u(\omega,T)
+	\end{equation}
+
+	Йозеф Стефан определил, что энергетическая светимость любого тела пропорциональна четвертой степени температуры (на самом деле это верно только для абсолютно черного тела). Людвиг Больцман теоретиески вывел выражение для $R^*$:
+	\begin{equation}
+		R^* = \int_0^\infty f(\omega,T)d\omega = \sigma T^4
+	\end{equation}
+
+	($\sigma$ -- постоянная Стефана-Больцмана)\\
+
+	Вильгельм Вин показал, что функция спектрального распределения должна иметь вид:
+	
+	\begin{equation}
+		f(\omega,T)=\omega^3 F(\frac{\omega}{T})
+	\end{equation}
+
+	Перейдем к функции $\varphi(\lambda,T)$:
+
+	\begin{equation}
+		\phi(\lambda,T) = (\frac{2\pi c}{\lambda^2})(\frac{2\pi c}{\lambda})^3 F(\frac{2\pi c}{\lambda T}) = \frac{1}{\lambda^5} \psi(\lambda T)
+	\end{equation}
+
+	Где $\psi (\lambda T)$ -- некоторая функция произведения $\lambda T$. Задача -- установить связь между максимальной длиной излучаемых тепловых волн $\lambda_m$ и температурой. Продифференцируем предыдущее соотношение по $\lambda$:
+
+	\begin{equation}
+		\frac{d\phi}{d\lambda} = \frac{1}{\lambda^5}T\psi'(\lambda T) - \frac{5}{\lambda^6} \psi(\lambda T) = \frac{1}{\lambda^6}[\lambda T \psi'(\lambda T) - 5\psi(\lambda T)] = \frac{1}{\lambda^6}\Psi(\lambda T)
+	\end{equation}
+
+	Условие максимума:
+
+	\begin{equation}
+		(\frac{d\varphi}{d\lambda})_{\lambda = \lambda_m} = \frac{1}{\lambda_m^6}\Psi(\lambda_m T) = 0
+	\end{equation}
+
+	Из опыта известно, что $\lambda_m$ конечно. Поэтому $\Psi(\lambda_m T) = 0$. Решение этого уравнения дает соотношение, называемое законом смещения Вина:
+
+	\begin{equation}
+		\lambda_m T = b
+	\end{equation}
+
+	Здесь b -- экспериментально определяемая константа.
+
+
+\end{document}

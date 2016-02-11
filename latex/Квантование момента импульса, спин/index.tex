@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Квантование момента импульса, спин}\\
+
+	Решение уравнения на собственные значения и собственные функции оператора момента импульса дает следующий набор возможных дискретных значений для модуля момента импульса:
+	\begin{equation}
+		M = \hbar\sqrt{l(l+1)}\;\;\;(l=0,1,2,...)
+	\end{equation}
+
+	Рассмотрим проекцию момента на выделенную ось $M_z$. Уравнение на собственные значения и собственные функции оператора имеет вид:
+	\begin{equation}
+		\hat M_z\psi = M_z\psi
+	\end{equation}
+
+	В полярных координатах $(r,\vartheta,\varphi)$ оператор проекции момента импульса на полярную ось $z$ имеет вид:
+	\begin{equation}
+		\hat M_z = -i\hbar\frac{\partial}{\partial\varphi}
+	\end{equation}
+
+	Уравнение Шредингера:
+	\begin{equation}
+		-i\hbar\frac{\partial\psi}{\partial\varphi} = M_z\psi
+	\end{equation}
+
+	После подстановки $\psi = e^{\alpha\varphi}$:
+	\begin{equation}
+		-i\hbar\alpha = M_z
+	\end{equation}
+
+	Отсюда:
+	\begin{equation}
+		\psi = Ce^{(i\frac{M_z}{\hbar})\varphi}
+	\end{equation}
+
+	Условие однозначности выражается в том, что $\psi(\varphi+2\pi)=\psi(\varphi)$. Поэтому $\hat M_z$ обладает дискретным спектром:
+	\begin{equation}
+		M_z = m\hbar\;\;\;(m=0,\pm 1,\pm 2,...)
+	\end{equation}
+
+	$m$ называется магнитным квантовым числом.\\
+
+	Суммарный модуль момента импульса системы из двух частиц, как и любой другой модуль момента импульса, определяется выражением:
+	\begin{equation}
+		M = \hbar\sqrt{L(L+1)},\;\;\;L=l_1+l_2,\;l_1+l_2-1,\;...,|l_1-l_2|
+	\end{equation}
+
+	Проекция результирующего момента на некоторую ось определяется выражением:
+	\begin{equation}
+		M_z = m_L\hbar\;\;\;(m_L=0,\pm 1,\pm 2,...,\pm L)
+	\end{equation}
+
+	Электрон имеет собственные механический и магнитный моменты $M_s$ и $\mu_s$ соответственно. Между ними есть связь:
+	\begin{equation}
+		\frac{\mu_s}{M_s} = -\frac{e}{m_e c}
+	\end{equation}
+
+	Модуль собственного момента импульса электрона определяется через спиновое число, равное для электрона $1/2$:
+	\begin{equation}
+		M_s = \hbar\sqrt{s(s+1)} = \hbar\sqrt{\frac{1}{2}\frac{3}{2}}=\frac{1}{2}\hbar\sqrt{3}
+	\end{equation}
+
+	Проекция спина на заданное направление может принимать значения:
+	\begin{equation}
+		M_{sz}=m_s\hbar\;\;\;(m_s=\pm s = \pm 1/2)
+	\end{equation}
+
+	Воспользуемся магнитомеханическим соотношением выше, чтобы найти $\mu_s$:
+	\begin{equation}
+		\mu_s = -\frac{e}{m_e c}M_s = -\frac{e\hbar}{m_e c}\sqrt{s(s+1)} = -2\mu_\text{Б}\sqrt{s(s+1)}=-\mu_\text{Б}\sqrt{3}
+	\end{equation}
+
+	Величина $\mu_\text{Б}=-\frac{e\hbar}{2m_ec}$ называется магнетоном Бора.
+	
+\end{document}

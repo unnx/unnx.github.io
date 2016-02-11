@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a6paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Энергия упругой волны}\\
+
+	\begin{equation}
+		\xi = a\cos(\omega t - kx + \varphi)
+	\end{equation}
+
+	\begin{equation}
+		\Delta V:\;\;\frac{\partial\xi}{\partial t} = const;\;\;\frac{\partial\xi}{\partial x} = const
+	\end{equation}
+
+	\begin{equation}
+		\Delta W_\text{к} = \frac{mv^2}{2} = \frac{\rho\Delta V}{2}(\frac{\partial\xi}{\partial t})^2
+	\end{equation}
+
+	\begin{equation}
+		\Delta W_\text{п} = \frac{k\Delta l^2}{2} = \{\varepsilon=\frac{\Delta l}{L},\;k=\frac{ES}{L}\} = \frac{ES}{L}\frac{(\varepsilon L)^2}{2}=\frac{ESL}{2}(\frac{\partial\xi}{\partial x})^2
+	\end{equation}
+
+	\begin{equation}
+		\Delta W_\text{п} = \frac{E}{2}(\frac{\partial\xi}{\partial x})^2\Delta V
+	\end{equation}
+
+	\begin{equation}
+		\Delta W_\text{п}=\frac{\rho v^2}{2}(\frac{\partial\xi}{\partial x})^2 \Delta V
+	\end{equation}
+
+	\begin{equation}
+		\Delta W = \Delta W_\text{к}+\Delta W_\text{п} = \frac{1}{2}\rho[(\frac{\partial\xi}{\partial t})^2+v^2(\frac{\partial\xi}{\partial x})^2]\Delta V
+	\end{equation}
+
+	\begin{equation}
+		 w=\frac{\Delta W}{\Delta V}
+	\end{equation}
+
+	\begin{equation}
+		w=\frac{1}{2}\rho[(\frac{\partial\xi}{\partial t})^2+v^2(\frac{\partial\xi}{\partial x})^2]
+	\end{equation}
+
+	\begin{equation}
+		\frac{\partial\xi}{\partial t} = ka\sin(\omega t - kx + \varphi)
+	\end{equation}
+	\begin{equation}
+		\frac{\partial\xi}{\partial x} = -a\omega\sin(\omega t - kx + \varphi)
+	\end{equation}
+
+	\begin{equation}
+		w = \rho a^2\omega^2\sin^2(\omega t - kx + \varphi)
+	\end{equation}
+
+	\begin{equation}
+		 <\sin^2 t>=\frac{1}{2}
+	\end{equation}
+
+	\begin{equation}
+		<w> = \frac{1}{2}\rho a^2\omega
+	\end{equation} 
+
+	\begin{equation}
+		\Phi = \frac{dW}{dt}
+	\end{equation}
+
+	\begin{equation}
+		\frac{\Delta\Phi}{\Delta S_\perp} = \frac{\Delta W}{\Delta S_\perp\Delta t} = j
+	\end{equation}
+
+	\begin{equation}
+		\Delta W = w\Delta V = w\Delta S_\perp v\Delta t
+	\end{equation}
+
+	\begin{equation}
+		j = \frac{\Delta W}{\Delta S_\perp\Delta t} = wv
+	\end{equation}
+
+	\begin{equation}
+		\vec j = w\vec v
+	\end{equation}
+
+	\begin{equation}
+		<\vec j> = <w>v = \frac{1}{2}\rho a^2 \omega^2 \vec v
+	\end{equation}
+
+	\begin{equation}
+		\Phi = \int_S\vec j d\vec S
+	\end{equation}
+
+	\begin{equation}
+		<\Phi> = \int_S \vec jd\vec S
+	\end{equation}
+
+	\begin{equation}
+		<\Phi>=\int_S <j>dS_n = <j>S = <j>4\pi r^2= 2\pi\rho\omega^2 v a_r^2 r^2
+	\end{equation}
+
+	\begin{equation}
+		Phi = const,\;\;a_r^2r^2 = const,\;\;a_r\sim\frac{1}{r}
+	\end{equation}
+
+	\begin{equation}
+		Phi\neq const,\;\;<j> = j_0e^{-kx},\;\;k=2\gamma
+	\end{equation}
+
+\end{document}

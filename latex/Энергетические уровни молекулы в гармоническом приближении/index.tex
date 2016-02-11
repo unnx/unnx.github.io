@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Энергетические уровни молекулы в гармоническом приближении}\\
+
+	Энергия молекулы складывается из трех частей:
+	\begin{equation}
+		E = E_e + E_v + E_r
+	\end{equation}
+
+	$E_e$ -- энергия, обусловленная электронной конфигурацией\\
+
+	$E_v$ -- энергия, соответствующая колебаниям молекулы\\
+
+	$E_r$ -- энергия, соответствующая вращениям молекулы\\
+
+	Энергия квантового осциллятора:
+	\begin{equation}
+		E_v = (v+1/2)\hbar\omega_v\;\;\;v=0,1,2,...
+	\end{equation}
+
+	$v$ -- колебательное квантовое число с правилом отбора $\Delta v = \pm 1$.\\
+
+	Энергия системы с моментом инерции $I$ и вращающейся с угловой скоростью $\omega_r$ равна
+	\begin{equation}
+		E_r = \frac{I\omega_r^2}{2}=\frac{(I\omega_r)^2}{2I}=\frac{M^2}{2I}
+	\end{equation}
+
+	Момент импульса может принимать лишь дискретные значения:
+	\begin{equation}
+		M=\hbar\sqrt{J(J+1)}\;\;\;J=0,1,2,...
+	\end{equation}
+
+	Поэтому вращательная энергия молекулы может принимать значения:
+	\begin{equation}
+		E_r = \frac{\hbar^2 J(J+1)}{2I}
+	\end{equation}
+
+	Для вращательного числа есть правило отбора $\Delta J=\pm 1$
+	
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+
+	\textbf{Формула Рэлея-Джинса и формула Планка}\\
+
+	Рэлей и Джинс попытались определить равновесную плотность излучения $u(\omega, T)$, исходя из теоремы классической статистики о равнораспределении энергии по степеням свободы.\\
+
+	Таким образом, на каждое электромагнитное колебание должна приходиться энергия, равная $\frac{1}{2}kT + \frac{1}{2}kT$ (слагаемые соответствуют магнитной и электрической компонентам).
+
+	Равновесное излучение в полости представляет собой систему стоячих волн, которые могут быть поляризованы во взаимно перпендикулярных плоскостях. Поэтому число таких волн в единице объема равно:
+
+	\begin{equation}
+		dn_\omega = \frac{\omega^2 d\omega}{\pi^2 c^3}
+	\end{equation}
+
+	Таким образом:
+
+	\begin{equation}
+		u(\omega,T)d\omega = \overline\varepsilon dn_\omega = kT\frac{\omega^2}{\pi^2 c^3} d\omega
+	\end{equation}
+	\begin{equation}
+		u(\omega,T) = \frac{\omega^2}{\pi^2 c^3} kT
+	\end{equation}
+
+	Поскольку $f(\omega,T)=\frac{cu(\omega,T)}{4}$:
+	\begin{equation}
+		f(\omega,T) = \frac{\omega^2}{4\pi^2 c^2} kT
+	\end{equation}
+
+	($f(\omega,T)$ -- испускательная способность абсолютно черного тела)
+
+	Эта формула находится в противоречии с опытом, т.к. при $\omega\rightarrow\infty$ равновесная энергия бесконечна. Данный феномен бын назван ультрафиолетовой катастрофой. Его наличие означает неприменимость классической физики к описанию процессов излучения.\\
+
+	Планку удалось найти вид функции $u(\omega,T)$ в точности соответствующий опытным данным. Он предположил, что электромагнитное излучение испускается в виде отдельных порций -- квантов, величина которых пропорциональна частоте излучения:
+	
+	\begin{equation}
+		\varepsilon = \hbar \omega
+	\end{equation} 
+
+	$\hbar$ -- постоянная Планка.\\
+
+	Таким образом, энергия кратна величине квантов:
+	\begin{equation}
+		\varepsilon_n = n\hbar\omega
+	\end{equation}
+
+	В состоянии равновесия распределение колебаний по энергии должно подчиняться закону Больцмана:
+	\begin{equation}
+		P_n = \frac{N_n}{N}=\frac{\exp(-\varepsilon_n/kT)}{\sum_n \exp(-\varepsilon_n/kT`)}
+	\end{equation}
+
+	Можно найти среднюю энергию:
+	\begin{equation}
+		\overline \varepsilon = \sum_n P_n\varepsilon_n=\frac{\sum_{n=0}^\infty n\hbar\omega\exp(-n\hbar\omega/kT)}{\sum_{n=0}^\infty \exp(-n\hbar\omega/kT)} = -\hbar\omega \frac{d}{d(\hbar\omega/kT)} \ln\sum_{n=0}^\infty \exp(-n(\hbar\omega/kT))
+	\end{equation}
+
+	Под знаком логарифма -- бесконечная убывающая геометрическая прогрессия с $b_1=1$ и $q=e^{-x}$. Ее сумму легко найти:
+	\begin{equation}
+		\overline\varepsilon = -\hbar\omega\frac{d}{d(\hbar\omega/kT)}\ln\frac{1}{1-e^{-\frac{\hbar\omega}{kT}}} = \hbar\omega\frac{e^{-\frac{\hbar\omega}{kT}}}{1-e^\frac{\hbar\omega}{kT}} = \frac{\hbar\omega}{e^{\frac{\hbar\omega}{kT}}-1}
+	\end{equation}
+
+	Кстати, при $\hbar\rightarrow 0$ средняя энергия стремится к $kT$, т.е. становится справедливым классический случай.\\
+
+	Получим плотность равновесной энергии для интервала частот $(\omega,\omega+d\omega)$:
+	\begin{equation}
+		u(\omega,T)d\omega = \overline\varepsilon dn_\omega = \frac{1}{e^{\frac{\hbar\omega}{kT}} - 1} \frac{\hbar\omega^3}{\pi^2 c^3}
+	\end{equation}
+
+	И
+
+	\begin{equation}
+		f(\omega,T) = \frac{1}{e^{\frac{\hbar\omega}{kT}} - 1} \frac{\hbar\omega^3}{4\pi^2 c^2}
+	\end{equation}
+
+	Эти два соотношения называются формулами Планка.\\
+
+	Получим из них закон Стефана-Больцмана, т.е. найдем энергетическую светимость абсолютно черного тела:
+	\begin{equation}
+		R^* = \int_0^\infty f(\omega,T)d\omega = \int_0^\infty\frac{\hbar\omega^3}{4\pi^2 c^2}\frac{d\omega}{e^{\frac{\hbar\omega}{kT}} - 1}
+	\end{equation}
+
+	Произведем замену $\omega = (kT/\hbar)x$:
+	\begin{equation}
+		R^* = \int_0^\infty\frac{\hbar}{4\pi^2 c^2}(\frac{kT}{\hbar})^3\frac{(\frac{kT}{\hbar})dx}{e^x-1} = \frac{\hbar}{4\pi^2 c^2}(\frac{kT}{\hbar})^4(\frac{\pi^4}{15})=\frac{\pi^2 k^4}{60 c^2 \hbar^3} T^4 = \sigma T^4
+	\end{equation}
+
+	
+\end{document}

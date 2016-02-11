@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{cmap}
+\usepackage{amsfonts,amsmath}
+\usepackage{geometry}
+\usepackage{fixint}
+\usepackage{rumathgrk1}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=1.5cm,lmargin=0.5cm,rmargin=0.5cm}
+\pdfcompresslevel=9
+
+\begin{document}
+	
+	\textbf{Стоячие волны в прямоугольном резонаторе с идеально проводящими стенками}\\
+
+	Внутри такого резонатора бегут волны со следующими проекциями волновых векторов:
+
+	\begin{equation}
+		\{\pm k_x, \pm k_y, \pm k_z\}
+	\end{equation}
+
+	(Легко видеть, что их 8 штук)\\
+
+	Если при отражении от стенок фаза волн не меняется, уравнение стоячей волны имеет вид:
+	\begin{equation}
+		\xi = \sum_{i=1}^8 \xi_i = 8A\cos(k_x x)\cos(k_y y)\cos(k_z z)\cos(\omega t)
+	\end{equation}
+
+	В случае изменения фазы на $\pi$ при отражении:
+	\begin{equation}
+		\xi = \sum_{i=1}^8 \xi_i = 8A\cos(k_x x + \frac{\pi}{2})\cos(k_y y - \frac{\pi}{2})\cos(k_z z + \frac{\pi}{2})\cos(\omega t + \frac{\pi}{2})
+	\end{equation}
+
+	Чтобы во всех вершинах резонатора амплитуда имела одинаковое значение, необходимо выполнение условий:
+	\begin{equation}
+		k_x = \frac{\pi}{a}n_1;\;\;k_y = \frac{\pi}{b}n_2;\;\;k_z = \frac{\pi}{c}n_3
+	\end{equation}
+
+	$a, b, c$ -- размеры резонатора, $n_1, n_2, n_3$ -- натуральные числа.\\
+
+	В $k$-пространстве каждой стоячей волне соответствует точка с такими координатами. На долю каждой точки приходится объем $\frac{\pi^3}{abc}$, поэтому плотность точек равна $V/\pi^3$. Число точек, у которых проекции волновых векторов заключены в пределах $(k_x,k_x+dx)$, $(k_y,k_y+dy)$, $(k_z,k_z+dz)$ равно:
+
+	\begin{equation}
+		dN_{k_x,k_y,k_z} = \frac{V}{\pi^3}dk_x dk_y dk_z
+	\end{equation}
+
+	Но точки, соответствующие стоячим волнам, лежат только в первом октанте. Поэтому число стоячих волн в шаровом слое радиуса $k$ и ширины $dk$ равно:
+	\begin{equation}
+		dN_k = \frac{V}{\pi^3}\frac{1}{8}4\pi k^2 dk = V\frac{k^2 dk}{2\pi^2}
+	\end{equation}
+
+	Поскольку $k=\omega/v$ и $dk = d\omega/v$, можно найти число стоячих волн с частотами от $\omega$ до $\omega+d\omega$ в резонаторе объема $V$:
+	\begin{equation}
+		dN_\omega = V\frac{\omega^2 d\omega}{2\pi^2 v^3}
+	\end{equation}
+
+	Или число таких волн в единице объема:
+	\begin{equation}
+		dn_\omega = \frac{\omega^2 d\omega}{2\pi^2 v^3}
+	\end{equation}
+
+	
+
+\end{document}
